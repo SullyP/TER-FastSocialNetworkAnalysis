@@ -7,69 +7,68 @@ Graphe::Graphe ()
 
 }
 
-int Graphe::ajouterDansG1 (int& nombre)
+int Graphe::ajouterDansL1 (int& nombre)
 {
-	g_arcs.push_back(nombre);
+	l_arcs.push_back(nombre);
 	return 0;
 }
 
-int Graphe::ajouterDansG2 (int& nombre)
+int Graphe::ajouterDansL2 (int& nombre)
 {
-	g_degrescumulatifs.push_back(nombre);
+	l_degrescumulatifs.push_back(nombre);
 	return 0;
 }
 
-int Graphe::ajouterDansG3 (int& nombre)
+int Graphe::ajouterDansL3 (int& nombre)
 {
-	g_troisiemetableau.push_back(nombre);
+	l_poids.push_back(nombre);
 	return 0;
 }
 
 void Graphe::remplirValeur (int& choix1, int& valeur)
 {
-	vector<int> arcs = this->g_arcs;
-	vector<int> degrescumulatifs = this->g_degrescumulatifs;
-	vector<int> troisiemetableau = this->g_troisiemetableau;
+	vector<int> arcs = this->l_arcs;
+	vector<int> degrescumulatifs = this->l_degrescumulatifs;
+	vector<int> poids = this->l_poids;
 
 	if (choix1 == 1)
     {
-    	this->ajouterDansG1(valeur);
+    	this->ajouterDansL1(valeur);
     }
     else if (choix1 == 2)
     {
-    	this->ajouterDansG2(valeur);
+    	this->ajouterDansL2(valeur);
     }
     else if (choix1 == 3)
     {
-    	this->ajouterDansG3(valeur);
+    	this->ajouterDansL3(valeur);
     }
-    cout << choix1 << endl;
 }
 
-int Graphe::getTailleG1()
+int Graphe::getTailleL1()
 {
-	return this->g_arcs.size();
+	return this->l_arcs.size();
 }
-int Graphe::getTailleG2()
+int Graphe::getTailleL2()
 {
-	return this->g_degrescumulatifs.size();
+	return this->l_degrescumulatifs.size();
 }
-int Graphe::getTailleG3()
+int Graphe::getTailleL3()
 {
-	return this->g_troisiemetableau.size();
+	return this->l_poids.size();
 }
 
-std::vector<int>* Graphe::getG1()
+std::vector<int>* Graphe::getL1()
 {
-	return &(this->g_arcs);
+	return &(this->l_arcs);
 }
-std::vector<int>* Graphe::getG2()
+std::vector<int>* Graphe::getL2()
 {
-	return &(this->g_degrescumulatifs);
+	return &(this->l_degrescumulatifs);
 }
-std::vector<int>* Graphe::getG3()
+std::vector<int>* Graphe::getL3()
 {
-	return &(this->g_troisiemetableau);
+	return &(this->l_poids);
 }
 
 int choixListe ()
@@ -102,9 +101,9 @@ int main ()
 
 	int choix1 = 0;
 
-	std::vector<int>* g_arcs = numero1.getG1();
-	std::vector<int>* g_degrescumulatifs = numero1.getG2();
-	std::vector<int>* g_troisiemetableau = numero1.getG3();
+	std::vector<int>* l_arcs = numero1.getL1();
+	std::vector<int>* l_degrescumulatifs = numero1.getL2();
+	std::vector<int>* l_poids = numero1.getL3();
 
 	do 
     {
@@ -117,22 +116,22 @@ int main ()
     }    
     while (choix1!=0);
 
-	cout << "Graphe 1 - g_arcs : ";
-    for (int i(0); i<(numero1.getTailleG1()); i++)
+	cout << "Graphe 1 - l_arcs : ";
+    for (int i(0); i<(numero1.getTailleL1()); i++)
     {
-    	cout << (*g_arcs)[i] << " ";
+    	cout << (*l_arcs)[i] << " ";
     }
     cout << endl;
-    cout << "Graphe 1 - g_degrescumulatifs : ";
-    for (int i(0); i<(numero1.getTailleG2()); i++)
+    cout << "Graphe 1 - l_degrescumulatifs : ";
+    for (int i(0); i<(numero1.getTailleL2()); i++)
     {
-    	cout << (*g_degrescumulatifs)[i] << " ";
+    	cout << (*l_degrescumulatifs)[i] << " ";
     }
     cout << endl;
-    cout << "Graphe 1 - g_troisiemetableau : ";
-    for (int i(0); i<(numero1.getTailleG3()); i++)
+    cout << "Graphe 1 - l_poids : ";
+    for (int i(0); i<(numero1.getTailleL3()); i++)
     {
-    	cout << (*g_troisiemetableau)[i] << " ";
+    	cout << (*l_poids)[i] << " ";
     }
     cout << endl;
 	return 0;

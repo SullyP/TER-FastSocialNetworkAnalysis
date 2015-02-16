@@ -13,24 +13,20 @@ class Graphe
     public:
 
     Graphe();
-    int ajouterDansG1(int& nombre);
-    int ajouterDansG2(int& nombre);
-    int ajouterDansG3(int& nombre);
+    int ajouterDansL1(int& nombre);
+    int ajouterDansL2(int& nombre);
+    int ajouterDansL3(int& nombre);
     void remplirValeur(int& choix, int& valeur);
-    int getTailleG1();
-    int getTailleG2();
-    int getTailleG3();
-    std::vector<int>* getG1();
-    std::vector<int>* getG2();
-    std::vector<int>* getG3();
-    //retirerDeG1();
-    //retirerDeG2();
-    //retirerDeG3();
-    //void recevoirDegats(int nbDegats);
+    int getTailleL1();
+    int getTailleL2();
+    int getTailleL3();
+    std::vector<int>* getL1();
+    std::vector<int>* getL2();
+    std::vector<int>* getL3();
 
 	private:
 
-	std::vector<int> g_arcs;
- 	std::vector<int> g_degrescumulatifs;
-	std::vector<int> g_troisiemetableau;
+	std::vector<int> l_arcs;
+ 	std::vector<int> l_degrescumulatifs;
+	std::vector<int> l_poids;
 };
