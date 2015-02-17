@@ -23,6 +23,12 @@ class Graphe
     std::vector<int>* getL1();
     std::vector<int>* getL2();
     std::vector<int>* getL3();
+    int size() const;
+    int getPoids(int const& numero_sommet) const;
+    int getDegreSortant(int const& numero_sommet) const;
+    int getDegreEntrant(int const& numero_sommet) const;
+    std::vector<int> getArcsSortants(int const& numero_sommet) const;
+    std::vector<int> getArcsEntrants(int const& numero_sommet) const;
 
 	private:
 
