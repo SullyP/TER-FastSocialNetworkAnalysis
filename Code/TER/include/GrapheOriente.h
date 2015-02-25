@@ -1,12 +1,15 @@
 #ifndef GRAPHEORIENTE_H
 #define GRAPHEORIENTE_H
 
-#include <Graphe.h>
+#include <omp.h>
+#include "Graphe.h"
+#include "GrapheNonOriente.h"
 
 class GrapheOriente : public Graphe
 {
     public:
-        GrapheOriente();
+        GrapheOriente(std::vector<int> const& p_degresCumulatifsSortants, std::vector<int> const& p_degresCumulatifsEntrants, std::vector<int> const& p_arcsSortants, std::vector<int> const& p_arcsEntrants, std::vector<int> const& p_poids);
+        GrapheNonOriente* convertToGrapheNonOriente() const;
         virtual ~GrapheOriente();
         virtual unsigned int size() const;
         virtual int getDegreSortant(unsigned int const& p_numeroSommet) const;

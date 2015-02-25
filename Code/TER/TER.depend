@@ -1,16 +1,27 @@
 # depslib dependency file v1.0
-1385316878 source:d:\mes documents\workspace\ter\code\ter\main.cpp
+1424868674 source:d:\mes documents\workspace\ter\code\ter\main.cpp
 	<iostream>
+	"GrapheOriente.h"
+	"GrapheNonOriente.h"
 
 1424774660 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
-1424775856 d:\mes documents\workspace\ter\code\ter\include\graphe.h
+1424797072 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
 
-1424775774 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
+1424873716 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
 
-1424775560 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
-	<Graphe.h>
+1424873722 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
+	"Graphe.h"
+
+1424882732 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
+	"GrapheOriente.h"
+	<iostream>
+
+1424873732 d:\mes documents\workspace\ter\code\ter\include\grapheoriente.h
+	<omp.h>
+	"Graphe.h"
+	"GrapheNonOriente.h"
 

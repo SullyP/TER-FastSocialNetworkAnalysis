@@ -12,7 +12,10 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-fopenmp" />
 					<Add directory="include" />
 				</Compiler>
 			</Target>
@@ -31,9 +34,13 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-fexceptions" />
+			<Add option="-fexceptions -fopenmp" />
 		</Compiler>
+		<Linker>
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\bin\libgomp-1.dll" />
+		</Linker>
 		<Unit filename="include/Graphe.h" />
 		<Unit filename="include/GrapheNonOriente.h" />
 		<Unit filename="include/GrapheOriente.h" />

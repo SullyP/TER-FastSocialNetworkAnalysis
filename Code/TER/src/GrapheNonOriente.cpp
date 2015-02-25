@@ -1,7 +1,15 @@
 #include "GrapheNonOriente.h"
 
-GrapheNonOriente::GrapheNonOriente(){
-    //ctor
+GrapheNonOriente::GrapheNonOriente(std::vector<int> const& p_degresCumulatifs, std::vector<int> const& p_arcs, std::vector<int> const& p_poids){
+    for(unsigned int i=0; i<p_poids.size(); i++){
+        m_poids.push_back(p_poids[i]);
+    }
+    for(unsigned int i=0; i<p_arcs.size(); i++){
+        m_arcs.push_back(p_arcs[i]);
+    }
+    for(unsigned int i=0; i<p_degresCumulatifs.size(); i++){
+        m_degresCumulatifs.push_back(p_degresCumulatifs[i]);
+    }
 }
 
 GrapheNonOriente::~GrapheNonOriente(){
@@ -9,7 +17,7 @@ GrapheNonOriente::~GrapheNonOriente(){
 }
 
 unsigned int GrapheNonOriente::size() const{
-    return m_arcs.size();
+    return m_degresCumulatifs.size();
 }
 
 int GrapheNonOriente::getDegreSortant(unsigned int const& p_numeroSommet) const{
