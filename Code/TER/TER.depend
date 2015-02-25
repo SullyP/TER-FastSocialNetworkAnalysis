@@ -4,11 +4,12 @@
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
 
-1424774660 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
+1424906332 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
-1424797072 d:\mes documents\workspace\ter\code\ter\include\graphe.h
+1424905300 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
+	<queue>
 
 1424873716 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
@@ -16,7 +17,7 @@
 1424873722 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
 	"Graphe.h"
 
-1424882732 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
+1424882784 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
 	"GrapheOriente.h"
 	<iostream>
 

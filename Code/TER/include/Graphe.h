@@ -1,4 +1,5 @@
 #include <vector>
+#include <queue>
 
 #ifndef GRAPHE_H
 #define GRAPHE_H
@@ -9,6 +10,7 @@ class Graphe
     public:
         virtual ~Graphe();
         int getPoids(unsigned int const& p_numeroSommet) const;
+        std::vector<bool> breadthFirstSearch(unsigned int const& p_numeroSommet, std::vector<int> const& p_sommetsANePasPrendreEnCompte = std::vector<int>()) const;
         //Methodes non-définies dans cette classe mais dans les classes filles (héritées)
         virtual unsigned int size() const = 0;
         virtual int getDegreSortant(unsigned int const& p_numeroSommet) const = 0;

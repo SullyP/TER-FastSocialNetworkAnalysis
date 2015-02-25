@@ -30,19 +30,19 @@ int main()
     arcsEntrants.push_back(1);
     GrapheOriente* grapheOriente = new GrapheOriente(degresCumulatifsSortants,degresCumulatifsEntrants,arcsSortants,arcsEntrants,poids);
 
-    cout << "Graphe Orienté - Degres sortants : ";
+    cout << "Graphe Oriente - Degres sortants : ";
     for (unsigned int i=0; i<grapheOriente->size(); i++)
     {
     	cout << grapheOriente->getDegreSortant(i) << " ";
     }
     cout << endl;
-    cout << "Graphe Orienté - Degres entrants : ";
+    cout << "Graphe Oriente - Degres entrants : ";
     for (unsigned int i=0; i<grapheOriente->size(); i++)
     {
     	cout << grapheOriente->getDegreEntrant(i) << " ";
     }
     cout << endl;
-    cout << "Graphe Orienté - Arcs sortants : " << endl;
+    cout << "Graphe Oriente - Arcs sortants : " << endl;
     for (unsigned int i=0; i<grapheOriente->size(); i++)
     {
     	std::vector<int> arcs = grapheOriente->getArcsSortants(i);
@@ -53,7 +53,7 @@ int main()
     	cout << endl;
     }
     cout << endl;
-    cout << "Graphe Orienté - Arcs entrants : " << endl;
+    cout << "Graphe Oriente - Arcs entrants : " << endl;
     for (unsigned int i=0; i<grapheOriente->size(); i++)
     {
     	std::vector<int> arcs = grapheOriente->getArcsEntrants(i);
@@ -67,13 +67,13 @@ int main()
 
     GrapheNonOriente* grapheNonOriente = grapheOriente->convertToGrapheNonOriente();
 
-    cout << "Graphe Non-Orienté - Degres : ";
+    cout << "Graphe Non-Oriente - Degres : ";
     for (unsigned int i=0; i<grapheNonOriente->size(); i++)
     {
     	cout << grapheNonOriente->getDegreEntrant(i) << " ";
     }
     cout << endl;
-    cout << "Graphe Non-Orienté - Arcs : " << endl;
+    cout << "Graphe Non-Oriente - Arcs : " << endl;
     for (unsigned int i=0; i<grapheNonOriente->size(); i++)
     {
     	std::vector<int> arcs = grapheNonOriente->getArcsSortants(i);
@@ -82,6 +82,29 @@ int main()
             cout << arcs[i] << " ";
     	}
     	cout << endl;
+    }
+    cout << endl;
+
+
+    cout << "BFS GrapheOriente - Tous les sommets a partir de 0" << endl;
+    vector<bool> bfs = grapheOriente->breadthFirstSearch(0);
+    for (unsigned int i=0; i<grapheOriente->size(); i++)
+    {
+        if(bfs[i]){
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    cout << "BFS grapheNonOriente - Tous les sommets sauf le 1, a partir de 0" << endl;
+    vector<int> nePasPrendreEnCompte;
+    nePasPrendreEnCompte.push_back(1);
+    vector<bool> bfs2 = grapheNonOriente->breadthFirstSearch(0,nePasPrendreEnCompte);
+    for (unsigned int i=0; i<grapheNonOriente->size(); i++)
+    {
+        if(bfs2[i]){
+            cout << i << " ";
+        }
     }
     cout << endl;
 
