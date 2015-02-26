@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1424868674 source:d:\mes documents\workspace\ter\code\ter\main.cpp
+1424954052 source:d:\mes documents\workspace\ter\code\ter\main.cpp
 	<iostream>
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
+	"IndiceEnsembliste.h"
 
 1424906332 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
@@ -25,4 +26,12 @@
 	<omp.h>
 	"Graphe.h"
 	"GrapheNonOriente.h"
+
+1424954142 source:d:\mes documents\workspace\ter\code\ter\src\indiceensembliste.cpp
+	"IndiceEnsembliste.h"
+
+1424954154 d:\mes documents\workspace\ter\code\ter\include\indiceensembliste.h
+	<vector>
+	<algorithm>
+	<iterator>
 

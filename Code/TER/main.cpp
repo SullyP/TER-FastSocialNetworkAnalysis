@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GrapheOriente.h"
 #include "GrapheNonOriente.h"
+#include "IndiceEnsembliste.h"
 
 using namespace std;
 
@@ -108,6 +109,30 @@ int main()
     }
     cout << endl;
 
+    vector<int> ensembleA, ensembleB;
+    ensembleA.push_back(1);
+    ensembleA.push_back(4);
+    ensembleA.push_back(7);
+    ensembleB.push_back(4);
+    ensembleB.push_back(2);
+    IndiceEnsembliste* indiceEnsembliste = new IndiceEnsembliste(ensembleA,ensembleB);
+
+    cout << "ensembleA " << endl;
+    for(unsigned int i=0; i<ensembleA.size(); i++){
+        cout << ensembleA[i] << " ";
+    }
+    cout << endl;
+
+    cout << "ensembleB " << endl;
+    for(unsigned int i=0; i<ensembleB.size(); i++){
+        cout << ensembleB[i] << " ";
+    }
+    cout << endl;
+
+    cout << " Jacard " << indiceEnsembliste->jaccard() << endl;
+    cout << " Overlap Index " << indiceEnsembliste->overlapIndex() << endl;
+
+    delete indiceEnsembliste;
     delete grapheNonOriente;
     delete grapheOriente;
     return 0;

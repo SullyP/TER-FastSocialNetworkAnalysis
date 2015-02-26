@@ -44,10 +44,12 @@
 		<Unit filename="include/Graphe.h" />
 		<Unit filename="include/GrapheNonOriente.h" />
 		<Unit filename="include/GrapheOriente.h" />
+		<Unit filename="include/IndiceEnsembliste.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Graphe.cpp" />
 		<Unit filename="src/GrapheNonOriente.cpp" />
 		<Unit filename="src/GrapheOriente.cpp" />
+		<Unit filename="src/IndiceEnsembliste.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
