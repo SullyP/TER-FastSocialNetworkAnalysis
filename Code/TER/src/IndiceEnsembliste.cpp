@@ -19,9 +19,16 @@ IndiceEnsembliste::~IndiceEnsembliste(){
 }
 
 double IndiceEnsembliste::jaccard() const{
+    if(m_tailleUnion == 0){
+        return 0;
+    }
     return (double)m_tailleIntersection / (double)m_tailleUnion;
 }
 
 double IndiceEnsembliste::overlapIndex() const{
-    return (double)m_tailleIntersection / (double)std::min(m_tailleEnsembleA, m_tailleEnsembleB);
+    int tailleMin = std::min(m_tailleEnsembleA, m_tailleEnsembleB);
+    if(tailleMin == 0){
+        return 0;
+    }
+    return (double)m_tailleIntersection / (double)tailleMin;
 }
