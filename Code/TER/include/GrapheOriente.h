@@ -12,6 +12,8 @@ class GrapheOriente : public Graphe
         GrapheNonOriente* convertToGrapheNonOriente() const;
         virtual ~GrapheOriente();
         virtual unsigned int size() const;
+        virtual unsigned int nbArcs() const;
+        virtual int getDegreBoucle(unsigned int const& p_numeroSommet) const;
         virtual int getDegreSortant(unsigned int const& p_numeroSommet) const;
         virtual int getDegreEntrant(unsigned int const& p_numeroSommet) const;
         virtual std::vector<int> getArcsSortants(unsigned int const& p_numeroSommet) const;

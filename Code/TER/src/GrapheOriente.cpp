@@ -52,6 +52,7 @@ GrapheNonOriente* GrapheOriente::convertToGrapheNonOriente() const{
         int indice;
         #pragma omp parallel for private(indice) schedule(dynamic)
         for(indice=startIndice; indice<endIndice; indice++){
+            //TODO Erreur les boucles (arcs allant d'un noeud à lui-même) sont comptées 2 fois !
             if(indice < changeIndice){
                 arcs[indice] = arcsEntrants[indice - startIndice];
             }else{
@@ -60,7 +61,36 @@ GrapheNonOriente* GrapheOriente::convertToGrapheNonOriente() const{
         }
     }
 
-    return new GrapheNonOriente(degresCumulatifs, arcs, m_poids);
+    return new GrapheNonOriente(degresCumulatifs, arcs, m_poids, nbArcs());
+}
+
+unsigned int GrapheOriente::nbArcs() const{
+    return m_arcsSortants.size();
+}
+
+//Retourne -1 si le numéro du sommet n'est pas dans le graphe
+int GrapheOriente::getDegreBoucle(unsigned int const& p_numeroSommet) const{
+    if(p_numeroSommet < size()){
+        std::vector<int> arcs;
+        int degreBoucle = 0;
+
+        //On effectue la recherche dans la liste d'arcs qui comporte le moinds d'éléments
+        if(getDegreEntrant(p_numeroSommet) < getDegreSortant(p_numeroSommet)){
+            arcs = getArcsEntrants(p_numeroSommet);
+        }else{
+            arcs = getArcsSortants(p_numeroSommet);
+        }
+
+        for(unsigned int indice = 0; indice < arcs.size(); indice++){
+            //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on incrémente le dégré
+            if((unsigned)arcs[indice] == p_numeroSommet){
+                degreBoucle++;
+            }
+        }
+
+        return degreBoucle;
+    }
+    return -1;
 }
 
 //Retourne la taille du graphe (nombre de sommets)

@@ -12,25 +12,29 @@ int main()
     vector<int> arcsSortants;
     vector<int> arcsEntrants;
     vector<int> poids;
-    //Exemple lors de la première réunion de TER
+    //Exemple lors de la première réunion de TER avec une boucle sur le 3eme sommet
     degresCumulatifsSortants.push_back(1);
     degresCumulatifsSortants.push_back(3);
     degresCumulatifsSortants.push_back(4);
-    degresCumulatifsSortants.push_back(4);
+    degresCumulatifsSortants.push_back(5);
     degresCumulatifsEntrants.push_back(0);
     degresCumulatifsEntrants.push_back(2);
     degresCumulatifsEntrants.push_back(3);
-    degresCumulatifsEntrants.push_back(4);
+    degresCumulatifsEntrants.push_back(5);
     arcsSortants.push_back(1);
     arcsSortants.push_back(2);
     arcsSortants.push_back(3);
     arcsSortants.push_back(1);
+    arcsSortants.push_back(3);
     arcsEntrants.push_back(0);
     arcsEntrants.push_back(2);
     arcsEntrants.push_back(1);
     arcsEntrants.push_back(1);
+    arcsEntrants.push_back(3);
     GrapheOriente* grapheOriente = new GrapheOriente(degresCumulatifsSortants,degresCumulatifsEntrants,arcsSortants,arcsEntrants,poids);
 
+    cout << "Graphe Oriente - Taille : " << grapheOriente->size() << endl;
+    cout << "Graphe Oriente - Nombre d'arcs : " << grapheOriente->nbArcs() << endl;
     cout << "Graphe Oriente - Degres sortants : ";
     for (unsigned int i=0; i<grapheOriente->size(); i++)
     {
@@ -64,10 +68,14 @@ int main()
     	}
     	cout << endl;
     }
+    cout << "Graphe Oriente - Degre double pour le sommet 1 : " << grapheOriente->getDegreBoucle(1) << endl;
+    cout << "Graphe Oriente - Degre double pour le sommet 3 : " << grapheOriente->getDegreBoucle(3) <<  endl;
     cout << endl;
 
     GrapheNonOriente* grapheNonOriente = grapheOriente->convertToGrapheNonOriente();
 
+    cout << "Graphe Non-Oriente - Taille : " << grapheNonOriente->size() << endl;
+    cout << "Graphe Non-Oriente - Nombre d'arcs : " << grapheNonOriente->nbArcs() << endl;
     cout << "Graphe Non-Oriente - Degres : ";
     for (unsigned int i=0; i<grapheNonOriente->size(); i++)
     {
@@ -84,6 +92,8 @@ int main()
     	}
     	cout << endl;
     }
+    cout << "Graphe Non-Oriente - Degre double pour le sommet 1 : " << grapheNonOriente->getDegreBoucle(1) << endl;
+    cout << "Graphe Non-Oriente - Degre double pour le sommet 3 : " << grapheNonOriente->getDegreBoucle(3) <<  endl;
     cout << endl;
 
 
