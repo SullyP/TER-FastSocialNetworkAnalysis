@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{alvarezhamelin}
+Jos{\'e}~Ignacio Alvarez-Hamelin, Luca Dall'Asta, Alain Barrat, and Alessandro
+  Vespignani.
+\newblock {K-core decomposition of Internet graphs: hierarchies,
+  self-similarity and measurement biases}.
+\newblock {\em {Networks and Heterogeneous Media}}, 3:371, April 2008.
+
 \bibitem{dll2}
 Alex Blekhman.
 \newblock Howto: Export c++ classes from a dll, 2012.

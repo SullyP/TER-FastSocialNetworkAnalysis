@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.2)  14 MAR 2015 15:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.2)  14 MAR 2015 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,49 +791,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 352--363
  []
 
 [16 <./Images/trello.PNG>]) (./Main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
 []\T1/pnc/m/n/12 Alex Ble-kh-man.  Howto : Ex-port c++ classes from a dll, 2012
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
 \T1/pnc/m/n/12 http ://www.codeproject.com/Articles/28969/HowTo-Export-C-classe
 s-from-a-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 []\T1/pnc/m/n/12 Nicolas Du-gué et An-thony Perez.  So-cial ca-pi-ta-lists on t
 wit-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 \T1/pnc/m/n/12 ter : de-tec-tion, evo-lu-tion and be-ha-vio-ral ana-ly-sis.  20
 14.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--27
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
 []\T1/pnc/m/n/12 Roger Gui-merà et Luis A Nunes Ama-ral.  Car-to-gra-phy of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--27
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
 \T1/pnc/m/n/12 com-plex net-works : mo-dules and uni-ver-sal roles.  2005.
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 44.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 51.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
 []\T1/pnc/m/n/12 Seb13.  Créer des bi-blio-thèques avec code : :blocks, 2013.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
 []\T1/pnc/m/n/12 Renaud Lam-biotte et Etienne Le-febvre Vincent D. Blon-del, Je
 an-
  []
@@ -856,11 +856,14 @@ Package rerunfilecheck Info: File `Main.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 7109 strings out of 493304
- 101862 string characters out of 6139872
+ 7110 strings out of 493304
+ 101881 string characters out of 6139872
  201209 words of memory out of 5000000
  10387 multiletter control sequences out of 15000+600000
  28808 words of font info for 43 fonts, out of 8000000 for 9000
@@ -878,10 +881,10 @@ y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/ncntrsbk/uncri8a.pfb>
-Output written on Main.pdf (18 pages, 2596141 bytes).
+Output written on Main.pdf (18 pages, 2597707 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 297 compressed objects within 3 object streams
- 65 named destinations out of 1000 (max. 500000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
  263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

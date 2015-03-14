@@ -3,52 +3,51 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
 The style file: plain.bst
 Database file #1: Bibliographie/BiblioBDD.bib
-Warning--I didn't find a database entry for "alvarezhamelin"
 Warning--empty journal in NDAP2
 Warning--empty journal in structure
 Warning--empty year in structure
 Warning--empty journal in GA
 Warning--empty journal in NDAP1
 Warning--empty journal in communautes
-You've used 11 entries,
+You've used 12 entries,
             2118 wiz_defined-function locations,
-            554 strings with 5632 characters,
-and the built_in function-call counts, 2316 in all, are:
-= -- 217
-> -- 77
+            559 strings with 5867 characters,
+and the built_in function-call counts, 2659 in all, are:
+= -- 248
+> -- 100
 < -- 0
-+ -- 34
-- -- 22
-* -- 81
-:= -- 413
-add.period$ -- 37
-call.type$ -- 11
-change.case$ -- 44
++ -- 43
+- -- 30
+* -- 110
+:= -- 475
+add.period$ -- 40
+call.type$ -- 12
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 92
-empty$ -- 218
-format.name$ -- 22
-if$ -- 479
+cite$ -- 18
+duplicate$ -- 103
+empty$ -- 240
+format.name$ -- 30
+if$ -- 546
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 5
-newline$ -- 62
-num.names$ -- 22
-pop$ -- 81
+int.to.str$ -- 12
+missing$ -- 6
+newline$ -- 67
+num.names$ -- 24
+pop$ -- 86
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 39
 quote$ -- 0
-skip$ -- 75
+skip$ -- 82
 stack$ -- 0
-substring$ -- 56
-swap$ -- 6
+substring$ -- 70
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 48
 warning$ -- 6
-while$ -- 22
-width$ -- 13
-write$ -- 115
-(There were 7 warnings)
+while$ -- 25
+width$ -- 14
+write$ -- 126
+(There were 6 warnings)
