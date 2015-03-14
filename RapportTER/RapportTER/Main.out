@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{R\351sum\351 du projet}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Analyse de l'existant}{}% 3
+\BOOKMARK [1][-]{section.4}{Besoins non fonctionnels}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Choix du langage}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Environnement cible}{section.4}% 6
+\BOOKMARK [3][-]{subsubsection.4.2.1}{La machine Speed}{subsection.4.2}% 7
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Algorithmes non-r\351cursif}{subsection.4.2}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Performance}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Utilisation de la m\351moire vive}{subsection.4.3}% 10
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Temps de calcul}{subsection.4.3}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Mise en place d'une biblioth\350que dynamique}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Besoins fonctionnels}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Code}{section.5}% 14
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Pattern}{subsection.5.1}% 15
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Parall\351lisation}{subsection.5.1}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Algorithmes}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.1}{BFS}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Jaccard}{subsection.5.2}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.3}{K-core}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Louvain}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Guimera et Amaral}{subsection.5.2}% 22
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Dugu\351 et Perez }{subsection.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.3}{Tests}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.4}{Documentation}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.5}{Prototype papier}{section.5}% 26
+\BOOKMARK [1][-]{section.6}{Prototypes et r\351sultats de tests}{}% 27
+\BOOKMARK [1][-]{section.7}{Planning et affectation des taches}{}% 28
+\BOOKMARK [1][-]{section.8}{Bibliographie}{}% 29

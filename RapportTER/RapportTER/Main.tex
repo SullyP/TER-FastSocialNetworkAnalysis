@@ -1,0 +1,59 @@
+\documentclass[oneside,12pt]{article}
+\usepackage[utf8]{inputenc} % un package pour utiliser tous les caracteres de votre clavier
+\usepackage[T1]{fontenc} % un second package pour le font
+\usepackage[francais]{babel} % un troisieme package pour dire a  latex que vous ecrivez en francais
+\usepackage{fancyhdr}
+\usepackage{newcent}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{Images/}}%le repertoire des images entre accolades
+\usepackage{url}
+\usepackage{hyperref}
+\fontfamily{pag}
+\pagestyle{fancy}
+
+\fancypagestyle{main} {
+
+	\renewcommand{\headrulewidth}{1pt}
+	\fancyhead[L]{Master 1 Informatique }
+	\fancyhead[C]{Orléans}
+	\fancyhead[R]{Année 2014-2015}
+	
+	\renewcommand{\footrulewidth}{1pt}
+	\fancyfoot[L]{Travaux d'études et de recherche}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{Manipulation de grands graphes}
+}
+
+\begin{document}
+\pagenumbering{arabic}
+
+%------------------------------Page de garde------------------------------
+
+\setcounter{page}{-1}
+
+\input{PageDeGarde/PageDeGarde}
+
+%------------------------------Fin Page de garde---------------------------
+%------------------------------Corps-----------------------------------------
+
+\input{Corps/Corps}
+\setcounter{page}{1}
+
+%------------------------------Fin Corps---------------------------
+
+%------------------------------Bibliographie------------------------------
+\newpage
+
+\begin{center}
+\begin{bf}
+\section{Bibliographie}
+\end{bf}
+\end{center}
+
+\bibliographystyle{plain} 
+\bibliography{Bibliographie/BiblioBDD}
+
+%------------------------------Fin Bibliographie------------------------------			
+				
+\end {document}

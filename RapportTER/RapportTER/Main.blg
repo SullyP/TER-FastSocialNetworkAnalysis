@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Main.aux
+The style file: plain.bst
+Database file #1: Bibliographie/BiblioBDD.bib
+Warning--I didn't find a database entry for "alvarezhamelin"
+Warning--empty journal in NDAP2
+Warning--empty journal in structure
+Warning--empty year in structure
+Warning--empty journal in GA
+Warning--empty journal in NDAP1
+Warning--empty journal in communautes
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            554 strings with 5632 characters,
+and the built_in function-call counts, 2316 in all, are:
+= -- 217
+> -- 77
+< -- 0
++ -- 34
+- -- 22
+* -- 81
+:= -- 413
+add.period$ -- 37
+call.type$ -- 11
+change.case$ -- 44
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 92
+empty$ -- 218
+format.name$ -- 22
+if$ -- 479
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 5
+newline$ -- 62
+num.names$ -- 22
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 33
+quote$ -- 0
+skip$ -- 75
+stack$ -- 0
+substring$ -- 56
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 6
+while$ -- 22
+width$ -- 13
+write$ -- 115
+(There were 7 warnings)
