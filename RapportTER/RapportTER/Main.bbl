@@ -1,5 +1,22 @@
 \begin{thebibliography}{10}
 
+\bibitem{communautes}
+Renaud Lambiotte et Etienne~Lefebvre Vincent D.~Blondel, Jean-Loup~Guillaume.
+\newblock Fast unfolding of communities in large networks.
+\newblock 2008.
+\newblock \url{http://arxiv.org/pdf/0803.0476.pdf}.
+
+\bibitem{structure}
+Ivan~Keller et~Emmanuel~Viennet.
+\newblock Caract{\'e}risation de la structure communautaire d'un grand
+  r{\'e}seau social.
+\newblock \url{http://lipn.fr/marami12/actes/keller.pdf}.
+
+\bibitem{jaccard}
+Wikip{\'e}dia.
+\newblock Indice et distance de jaccard, 2015.
+\newblock \url{https://fr.wikipedia.org/wiki/Indice_et_distance_de_Jaccard}.
+
 \bibitem{alvarezhamelin}
 Jos{\'e}~Ignacio Alvarez-Hamelin, Luca Dall'Asta, Alain Barrat, and Alessandro
   Vespignani.
@@ -7,71 +24,54 @@ Jos{\'e}~Ignacio Alvarez-Hamelin, Luca Dall'Asta, Alain Barrat, and Alessandro
   self-similarity and measurement biases}.
 \newblock {\em {Networks and Heterogeneous Media}}, 3:371, April 2008.
 
-\bibitem{dll2}
-Alex Blekhman.
-\newblock Howto: Export c++ classes from a dll, 2012.
-\newblock
-  http://www.codeproject.com/Articles/28969/HowTo-Export-C-classes-from-a-DLL.
-
-\bibitem{NDAP2}
-Nicolas~Dugué et~Anthony~Perez.
-\newblock Social capitalists on twitter: detection, evolution and behavioral
-  analysis.
-\newblock 2014.
-\newblock http://link.springer.com/article/10.1007\%2Fs13278-014-0178-4.
-
-\bibitem{structure}
-Ivan~Keller et~Emmanuel~Viennet.
-\newblock Caractérisation de la structure communautaire d’un grand réseau
-  social.
-\newblock http://lipn.fr/marami12/actes/keller.pdf.
-
 \bibitem{GA}
-Roger~Guimerà et~Luis A Nunes~Amaral.
+Roger~Guimer{\`a} et~Luis A Nunes~Amaral.
 \newblock Cartography of complex networks: modules and universal roles.
 \newblock 2005.
-\newblock http://www.nature.com/nature/journal/v433/n7028/abs/nature03288.html.
-
-\bibitem{dll3}
-Hiko-Seijuro.
-\newblock Exportation de classes c++ dans une bibliothèque dynamique sous
-  linux, 2007.
-\newblock http://hiko-seijuro.developpez.com/articles/bibliotheque-dynamique.
+\newblock
+  \url{http://www.nature.com/nature/journal/v433/n7028/abs/nature03288.html}.
 
 \bibitem{NDAP1}
-Vincent Labatut et Anthony~Perez Nicolas~Dugué.
+Vincent Labatut et Anthony~Perez Nicolas~Dugu{\'e}.
 \newblock A community role approach to assess social capitalists visibility in
   the twitter network.
 \newblock 2014.
 \newblock Social Network Analysis and Mining.
+
+\bibitem{NDAP2}
+Nicolas~Dugu{\'e} et~Anthony~Perez.
+\newblock Social capitalists on twitter: detection, evolution and behavioral
+  analysis.
+\newblock 2014.
+\newblock \url{http://link.springer.com/article/10.1007\%2Fs13278-014-0178-4}.
+
+\bibitem{dll1}
+Seb13.
+\newblock Cr{\'e}er des biblioth{\`e}ques avec code::blocks, 2013.
+\newblock
+  \url{http://openclassrooms.com/courses/creer-des-bibliotheques-avec-code-blocks}.
+
+\bibitem{dll2}
+Alex Blekhman.
+\newblock Howto: Export c++ classes from a dll, 2012.
+\newblock
+  \url{http://www.codeproject.com/Articles/28969/HowTo-Export-C-classes-from-a-DLL}.
+
+\bibitem{dll3}
+Hiko-Seijuro.
+\newblock Exportation de classes c++ dans une biblioth{\`e}que dynamique sous
+  linux, 2007.
+\newblock
+  \url{http://hiko-seijuro.developpez.com/articles/bibliotheque-dynamique}.
 
 \bibitem{OpenMP}
 Vincent Reverdy.
 \newblock Open mp, 2011.
 \newblock \url{https://software.intel.com/fr-fr/articles/debuter-avec-openmp}.
 
-\bibitem{dll1}
-Seb13.
-\newblock Créer des bibliothèques avec code::blocks, 2013.
-\newblock
-  http://openclassrooms.com/courses/creer-des-bibliotheques-avec-code-blocks.
-
-\bibitem{communautes}
-Renaud Lambiotte et Etienne~Lefebvre Vincent D.~Blondel, Jean-Loup~Guillaume.
-\newblock Fast unfolding of communities in large networks.
-\newblock 2008.
-\newblock http://arxiv.org/pdf/0803.0476.pdf.
-
 \bibitem{BFS}
-Wikipédia.
+Wikip{\'e}dia.
 \newblock Algorithme de parcours en largeur, 2014.
-\newblock
-  \url{http://fr.wikipedia.org/wiki/Algorithme\_de\_parcours\_en\_largeur}.
-
-\bibitem{jaccard}
-Wikipédia.
-\newblock Indice et distance de jaccard, 2015.
-\newblock
-  \url{https://fr.wikipedia.org/wiki/Indice\_et\_distance\_de\_Jaccard}.
+\newblock \url{http://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur}.
 
 \end{thebibliography}

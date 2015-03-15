@@ -1,14 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.2)  14 MAR 2015 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.23)  15 MAR 2015 18:44
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **Main.tex
 (./Main.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,19 +24,19 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -185,7 +186,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -216,7 +217,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -240,68 +241,73 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/03/24 3.9k The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2013/12/30 v2.6g French support from the babel system
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel-french/frenchb.ldf
+Language: frenchb 2014/04/18 v3.0c French support from the babel system
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/12/03 3.9h Babel common definitions
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/03/24 3.9k Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FBcolonskip=\skip43
+\FBthinskip=\skip44
 \FB@interchartokenstateORI=\count88
-Package babel Info: Making : an active character on input line 244.
-Package babel Info: Making ; an active character on input line 245.
-Package babel Info: Making ! an active character on input line 246.
-Package babel Info: Making ? an active character on input line 247.
+Package babel Info: Making : an active character on input line 371.
+Package babel Info: Making ; an active character on input line 372.
+Package babel Info: Making ! an active character on input line 373.
+Package babel Info: Making ? an active character on input line 374.
+\FBguillskip=\skip45
 \FB@Mht=\dimen104
 \std@mcc=\count89
 \dec@mcc=\count90
-\listindentFB=\skip43
-\labelwidthFB=\skip44
-\leftmarginFB=\skip45
+\listindentFB=\skip46
+\labelwidthFB=\skip47
+\leftmarginFB=\skip48
 \parindentFFN=\dimen105
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip46
-\f@ncyO@elh=\skip47
-\f@ncyO@erh=\skip48
-\f@ncyO@olh=\skip49
-\f@ncyO@orh=\skip50
-\f@ncyO@elf=\skip51
-\f@ncyO@erf=\skip52
-\f@ncyO@olf=\skip53
-\f@ncyO@orf=\skip54
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip49
+\f@ncyO@elh=\skip50
+\f@ncyO@erh=\skip51
+\f@ncyO@olh=\skip52
+\f@ncyO@orh=\skip53
+\f@ncyO@elf=\skip54
+\f@ncyO@erf=\skip55
+\f@ncyO@olf=\skip56
+\f@ncyO@orf=\skip57
 )
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/newcent.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/newcent.sty
 Package: newcent 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count91
@@ -317,27 +323,27 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen113
 \Gm@dimlist=\toks17
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count94
@@ -345,18 +351,18 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -395,24 +401,24 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen116
 \Hy@linkcounter=\count95
 \Hy@pagecounter=\count96
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count97
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -444,17 +450,17 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count103
 \c@bookmark@seq@number=\count104
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip55
+\Hy@SectionHShift=\skip58
 )
 (./Main.aux)
 \openout1 = `Main.aux'.
@@ -474,7 +480,7 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Try loading font information for T1+pnc on input line 28.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pnc.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pnc.fd
 File: t1pnc.fd 2001/06/04 font definitions for T1/pnc.
 )
 LaTeX Info: Redefining \degres on input line 28.
@@ -515,7 +521,7 @@ LaTeX Info: Redefining \up on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen120
@@ -528,10 +534,10 @@ LaTeX Info: Redefining \up on input line 28.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks19
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -539,17 +545,17 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box27
 Package hyperref Info: Link coloring OFF on input line 28.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
@@ -571,8 +577,9 @@ LaTeX Font Info:    Font shape `T1/pnc/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/pnc/b/n' tried instead on input line 28.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Corps/Corps.tex (./Mai
-n.toc
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./Cor
+ps/Corps.tex
+(./Main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -680,211 +687,256 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--82
 
 [3 <./Images/tcot.png>] [4 <./Images/biology.png>] [5 <./Images/degreedistribut
 ion.png>] [6]
-LaTeX Font Info:    Try loading font information for OMS+pnc on input line 99.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspnc.fd
-File: omspnc.fd 
-)
-LaTeX Font Info:    Font shape `OMS/pnc/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
+
+ []
 
 
-LaTeX Warning: Citation `alvarezhamelin' on page 7 undefined on input line 100.
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
+
+ []
 
 
-[7] <Images/fast.PNG, id=213, 441.90094pt x 266.49562pt>
-File: Images/fast.PNG Graphic file (type png)
- <use Images/fast.PNG>
-Package pdftex.def Info: Images/fast.PNG used on input line 108.
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
+
+ []
+
+[7] <Images/fast.png, id=211, 441.90094pt x 266.49562pt>
+File: Images/fast.png Graphic file (type png)
+ <use Images/fast.png>
+Package pdftex.def Info: Images/fast.png used on input line 107.
 (pdftex.def)             Requested size: 424.82523pt x 256.21106pt.
 
-[8 <./Images/fast.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 
  []
 
-[9] [10] [11] [12] <Images/proto0.PNG, id=253, 648.92438pt x 469.00218pt>
-File: Images/proto0.PNG Graphic file (type png)
 
-<use Images/proto0.PNG>
-Package pdftex.def Info: Images/proto0.PNG used on input line 294.
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+
+ []
+
+[8 <./Images/fast.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+
+ []
+
+[10] [11] [12] [13] <Images/proto0.png, id=257, 648.92438pt x 469.00218pt>
+File: Images/proto0.png Graphic file (type png)
+
+<use Images/proto0.png>
+Package pdftex.def Info: Images/proto0.png used on input line 300.
 (pdftex.def)             Requested size: 467.3135pt x 337.75287pt.
 
-Overfull \hbox (1.9603pt too wide) in paragraph at lines 299--309
+Overfull \hbox (1.9603pt too wide) in paragraph at lines 305--315
 []\T1/pnc/m/n/12 La li-brai-rie que nous al-lons consti-tuer de-vra ras-sem-ble
 r l'en-semble des al-go-rithmes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--309
+Underfull \hbox (badness 10000) in paragraph at lines 305--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--309
+Underfull \hbox (badness 10000) in paragraph at lines 305--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--309
+Underfull \hbox (badness 10000) in paragraph at lines 305--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--309
+Underfull \hbox (badness 10000) in paragraph at lines 305--315
 
  []
 
-[13 <./Images/proto0.PNG>] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
+[14 <./Images/proto0.png>] [15]
+<Images/proto1.png, id=268, 690.32906pt x 271.0125pt>
+File: Images/proto1.png Graphic file (type png)
+ <use Images/proto1.png>
+Package pdftex.def Info: Images/proto1.png used on input line 331.
+(pdftex.def)             Requested size: 467.3135pt x 183.46312pt.
 
- []
+<Images/proto2.png, id=269, 389.20406pt x 240.9pt>
+File: Images/proto2.png Graphic file (type png)
+ <use Images/proto2.png>
+Package pdftex.def Info: Images/proto2.png used on input line 344.
+(pdftex.def)             Requested size: 467.3135pt x 289.25497pt.
 
+<Images/capture.jpg, id=270, 989.6975pt x 679.53876pt>
+File: Images/capture.jpg Graphic file (type jpg)
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
+<use Images/capture.jpg>
+Package pdftex.def Info: Images/capture.jpg used on input line 355.
+(pdftex.def)             Requested size: 467.3135pt x 320.85565pt.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--339
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
 
  []
 
-[15] <Images/trello.PNG, id=268, 1023.07219pt x 475.02469pt>
-File: Images/trello.PNG Graphic file (type png)
 
-<use Images/trello.PNG>
-Package pdftex.def Info: Images/trello.PNG used on input line 355.
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--362
+
+ []
+
+[16 <./Images/proto1.png>] [17 <./Images/proto2.png>] [18 <./Images/capture.jpg
+>] <Images/trello.png, id=289, 1023.07219pt x 475.02469pt>
+File: Images/trello.png Graphic file (type png)
+
+<use Images/trello.png>
+Package pdftex.def Info: Images/trello.png used on input line 375.
 (pdftex.def)             Requested size: 467.3135pt x 216.97736pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--363
+Underfull \hbox (badness 10000) in paragraph at lines 372--383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--363
+Underfull \hbox (badness 10000) in paragraph at lines 372--383
 
  []
 
-[16 <./Images/trello.PNG>]) (./Main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
-[]\T1/pnc/m/n/12 Alex Ble-kh-man.  Howto : Ex-port c++ classes from a dll, 2012
-.
- []
+[19 <./Images/trello.png>] (./Main.bbl
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
-\T1/pnc/m/n/12 http ://www.codeproject.com/Articles/28969/HowTo-Export-C-classe
-s-from-a-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
-[]\T1/pnc/m/n/12 Nicolas Du-gué et An-thony Perez.  So-cial ca-pi-ta-lists on t
-wit-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
-\T1/pnc/m/n/12 ter : de-tec-tion, evo-lu-tion and be-ha-vio-ral ana-ly-sis.  20
-14.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--34
-[]\T1/pnc/m/n/12 Roger Gui-merà et Luis A Nunes Ama-ral.  Car-to-gra-phy of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--34
-\T1/pnc/m/n/12 com-plex net-works : mo-dules and uni-ver-sal roles.  2005.
- []
-
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 51.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
-[]\T1/pnc/m/n/12 Seb13.  Créer des bi-blio-thèques avec code : :blocks, 2013.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
 []\T1/pnc/m/n/12 Renaud Lam-biotte et Etienne Le-febvre Vincent D. Blon-del, Je
 an-
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.59 \end {document}
-                     [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+[]\T1/pnc/m/n/12 Seb13.  Créer des bi-blio-thèques avec code : :blocks,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+\T1/pnc/m/n/12 2013.  []$\T1/pcr/m/n/12 http : / / openclassrooms . com / cours
+es /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
+[]\T1/pnc/m/n/12 Alex Ble-kh-man.  Howto : Ex-port c++ classes from a dll,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
+\T1/pnc/m/n/12 2012.  []$\T1/pcr/m/n/12 http : / / www . codeproject . com / Ar
+ticles / 28969 /
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 61--66
+\T1/pnc/m/n/12 sous li-nux, 2007.  []$\T1/pcr/m/n/12 http : / / hiko-[]seijuro 
+. developpez . com / articles /
+ []
+
+) [20])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
  (./Main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 45.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Main.out' has not changed.
 (rerunfilecheck)             Checksum: F0A128DDECE52282035D26A8A85EB3F5;1944.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 7110 strings out of 493304
- 101881 string characters out of 6139872
- 201209 words of memory out of 5000000
- 10387 multiletter control sequences out of 15000+600000
+ 7274 strings out of 493117
+ 104896 string characters out of 6135433
+ 203378 words of memory out of 5000000
+ 10552 multiletter control sequences out of 15000+600000
  28808 words of font info for 43 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 29i,11n,43p,1552b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/ncntrsbk/uncri8a.pfb>
-Output written on Main.pdf (18 pages, 2597707 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 29i,11n,43p,1523b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/urw/ncntrsbk/uncri8a.pfb>
+Output written on Main.pdf (21 pages, 2994866 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 263 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 278 words of extra memory for PDF output out of 10000 (max. 10000000)
 

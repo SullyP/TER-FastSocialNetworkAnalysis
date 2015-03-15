@@ -18,11 +18,11 @@
 
 {
 Dans le cadre de recherches sur les réseaux, tout particulièrement les réseaux sociaux, nous sommes rapidement amenés à traiter des quantités importantes de données. Les données provenant des réseaux peuvent être représentées sous forme de graphes, nous pouvons donc faire appel à certaines informations que la théorie des graphes nous permet d'obtenir. Par exemple, la taille d'un graphe en nombre de noeuds ou de liens. Ou encore utiliser des algorithmes permettant de parcourir les différents noeuds d'un graphe.
-\\ \\ 
+~\\ \\ 
 Pour aller plus loin, la théorie des réseaux complexes permet de comprendre comment de tels réseaux se forment, grandissent, quelles caractéristiques ils partagent. Ceci permet par exemple de comprendre comment l'information ou une infection se propage dans un réseau.
-\\ \\
+~\\ \\
 Afin d'obtenir de telles informations, il est nécessaire d'avoir à sa disposition un ensemble d'outils informatiques permettant d'y répondre de manière efficace, et ce dans un temps acceptable. Notre mission est donc d'analyser les solutions existantes de traitements de grands graphes, et de mettre au point une librairie répondant à cette problématique.
-\\ \\
+~\\\\
 Le but est donc d'organiser les programmes existants en une librairie maintenable, évolutive et facilement
 utilisable, sans oublier d'enrichir la librairie d'algorithmes classiques de la théorie des graphes, tout en portant un soin particulier à la performance.
 }
@@ -58,7 +58,7 @@ Mais les réseaux ne sont pas limités aux réseaux sociaux, et peuvent faire le
 \end{figure}
 \\ \\
 Dans un premier temps, il est nécessaire de définir quelques concepts liés à la représentation de réseaux sous forme de graphes.
-Un graphe est un ensemble de points, dont certaines paires sont directement reliées par un (ou plusieurs) lien(s). Ces liens peuvent être orientés, c'est-à-dire qu'un lien entre deux points u et v relie soit u vers v, soit v vers u : dans ce cas, le graphe est dit orienté. Sinon, les liens sont symétriques, et le graphe est dit non orienté. Afin de représenter au mieux les données, nous pouvons placer des poids sur les noeuds ou sur les arêtes, par exemple : dans un graphe représentant des villes, on pourrait mettre une valeur en kilomètres sur les liens séparants 2 villes ; ou encore affecter le nombre d'habitants d'une ville à chaque noeud correspondant. Le degré d'un noeud correspond au nombre de ses voisins. On définit comme voisins d'un noeud N l'ensemble des noeuds ayant un lien direct avec N. 
+Un graphe est un ensemble de points, dont certaines paires sont directement reliées par un (ou plusieurs) lien(s). Ces liens peuvent être orientés, c'est-à-dire qu'un lien entre deux points u et v relie soit u vers v, soit v vers u : dans ce cas, le graphe est dit orienté. Sinon, les liens sont symétriques, et le graphe est dit non orienté. \\ Afin de représenter au mieux les données, nous pouvons placer des poids sur les noeuds ou sur les arêtes, par exemple : dans un graphe représentant des villes, on pourrait mettre une valeur en kilomètres sur les liens séparants 2 villes ; ou encore affecter le nombre d'habitants d'une ville à chaque noeud correspondant. Le degré d'un noeud correspond au nombre de ses voisins. On définit comme voisins d'un noeud N l'ensemble des noeuds ayant un lien direct avec N. 
 \\ \\
 Grâce à cela, il est déjà possible de répondre à certaines questions, comme par exemple trouver le chemin le plus court entre deux noeuds. Ou encore, de répondre à des problèmes comme le voyageur de commerce : on se place dans un graphe à n noeuds où l'on connaît les distances séparant chaque noeuds, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque noeuds et revienne au noeud de départ. L'ensemble des algorithmes de la théorie des graphes nous sert donc comme base pour nos algorithmes d'études de réseaux.
 \\ \\ 
@@ -75,7 +75,7 @@ Un réseau est appelé small-world, en référence au phénomène du même nom q
 \\ \\ 
 Il existe également les réseaux appelés scale-free, dont la distribution des degrés suit une loi de puissance. Une loi de puissance est une relation entre deux quantités x et y qui peut s'écrire de la façon suivante :
 $ y = ax^k $
-De part la loi de puissance et son principe d'in-variance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de noeuds/liens).
+De part la loi de puissance et son principe d'invariance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de noeuds/liens).
 \\ \\ 
 Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels noeuds du réseau sont importants, influents, centraux, ou connaitre quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis, ou de sa communauté.
 }
@@ -107,12 +107,10 @@ Les al\=gorithmes que nous allons devoir traiter sont les suivants : \\ \\
 \includegraphics[width=0.9\textwidth]{fast}
 \caption{Un exemple des différentes étapes de l'algorithme de Louvain}
 \end{figure}
-\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne (le nombre de noeuds de la m\^eme communauté auquel un noeud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un noeud aux autres communautés à travers la participation externe. Un noeud est dit connecteur s'il est connecté à  beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne). Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté  proportionnellement aux liaisons des autres nœuds de la communauté.\[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du noeud i dans sa communauté.\cite{GA}
+\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne - le nombre de noeuds de la m\^eme communauté auquel un noeud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un noeud aux autres communautés à travers la participation externe. Un noeud est dit connecteur s'il est connecté à  beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne. Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté  proportionnellement aux liaisons des autres nœuds de la communauté.\\ \[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] \\ \\ \\ \\La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du noeud i dans sa communauté.\cite{GA}
 \newline
-\item[Dugué et Perez  :] Ce dernier point est une adaptation des mesures de Guimera et Amaral. On traitera de la connectivité externe, en étudiant la diversité, l'intensité et l'hétérogénéité. La diversité correspond au z-score du nombre de communautés externes auquel le noeud est connecté. L'intensité correspond au z-score du nombre de liens vers l'extérieur. Enfin, l'hétérogénéité est l'écart type de la moyenne des liens vers les communautés extérieures, par communauté extérieure, et pour chaque nœud. \cite{NDAP1}\cite{NDAP2} 
-\end{description}
-
-
+\item[Dugué et Perez  :] Ce dernier point est une adaptation des mesures de Guimera et Amaral. On traitera de la connectivité externe, en étudiant la diversité, l'intensité et l'hétérogénéité. La diversité correspond au z-score du nombre de communautés externes auquel le noeud est connecté. L'intensité correspond au z-score du nombre de liens vers l'extérieur. Enfin, l'hétérogénéité est l'écart type de la moyenne des liens vers les communautés extérieures, par communauté extérieure, et pour chaque nœud. \cite{NDAP1}\cite{NDAP2}  \\ 
+\end{description} 
 D'autre part, les algorithmes déjà codés sont répartis de manière éparse sur différents fichiers, et il n'y a aucune cohésion entre eux ; notre travail va donc être de rassembler toutes les fonctionnalités de manière organisée, d'en faire une librairie.
 }
 
@@ -215,7 +213,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 9/10
 
-\textbf{Justification :} En effet, l'environnement cible dispose de 64 coeurs, il est donc très intéressant de paralléliser nos programmes et de bénéficier d'un temps de calculs beaucoup plus réduit. OpenMP \cite{OpenMP} permet une parallélisation simple de programmes grâce à l'utilisation de directives (lignes de code qui seront remplacées à la compilation pour transformer certains blocs en blocs parallèles, avec des paramètres définis).
+\textbf{Justification :} En effet, l'environnement cible dispose de 64 coeurs, il est donc très intéressant de paralléliser nos programmes et de bénéficier d'un temps de calcul beaucoup plus réduit. OpenMP \cite{OpenMP} permet une parallélisation simple de programmes grâce à l'utilisation de directives (lignes de code qui seront remplacées à la compilation pour transformer certains blocs en blocs parallèles, avec des paramètres définis).
 }
 
 \subsection{Algorithmes}
@@ -235,7 +233,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 9/10
 
-\textbf{Justification :} Comme on l'a vu précédemment, le jaccard \cite{jaccard} permet la comparaison de deux ensembles, cet algorithme est donc un élément essentiel puisqu'utilisé par plusieurs autres algorithmes.
+\textbf{Justification :} Comme on l'a vu précédemment, le jaccard permet la comparaison de deux ensembles, cet algorithme est donc un élément essentiel puisqu'utilisé par plusieurs autres algorithmes.
 }
 
 \subsubsection{K-core}
@@ -281,7 +279,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 8/10
 
-\textbf{Justification :} Lorsque l'on écrit un programme, il est nécéssaire de de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu"il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
+\textbf{Justification :} Lorsque l'on écrit un programme, il est nécéssaire de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu"il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
 }
 
 \subsection{Documentation}
@@ -304,7 +302,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 \end{figure}
 
 {
-La librairie que nous allons constituer devra rassembler l'ensemble des algorithmes que nous serons à même de retranscrire depuis la solution existante, c'est à dire l'ensemble des algorithmes vus précédemment. Mais elle devra également comporter des algorithmes de base de la théorie des graphes, tels que le parcours en largeur ou en profondeur. L'objectif est d'avoir une librairie suffisamment flexible et modulaire, afin que de nombreux algorithmes puissent être ajoutés et cela même après la fin de ce TER.
+La librairie que nous allons constituer devra rassembler l'ensemble des algorithmes que nous serons à même de retranscrire depuis la solution existante, c'est à dire l'ensemble des algorithmes vus précédemment. Mais elle devra également comporter des algorithmes de base de la théorie des graphes, tels que le parcours en largeur ou en profondeur. \\ L'objectif est d'avoir une librairie suffisamment flexible et modulaire, afin que de nombreux algorithmes puissent être ajoutés et cela même après la fin de ce TER.
 \\ \\ 
 C'est pourquoi il est essentiel de mettre en place un modèle permettant de représenter un graphe, qu'il soit orienté ou non, de pouvoir convertir un graphe orienté en non-orienté. Ou encore, de pouvoir utiliser un graphe de la même manière qu'il soit orienté ou non, ce qui peut être utile dans des algorithmes qui ne se préoccupent pas de l'orientation. En outre, il est important de pouvoir spécifier si une fonction prend en paramètre uniquement un graphe orienté, non-orienté ou les deux.
 \\ \\ 
@@ -327,24 +325,38 @@ L'utilisation de cette librairie s'effectuera par l'inclusion des bons fichier h
 
 \vspace{1cm}
 {
-Nous avons dans un premier temps commencé par coder la structure de données.
-Étant donnée la taille importante des graphes à stocker en mémoire, il nous fallait un moyen d'avoir un accès direct à un sommet ainsi que ses voisins. La méthode utilisée est donc la suivante : trois tableaux distincts. 
+Nous avons tout d'abord commencé par coder la structure de données permettant de gérer les grands graphes. Notre structure de données est constituée d'une classe Graphe permettant de gérer les graphes de manière globale, et nous avons ensuite deux classes GrapheOriente et GrapheNonOriente qui permettent, comme leur nom l'indique, de gérer la différence entre les graphes orientés et les graphes non orientés.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.99\textwidth]{proto1}
+\caption{Graphes orientés, graphes non orientés}
+\end{figure}
+~\\ \\
+	Les deux classes de graphes sont composées de plusieurs tableaux qui permettent de stocker les arcs de chaque sommet ainsi que les degrés de ces même sommets. La principale différence entre les deux classes est que, pour un graphe orienté, les tableaux sont dédoublés afin d'avoir accès aux arcs et degrés sortants ou entrants. Le but de cette structure de données est d'avoir un accès à un élément i d'un tableau en temps constant. \\  \\ Nous avons donc choisi de coder les tableaux grâce à des vectors. Nous avons opté pour cette structure car elle permet un accès en temps O(1) à un élément n du tableau, et permet également d'avoir des tableaux dynamiques, et donc de rajouter facilement de nouveaux nœuds dans le graphe. Pour le moment, le stockage des poids est encore assez incertain, nous avons essayé de le stocker dans un vector, mais les résultats ne sont pas forcément convaincants.
+~\\ \\
+	Une fois la structure de données créée, nous avons écrit les fonctions de base, permettant de récupérer les données du graphe, tels que les voisins d'un sommet, ou son degré, de façon constante. Ce dernier point est très important, comme nous devons travailler sur de très grands graphes. La première fonction que nous avons codé est celle permettant de récupérer les degrés d'un sommet. Pour ce faire, nous avons le tableau des degrés cumulatifs. Ce tableau stocke par exemple à la case N le degré du sommet N ainsi que tous les degrés des sommets précédents, stockés dans le tableau. Donc le degré de la case N correspondra à la valeur en N, moins la valeur en N-1. Cela donne un accès en temps O(1), tout en conservant les valeurs précédentes, et donc en ayant le nombre total d'arcs stockés à la dernière case du tableau.
+~\\ \\
+	La deuxième fonction dont nous avions besoin est celle permettant de récupérer les arcs correspondant à un sommet N. Pour cela nous utilisons un deuxième tableau, qui est celui correspondant aux arcs. Afin de récupérer la liste des sommets voisins de N, nous avons besoin de connaître deux éléments. Le premier est le degré du sommet récupéré grâce à la méthode vue précédemment. Le deuxième est bien sûr la première case à regarder dans le tableau des arcs, que nous pouvons récupérer grâce à la case N-1 du tableau des degrés cumulatifs. En effet, cette case nous indique directement la case à regarder dans le tableau. Si elle est à 1, on se place à la case 1 du tableau des arcs. Il nous suffit ensuite de regarder le nombre de cases correspondant au degré du sommet N. Cela nous permet ainsi de récupérer les voisins en temps constant.
+~\\ \\
+	Nous pouvons voir dans ce schéma comment marche la liaison entre les deux tableaux, grâce à un exemple.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.99\textwidth]{proto2}
+\caption{Liaison entre nos deux tableaux}
+\end{figure}
+~\\ \\
+	L'une des difficultés pour tester notre prototype est bien entendu la taille des graphes. Pour une question de mémoire vive ainsi que de temps d’exécution, nous n'avons pas testé notre prototype sur les graphes pour lesquels notre code sera dédiés. Malgré cela, le fait de travailler sur des graphes beaucoup plus abordables ne nous handicape en aucun sens. Au contraire, cela nous permet un debuggage plus rapide. Nous pouvons bien entendu tester nos temps d'exécution sur de petits graphes, et ainsi voir si certains algorithmes sont effectivement plus rapides que d'autres.
+~\\ \\
+	À partir de ce point, nous avons codé notre premier algorithme à proprement parler, le BFS, ou algorithme de parcours en largeur. Cet algorithme est très important car il sera utilisé dans l'algorithme de Louvain, qui est l'un des algorithmes les plus importants du projet. L'algorithme du BFS permet de parcourir le graphe en temps O (n+m), et donc d'avoir un parcours de graphe efficace. 
+~\\ \\
+	Comme dit précédemment, nous avons testé notre code sur de petits graphes ; voici un exemple d'exécution dans la sortie console ci-dessous.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.99\textwidth]{capture}
+\caption{Sortie console}
+\end{figure}
 \\ \\
-•     Un pour stocker les arcs entrants d'un sommet
-\\ \\
-•     Un autre pour les arcs sortants
-\\ \\
-•     Un dernier permettant de savoir, pour chaque sommet, où regarder dans les deux autres tableaux afin d'avoir les voisins correspondants. 
-\\ \\
-Cela nous permet d'avoir un temps constant lors de la recherche des voisins, car on n'a pas à parcourir toute la liste des sommets, et chaque sommet n'est stocké en mémoire qu'une fois.
-\\ \\
-Pour représenter ces tableaux nous avons utilisé les "vector" présents en C++, car cela nous permet un accès direct aux données dans le tableau (contrairement aux listes par exemple, où le get fait un parcours de la liste) et d'avoir un tableau dynamique.
-\\ \\
-Une fois ceci fait, nous n'avons pu tester notre structure de données que sur de petits graphes, loin de la taille des graphes pour lesquels notre programme doit tourner, car ce sont des graphes prenant plusieurs dizaines de Go de mémoire. 
-\\ \\
-Heureusement, la taille des graphes en mémoire n'est pas importante car il vaut mieux tester nos algorithmes sur un graphe faible en mémoire, plutôt que sur un de 25 Go, car le temps d'exécution et donc le temps de debug sera ainsi beaucoup plus court.
 }
-
 %------------------------------Fin Prototypes et resultats de tests------------------------------
 %------------------------------Planning et affectation des taches------------------------------
 
@@ -370,5 +382,15 @@ Notre objectif est d'avancer progressivement, de construire notre librairie briq
 }
 
 %------------------------------Fin Planning et affectation des taches------------------------------
+%------------------------------Bibliographie------------------------------
 
+\newpage
+\begin{center}
+\begin{bf}
+\section{Bibliographie}
+\end{bf}
+\end{center}
+\bibliographystyle{unsrt} 
+\bibliography{Bibliographie/BiblioBDD}	
+%------------------------------Fin Bibliographie------------------------------
 \end{titlepage}

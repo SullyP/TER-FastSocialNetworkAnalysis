@@ -1,53 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: Bibliographie/BiblioBDD.bib
-Warning--empty journal in NDAP2
+Warning--empty journal in communautes
 Warning--empty journal in structure
 Warning--empty year in structure
 Warning--empty journal in GA
 Warning--empty journal in NDAP1
-Warning--empty journal in communautes
+Warning--empty journal in NDAP2
 You've used 12 entries,
-            2118 wiz_defined-function locations,
-            559 strings with 5867 characters,
-and the built_in function-call counts, 2659 in all, are:
-= -- 248
-> -- 100
+            1791 wiz_defined-function locations,
+            507 strings with 5451 characters,
+and the built_in function-call counts, 1679 in all, are:
+= -- 134
+> -- 58
 < -- 0
-+ -- 43
-- -- 30
-* -- 110
-:= -- 475
++ -- 27
+- -- 15
+* -- 44
+:= -- 286
 add.period$ -- 40
 call.type$ -- 12
-change.case$ -- 51
+change.case$ -- 12
 chr.to.int$ -- 0
 cite$ -- 18
-duplicate$ -- 103
-empty$ -- 240
-format.name$ -- 30
-if$ -- 546
+duplicate$ -- 79
+empty$ -- 198
+format.name$ -- 15
+if$ -- 369
 int.to.chr$ -- 0
 int.to.str$ -- 12
 missing$ -- 6
 newline$ -- 67
-num.names$ -- 24
-pop$ -- 86
+num.names$ -- 12
+pop$ -- 64
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 0
 quote$ -- 0
-skip$ -- 82
+skip$ -- 35
 stack$ -- 0
-substring$ -- 70
+substring$ -- 9
 swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 0
 warning$ -- 6
-while$ -- 25
+while$ -- 13
 width$ -- 14
 write$ -- 126
 (There were 6 warnings)

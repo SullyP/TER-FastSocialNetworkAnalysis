@@ -2,29 +2,29 @@
 \contentsline {section}{\numberline {1}R\IeC {\'e}sum\IeC {\'e} du projet}{2}{section.1}
 \contentsline {section}{\numberline {2}Introduction}{3}{section.2}
 \contentsline {section}{\numberline {3}Analyse de l'existant}{7}{section.3}
-\contentsline {section}{\numberline {4}Besoins non fonctionnels}{9}{section.4}
-\contentsline {subsection}{\numberline {4.1}Choix du langage}{9}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Environnement cible}{9}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}La machine Speed}{9}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Algorithmes non-r\IeC {\'e}cursif}{9}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Performance}{10}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Utilisation de la m\IeC {\'e}moire vive}{10}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Temps de calcul}{10}{subsubsection.4.3.2}
-\contentsline {subsection}{\numberline {4.4}Mise en place d'une biblioth\IeC {\`e}que dynamique}{10}{subsection.4.4}
-\contentsline {section}{\numberline {5}Besoins fonctionnels}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Code}{11}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}Pattern}{11}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Parall\IeC {\'e}lisation}{11}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Algorithmes}{11}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}BFS}{11}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Jaccard}{11}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}K-core}{12}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Louvain}{12}{subsubsection.5.2.4}
-\contentsline {subsubsection}{\numberline {5.2.5}Guimera et Amaral}{12}{subsubsection.5.2.5}
-\contentsline {subsubsection}{\numberline {5.2.6}Dugu\IeC {\'e} et Perez }{12}{subsubsection.5.2.6}
-\contentsline {subsection}{\numberline {5.3}Tests}{12}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Documentation}{13}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Prototype papier}{13}{subsection.5.5}
-\contentsline {section}{\numberline {6}Prototypes et r\IeC {\'e}sultats de tests}{15}{section.6}
-\contentsline {section}{\numberline {7}Planning et affectation des taches}{16}{section.7}
-\contentsline {section}{\numberline {8}Bibliographie}{1}{section.8}
+\contentsline {section}{\numberline {4}Besoins non fonctionnels}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Choix du langage}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Environnement cible}{10}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}La machine Speed}{10}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Algorithmes non-r\IeC {\'e}cursif}{10}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Performance}{11}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Utilisation de la m\IeC {\'e}moire vive}{11}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Temps de calcul}{11}{subsubsection.4.3.2}
+\contentsline {subsection}{\numberline {4.4}Mise en place d'une biblioth\IeC {\`e}que dynamique}{11}{subsection.4.4}
+\contentsline {section}{\numberline {5}Besoins fonctionnels}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Code}{12}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Pattern}{12}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Parall\IeC {\'e}lisation}{12}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Algorithmes}{12}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}BFS}{12}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Jaccard}{12}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}K-core}{13}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Louvain}{13}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Guimera et Amaral}{13}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}Dugu\IeC {\'e} et Perez }{13}{subsubsection.5.2.6}
+\contentsline {subsection}{\numberline {5.3}Tests}{13}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Documentation}{14}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Prototype papier}{14}{subsection.5.5}
+\contentsline {section}{\numberline {6}Prototypes et r\IeC {\'e}sultats de tests}{16}{section.6}
+\contentsline {section}{\numberline {7}Planning et affectation des taches}{19}{section.7}
+\contentsline {section}{\numberline {8}Bibliographie}{20}{section.8}
