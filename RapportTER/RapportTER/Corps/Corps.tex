@@ -60,9 +60,9 @@ Mais les réseaux ne sont pas limités aux réseaux sociaux, et peuvent faire le
 Dans un premier temps, il est nécessaire de définir quelques concepts liés à la représentation de réseaux sous forme de graphes.
 Un graphe est un ensemble de points, dont certaines paires sont directement reliées par un (ou plusieurs) lien(s). Ces liens peuvent être orientés, c'est-à-dire qu'un lien entre deux points u et v relie soit u vers v, soit v vers u : dans ce cas, le graphe est dit orienté. Sinon, les liens sont symétriques, et le graphe est dit non orienté. Afin de représenter au mieux les données, nous pouvons placer des poids sur les noeuds ou sur les arêtes, par exemple : dans un graphe représentant des villes, on pourrait mettre une valeur en kilomètres sur les liens séparants 2 villes ; ou encore affecter le nombre d'habitants d'une ville à chaque noeud correspondant. Le degré d'un noeud correspond au nombre de ses voisins. On définit comme voisins d'un noeud N l'ensemble des noeuds ayant un lien direct avec N. 
 \\ \\
-Grâce à cela, il est déjà possible de répondre à certaines questions, comme par exemple trouver le chemin le plus court entre deux noeuds. De répondre à certains problèmes comme le parcours de chaque noeud ( et respectivement de chaque lien), tout en limitant le nombre de liens (et respectivement de noeuds) parcourus. L'ensemble des algorithmes de la théorie des graphes nous sert donc comme base pour nos algorithmes d'études de réseaux.
+Grâce à cela, il est déjà possible de répondre à certaines questions, comme par exemple trouver le chemin le plus court entre deux noeuds. Ou encore, de répondre à des problèmes comme le voyageur de commerce : on se place dans un graphe à n noeuds où l'on connaît les distances séparant chaque noeuds, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque noeuds et revienne au noeud de départ. L'ensemble des algorithmes de la théorie des graphes nous sert donc comme base pour nos algorithmes d'études de réseaux.
 \\ \\ 
-Dans un second temps, la théorie des réseaux complexes définit plusieurs mesures comme le nombre de sauts qui correspondent au nombre de noeud parcouru, ou encore la distribution des degrés, c'est à dire la probabilité qu'un noeud, choisi de manière aléatoire, comporte un certain degré. Le degré de séparation est également une notion importante qui définit le nombre de noeuds minimum pour aller d'un noeud à un autre.
+Dans un second temps, la théorie des réseaux complexes définit plusieurs mesures comme le nombre de sauts (utilisé dans les réseaux internet pour compter le nombre d'intermédiaire pour aller d'un point à un autre), ou encore la distribution des degrés, c'est à dire la probabilité qu'un noeud, choisi de manière aléatoire, comporte un certain degré. Le degré de séparation est également une notion importante qui définit le nombre de noeuds minimum pour aller d'un noeud à un autre.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{degreedistribution}
@@ -75,7 +75,7 @@ Un réseau est appelé small-world, en référence au phénomène du même nom q
 \\ \\ 
 Il existe également les réseaux appelés scale-free, dont la distribution des degrés suit une loi de puissance. Une loi de puissance est une relation entre deux quantités x et y qui peut s'écrire de la façon suivante :
 $ y = ax^k $
-Dans un tel réseau, la distribution des degrés a une in-variance d'échelle, c'est à dire qu'aucune échelle ne caractérise la distribution des degrés.
+De part la loi de puissance et son principe d'in-variance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de noeuds/liens).
 \\ \\ 
 Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels noeuds du réseau sont importants, influents, centraux, ou connaitre quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis, ou de sa communauté.
 }
