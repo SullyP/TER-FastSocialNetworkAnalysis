@@ -41,7 +41,7 @@ utilisable, sans oublier d'enrichir la librairie d'algorithmes classiques de la 
 {
 Lors de la dernière décennie nous avons vu émerger de nombreux services de réseaux sociaux, c'est à dire des environnements collaboratifs centrés sur l'individu. En effet, il existe une multitude de réseaux sociaux, certains destinés à regrouper des amis de la vie réelle, comme Facebook. D'autres aident à trouver des relations professionnels (emplois, liens commerciaux), amicales, amoureuses, ou permettent la découverte et le partage de contenus.
 \\ \\
-L'ensemble de ces plateformes a vu son nombre d'utilisateurs exploser, comme c'est le cas pour Twitter (permettant le partage, la découverte, et le débat d'informations) qui est passé de  200 millions de comptes en Avril 2011 à 500 millions en Octobre 2012.
+L'ensemble de ces plateformes a vu son nombre d'utilisateurs exploser, comme c'est le cas pour Twitter (permettant le partage, la découverte, et le débat d'informations) qui est passé de 200 millions de comptes en Avril 2011 à 500 millions en Octobre 2012.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{tcot}
@@ -73,11 +73,11 @@ Nous avons vu précédemment qu'avec la théorie des réseaux complexes, on rech
 \\ \\ 
 Un réseau est appelé small-world, en référence au phénomène du même nom qui indique que dans un graphe représentant un réseau social, il y a au plus $k$ (avec $k$ petit, souvent inférieur à $10$) degrés de séparation entre deux noeuds. L'idée est donc que, dans un réseau small-world, le degré de séparation entre deux noeuds est très petit (mathématiquement, il augmente de manière logarithmique en fonction de la taille du réseau).
 \\ \\ 
-Il existe également les réseaux appelés scale-free, dont la distribution des degrés suit une loi de puissance. Une loi de puissance est une relation entre deux quantités x et y qui peut s'écrire de la façon suivante :
+Il existe également des réseaux appelés scale-free, dont la distribution des degrés suit une loi de puissance. Une loi de puissance est une relation entre deux quantités x et y qui peut s'écrire de la façon suivante :
 $ y = ax^k $
 De part la loi de puissance et son principe d'invariance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de noeuds/liens).
 \\ \\ 
-Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels noeuds du réseau sont importants, influents, centraux, ou connaitre quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis, ou de sa communauté.
+Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels noeuds du réseau sont importants, influents, centraux, ou connaitre quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis ou de sa communauté.
 }
 
 %------------------------------Fin Introduction------------------------------
@@ -96,7 +96,7 @@ Actuellement, une partie des algorithmes que nous allons reprendre a déjà ét�
 Les al\=gorithmes que nous allons devoir traiter sont les suivants : \\ \\
 	
 \begin{description}
-\item[Jaccard :] Il s'agit d'étudier le jaccard \cite{jaccard} de deux ensembles de sommets A et B, c'est à dire le cardinal de l'intersection de A et B, divisé par le cardinal de l'union de A et B. A est l'ensemble des voisins sortants et B l'ensemble des voisins entrants. \[J(A,B) = \frac{|A \cap B|}{|A \cup B|}\] Cela permet de voir les similitudes en deux ensembles. Par exemple, on peut comparer le voisinage de deux utilisateurs et déterminer leur ressemblance, ou encore comparer les communautés résultantes d'algorithmes différents afin de voir  leur correspondance. Il existe aussi OverlapIndex qui permet de mesurer le chevauchement de deux ensembles et est défini comme ceci : \[O(A,B) = \frac{|A \cap B|}{min(|A|,|B|)}\]
+\item[Jaccard :] Il s'agit d'étudier le jaccard \cite{jaccard} de deux ensembles de sommets A et B, c'est à dire le cardinal de l'intersection de A et B, divisé par le cardinal de l'union de A et B. A est l'ensemble des voisins sortants et B l'ensemble des voisins entrants. \[J(A,B) = \frac{|A \cap B|}{|A \cup B|}\] Cela permet de voir les similitudes en deux ensembles. Par exemple, on peut comparer le voisinage de deux utilisateurs et déterminer leur ressemblance, ou encore comparer les communautés résultantes d'algorithmes différents, afin de voir leur correspondance. Il existe aussi OverlapIndex qui permet de mesurer le chevauchement de deux ensembles et est défini comme ceci : \[O(A,B) = \frac{|A \cap B|}{min(|A|,|B|)}\]
 \item[K-core~\cite{alvarezhamelin} :] On cherche à obtenir un sous graphe maximal induit $G_{max}$, tel que chacun des degrés des nœuds de $G_{max}$ soit supérieur ou égal à K dans $G_{max}$. C'est la définition d'un sous graphe dense par l'assouplissement de la définition d'une clique (tous les sommets d'une clique sont deux-à-deux adjacents) car les cliques sont peu présentes dans les réseaux. On constate en général que dans des processus de diffusion d'informations, celle-ci se fait au sein d'un même core, du k le plus élevé vers le plus petit.
 \newline
 \item[Louvain :] Pour faire simple, on étudie avec cet algorithme la comparaison entre le fait que deux éléments  soient connectés, et leur probabilité de l'être. C'est grâce à cela qu'on peut détecter des communautés. On utilise donc la modularité pour que chaque nœud appartienne à une seule communauté. La modularité est définie par: \[\Delta=\sum_{i\,j}\left[ A_{i\,j}-\frac{d_i d_j}{2^m}\right] \delta\left(c_i , c_j \right)\] où $A_{i\,j}$ est la matrice d'adjacence, $\frac{d_i d_j}{2^m}$ est la probabilité de i et j d'être connectés et $\delta(c_i , c_j)$ le fait ou non que i et j soient dans la même communauté.
@@ -107,9 +107,9 @@ Les al\=gorithmes que nous allons devoir traiter sont les suivants : \\ \\
 \includegraphics[width=0.9\textwidth]{fast}
 \caption{Un exemple des différentes étapes de l'algorithme de Louvain}
 \end{figure}
-\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne - le nombre de noeuds de la m\^eme communauté auquel un noeud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un noeud aux autres communautés à travers la participation externe. Un noeud est dit connecteur s'il est connecté à  beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne. Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté  proportionnellement aux liaisons des autres nœuds de la communauté.\\ \[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] \\ \\ \\ \\La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du noeud i dans sa communauté.\cite{GA}
+\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne - le nombre de nœuds de la m\^eme communauté auquel un nœud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un noeud aux autres communautés à travers la participation externe. Un noeud est dit connecteur s'il est connecté à beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne. Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté proportionnellement aux liaisons des autres nœuds de la communauté.\\ \[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] \\ \\ \\ \\La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du noeud i dans sa communauté.\cite{GA}
 \newline
-\item[Dugué et Perez  :] Ce dernier point est une adaptation des mesures de Guimera et Amaral. On traitera de la connectivité externe, en étudiant la diversité, l'intensité et l'hétérogénéité. La diversité correspond au z-score du nombre de communautés externes auquel le noeud est connecté. L'intensité correspond au z-score du nombre de liens vers l'extérieur. Enfin, l'hétérogénéité est l'écart type de la moyenne des liens vers les communautés extérieures, par communauté extérieure, et pour chaque nœud. \cite{NDAP1}\cite{NDAP2}  \\ 
+\item[Dugué et Perez  :] Ce dernier point est une adaptation des mesures de Guimera et Amaral. On traitera de la connectivité externe, en étudiant la diversité, l'intensité et l'hétérogénéité. La diversité correspond au z-score du nombre de communautés externes auquel le nœud est connecté. L'intensité correspond au z-score du nombre de liens vers l'extérieur. Enfin, l'hétérogénéité est l'écart type de la moyenne des liens vers les communautés extérieures, par communauté extérieure, et pour chaque nœud. \cite{NDAP1}\cite{NDAP2}  \\ 
 \end{description} 
 D'autre part, les algorithmes déjà codés sont répartis de manière éparse sur différents fichiers, et il n'y a aucune cohésion entre eux ; notre travail va donc être de rassembler toutes les fonctionnalités de manière organisée, d'en faire une librairie.
 }
@@ -136,13 +136,13 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 10/10
 
-\textbf{Justification :} Les solutions existantes sont déjà en C++. De plus, les programmes qui utilisent les solutions existantes le sont également. Enfin, cela permet un usage simple dans des programmes en C++. Par ailleurs, C++ est un language performant et OpenMP permet de paralléliser simplement du code C++ . Ainsi, par souci de continuité et de performance, C++ est choisi
+\textbf{Justification :} Les solutions existantes sont déjà en C++. De plus, les programmes qui utilisent les solutions existantes le sont également. Enfin, cela permet un usage simple dans des programmes en C++. Par ailleurs, C++ est un language performant et OpenMP permet de paralléliser simplement du code C++ . Ainsi, par souci de continuité et de performance, C++ est choisi.
 }
 
 \subsection{Environnement cible}
 \subsubsection{La machine Speed}
 {
-\textbf{Description :} L'environnement cible de notre bibliothèque est la machine Speed qui comporte 64 coeurs et 64 Go de RAM. En outre l'utilisation de la mémoire doit être limité.
+\textbf{Description :} L'environnement cible de notre bibliothèque est la machine Speed qui comporte 64 coeurs et 64 Go de RAM. En outre l'utilisation de la mémoire doit être limitée.
 
 \textbf{Priorité :} 10/10
 
@@ -155,13 +155,13 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 9/10
 
-\textbf{Justification :} Les graphes peuvent comporter un très grand nombre de noeuds et de sommets (plusieurs millions de noeuds), il est donc important de ne pas utiliser d'algorithme récursif sur le nombre de noeuds par exemple. En effet, la pile d'appel de fonctions pourrait ne pas pouvoir contenir l'ensemble de nos appels récursif et ferait donc planter l'exécution de notre programme avec une erreur de type \textit{StackOverflow}.
+\textbf{Justification :} Les graphes peuvent comporter un très grand nombre de nœuds et de sommets (plusieurs millions de nœuds), il est donc important de ne pas utiliser d'algorithme récursif sur le nombre de nœuds par exemple. En effet, la pile d'appel de fonctions pourrait ne pas pouvoir contenir l'ensemble de nos appels récursif et ferait donc planter l'exécution de notre programme avec une erreur de type \textit{StackOverflow}.
 }
 
 \subsection{Performance}
 \subsubsection{Utilisation de la mémoire vive}
 {
-\textbf{Description :} L'environnement cible comporte 64 Go de RAM, son utilisation est donc limité. Néanmoins, il est nécessaire de savoir l'utiliser intelligemment.
+\textbf{Description :} L'environnement cible comporte 64 Go de RAM, son utilisation est donc limitée. Néanmoins, il est nécessaire de savoir l'utiliser intelligemment.
 
 \textbf{Priorité :} 10/10
 
@@ -179,11 +179,11 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \subsection{Mise en place d'une bibliothèque dynamique}
 {
-\textbf{Description :} Si possible, nous pourrions mettre en place une librairie dynamique sous forme de .DLL (Windows) et .so (Linux). \cite{dll1}\cite{dll2}\cite{dll3} Dans le cas contraire, la bibliothèque sera utilisées comme les solutions existantes, c'est à dire comme un ensemble de fichier .h et .cpp (fichier template et code source de C++).
+\textbf{Description :} Si possible, nous pourrions mettre en place une librairie dynamique sous forme de .DLL (Windows) et .so (Linux). \cite{dll1}\cite{dll2}\cite{dll3} Dans le cas contraire, la bibliothèque sera utilisée comme les solutions existantes, c'est à dire comme un ensemble de fichiers .h et .cpp (fichier template et code source de C++).
 
 \textbf{Priorité :} 1/10
 
-\textbf{Justification :} Une bibliothèque dynamique permet de regrouper l'ensemble d'une bibliothèque de fonctions sous un seul fichier (.dll ou .so). Permettant une distribution facilitée de la bibliothèque à une tierce personne. De plus, cela permet d'avoir une seule instance de la bibliothèque qui s'exécute et répond aux demandes en temps réel.
+\textbf{Justification :} Une bibliothèque dynamique sert à regrouper l'ensemble d'une bibliothèque de fonctions sous un seul fichier (.dll ou .so), permettant une distribution facilitée de la bibliothèque à une tierce personne. De plus, cela permet d'avoir une seule instance de la bibliothèque qui s'exécute et répond aux demandes en temps réel.
 }
 
 %------------------------------Fin Besoins non fonctionnels------------------------------
@@ -279,7 +279,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 8/10
 
-\textbf{Justification :} Lorsque l'on écrit un programme, il est nécéssaire de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu"il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
+\textbf{Justification :} Lorsque l'on écrit un programme, il est nécéssaire de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu'il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
 }
 
 \subsection{Documentation}
@@ -302,7 +302,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 \end{figure}
 
 {
-La librairie que nous allons constituer devra rassembler l'ensemble des algorithmes que nous serons à même de retranscrire depuis la solution existante, c'est à dire l'ensemble des algorithmes vus précédemment. Mais elle devra également comporter des algorithmes de base de la théorie des graphes, tels que le parcours en largeur ou en profondeur. \\ L'objectif est d'avoir une librairie suffisamment flexible et modulaire, afin que de nombreux algorithmes puissent être ajoutés et cela même après la fin de ce TER.
+La librairie que nous allons constituer devra rassembler l'ensemble des algorithmes que nous serons à même de retranscrire depuis la solution existante, c'est à dire l'ensemble des algorithmes vus précédemment. Mais elle devra également comporter des algorithmes de base de la théorie des graphes, tels que le parcours en largeur ou celui en profondeur. \\ L'objectif est d'avoir une librairie suffisamment flexible et modulaire, afin que de nombreux algorithmes puissent être ajoutés et cela même après la fin de ce TER.
 \\ \\ 
 C'est pourquoi il est essentiel de mettre en place un modèle permettant de représenter un graphe, qu'il soit orienté ou non, de pouvoir convertir un graphe orienté en non-orienté. Ou encore, de pouvoir utiliser un graphe de la même manière qu'il soit orienté ou non, ce qui peut être utile dans des algorithmes qui ne se préoccupent pas de l'orientation. En outre, il est important de pouvoir spécifier si une fonction prend en paramètre uniquement un graphe orienté, non-orienté ou les deux.
 \\ \\ 
@@ -310,7 +310,7 @@ Afin de faciliter l'utilisation de la librairie, nous avons effectué des recher
 \\ \\ 
 C'est pour cette raison que la librairie sera constituée de multiples fichiers .cpp et .h, comme c'est le cas de la solution existante. En effet, cela permet une utilisation simple et rapide de l'ensemble de la librairie pour l'écriture d'un nouveau projet de manipulation de graphe, et ce, peu importe l'environnement de développement ou d'exécution. C'est également un moyen permettant plus de libertés quant à l'enrichissement de cette librairie.
 \\ \\ 
-L'utilisation de cette librairie s'effectuera par l'inclusion des bons fichier header (\#include "Graphe.h"), et l'utilisation des fonctions et classes sera aussi aisé que l'utilisation de classes et fonctions d'un projet en cours. Bien évidement, aucune interface graphique n'est demandée, puisque le but est de fournir un ensemble d'outils (classes et fonctions) permettant la mise en oeuvre simple, rapide et uniforme de nouveaux projets/solutions pour le traitement des graphes importants sur super-calculateurs.
+L'utilisation de cette librairie s'effectuera par l'inclusion des bons fichier header (\#include "Graphe.h"), et l'utilisation des fonctions et classes sera aussi aisée que l'utilisation de classes et fonctions d'un projet en cours. Bien évidement, aucune interface graphique n'est demandée, puisque le but est de fournir un ensemble d'outils (classes et fonctions) permettant la mise en œuvre simple, rapide et uniforme de nouveaux projets/solutions pour le traitement des graphes importants, sur super-calculateurs.
 }
 
 %------------------------------Fin Besoins fonctionnels------------------------------
@@ -347,7 +347,7 @@ Nous avons tout d'abord commencé par coder la structure de données permettant 
 ~\\ \\
 	L'une des difficultés pour tester notre prototype est bien entendu la taille des graphes. Pour une question de mémoire vive ainsi que de temps d’exécution, nous n'avons pas testé notre prototype sur les graphes pour lesquels notre code sera dédiés. Malgré cela, le fait de travailler sur des graphes beaucoup plus abordables ne nous handicape en aucun sens. Au contraire, cela nous permet un debuggage plus rapide. Nous pouvons bien entendu tester nos temps d'exécution sur de petits graphes, et ainsi voir si certains algorithmes sont effectivement plus rapides que d'autres.
 ~\\ \\
-	À partir de ce point, nous avons codé notre premier algorithme à proprement parler, le BFS, ou algorithme de parcours en largeur. Cet algorithme est très important car il sera utilisé dans l'algorithme de Louvain, qui est l'un des algorithmes les plus importants du projet. L'algorithme du BFS permet de parcourir le graphe en temps O (n+m), et donc d'avoir un parcours de graphe efficace. 
+	À partir de ce point, nous avons codé notre premier algorithme à proprement parler, le BFS, ou algorithme de parcours en largeur. Cet algorithme est très important car il sera utilisé dans l'algorithme de Louvain, qui est l'un des algorithmes les plus importants du projet. L'algorithme du BFS permet de parcourir le graphe en temps O(n+m), et donc d'avoir un parcours de graphe efficace. 
 ~\\ \\
 	Comme dit précédemment, nous avons testé notre code sur de petits graphes ; voici un exemple d'exécution dans la sortie console ci-dessous.
 \begin{figure}[h]

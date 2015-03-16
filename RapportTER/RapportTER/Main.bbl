@@ -1,7 +1,8 @@
 \begin{thebibliography}{10}
 
 \bibitem{communautes}
-Renaud Lambiotte et Etienne~Lefebvre Vincent D.~Blondel, Jean-Loup~Guillaume.
+Vincent D. Blondel{\',} Jean-Loup Guillaume{\',} Renaud~Lambiotte
+  et~Etienne~Lefebvre.
 \newblock Fast unfolding of communities in large networks.
 \newblock 2008.
 \newblock \url{http://arxiv.org/pdf/0803.0476.pdf}.
@@ -18,10 +19,10 @@ Wikip{\'e}dia.
 \newblock \url{https://fr.wikipedia.org/wiki/Indice_et_distance_de_Jaccard}.
 
 \bibitem{alvarezhamelin}
-Jos{\'e}~Ignacio Alvarez-Hamelin, Luca Dall'Asta, Alain Barrat, and Alessandro
-  Vespignani.
-\newblock {K-core decomposition of Internet graphs: hierarchies,
-  self-similarity and measurement biases}.
+Alvarez-Hamelin Jos{\'e} Ignacio{\',} Dall'Asta Luca{\',} Barrat~Alain
+  et~Vespignani~Alessandro.
+\newblock K-core decomposition of internet graphs: hierarchies, self-similarity
+  and measurement biases.
 \newblock {\em {Networks and Heterogeneous Media}}, 3:371, April 2008.
 
 \bibitem{GA}
@@ -32,7 +33,7 @@ Roger~Guimer{\`a} et~Luis A Nunes~Amaral.
   \url{http://www.nature.com/nature/journal/v433/n7028/abs/nature03288.html}.
 
 \bibitem{NDAP1}
-Vincent Labatut et Anthony~Perez Nicolas~Dugu{\'e}.
+Nicolas Dugu{\'e}{\',} Vincent~Labatut et~Anthony~Perez.
 \newblock A community role approach to assess social capitalists visibility in
   the twitter network.
 \newblock 2014.
