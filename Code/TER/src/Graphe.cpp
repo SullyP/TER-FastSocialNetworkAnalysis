@@ -11,6 +11,10 @@ double Graphe::getPoids(unsigned int const& p_numeroSommet) const{
     return -1;
 }
 
+double Graphe::getPoidsTotalArcs() const{
+    return m_poidsTotalArcs;
+}
+
 /*
     Effectue une recherche en largeur sur le graphe.
     @param p_numeroSommet Numéro du sommet à partir duquel commencer la recherche

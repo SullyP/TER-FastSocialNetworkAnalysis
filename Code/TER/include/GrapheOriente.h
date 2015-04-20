@@ -16,9 +16,9 @@ class GrapheOriente : public Graphe
         virtual int getDegreEntrant(unsigned int const& p_numeroSommet) const;
         virtual std::vector<Arc> getArcsSortants(unsigned int const& p_numeroSommet) const;
         virtual std::vector<Arc> getArcsEntrants(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsBoucle(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsBoucle(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const;
     protected:
     private:
         std::vector<int> m_degresCumulatifsSortants;

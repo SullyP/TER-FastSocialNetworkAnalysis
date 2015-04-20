@@ -19,10 +19,10 @@ class GrapheNonOriente : public Graphe
         virtual std::vector<Arc> getArcsEntrants(unsigned int const& p_numeroSommet) const;
         std::vector<Arc> getArcs(unsigned int const& p_numeroSommet) const;
         int getDegre(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsBoucle(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const;
-        virtual int getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const;
-        int getSommePoidsArcs(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsBoucle(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const;
+        virtual double getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const;
+        double getSommePoidsArcs(unsigned int const& p_numeroSommet) const;
     protected:
     private:
         std::vector<int> m_degresCumulatifs;

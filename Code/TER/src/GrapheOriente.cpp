@@ -2,14 +2,19 @@
 #include <iostream>
 
 GrapheOriente::GrapheOriente(std::vector<int> const& p_degresCumulatifsSortants, std::vector<int> const& p_degresCumulatifsEntrants, std::vector<Arc> const& p_arcsSortants, std::vector<Arc> const& p_arcsEntrants, std::vector<double> const& p_poids){
+    m_poidsTotalArcs = 0.0;
     for(unsigned int i=0; i<p_poids.size(); i++){
         m_poids.push_back(p_poids[i]);
     }
     for(unsigned int i=0; i<p_arcsEntrants.size(); i++){
         m_arcsEntrants.push_back(p_arcsEntrants[i]);
+        m_poidsTotalArcs += p_arcsEntrants[i].getPoids();
     }
     for(unsigned int i=0; i<p_arcsSortants.size(); i++){
         m_arcsSortants.push_back(p_arcsSortants[i]);
+        if(p_arcsSortants[i].getNumeroSommet() != i){
+            m_poidsTotalArcs += p_arcsSortants[i].getPoids();
+        }
     }
     for(unsigned int i=0; i<p_degresCumulatifsEntrants.size(); i++){
         m_degresCumulatifsEntrants.push_back(p_degresCumulatifsEntrants[i]);
@@ -109,9 +114,9 @@ std::vector<Arc> GrapheOriente::getArcsEntrants(unsigned int const& p_numeroSomm
     return arcs;
 }
 
-int GrapheOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
+double GrapheOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
     if(p_numeroSommet < size()){
-        int sommePoidsBoucle = 0;
+        double sommePoidsBoucle = 0;
         std::vector<Arc> arcs;
 
         //On effectue la recherche dans la liste d'arcs qui comporte le moins d'éléments
@@ -133,9 +138,9 @@ int GrapheOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const
     return -1;
 }
 
-int GrapheOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
+double GrapheOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
     if(p_numeroSommet < size()){
-        int sommePoidsArcsEntrants = 0;
+        double sommePoidsArcsEntrants = 0;
         std::vector<Arc> arcs = getArcsEntrants(p_numeroSommet);
 
         for(unsigned int indice = 0; indice < arcs.size(); indice++){
@@ -147,9 +152,9 @@ int GrapheOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet)
     return -1;
 }
 
-int GrapheOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const{
+double GrapheOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const{
     if(p_numeroSommet < size()){
-        int sommePoidsArcsSortants = 0;
+        double sommePoidsArcsSortants = 0;
         std::vector<Arc> arcs = getArcsSortants(p_numeroSommet);
 
         for(unsigned int indice = 0; indice < arcs.size(); indice++){

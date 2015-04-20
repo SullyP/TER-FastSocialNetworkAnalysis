@@ -1,11 +1,13 @@
 #include "GrapheNonOriente.h"
 
 GrapheNonOriente::GrapheNonOriente(std::vector<int> const& p_degresCumulatifs, std::vector<Arc> const& p_arcs, std::vector<double> const& p_poids, unsigned int p_nbArcs){
+    m_poidsTotalArcs = 0.0;
     for(unsigned int i=0; i<p_poids.size(); i++){
         m_poids.push_back(p_poids[i]);
     }
     for(unsigned int i=0; i<p_arcs.size(); i++){
         m_arcs.push_back(p_arcs[i]);
+        m_poidsTotalArcs += p_arcs[i].getPoids();
     }
     for(unsigned int i=0; i<p_degresCumulatifs.size(); i++){
         m_degresCumulatifs.push_back(p_degresCumulatifs[i]);
@@ -15,6 +17,7 @@ GrapheNonOriente::GrapheNonOriente(std::vector<int> const& p_degresCumulatifs, s
 
 GrapheNonOriente::GrapheNonOriente(GrapheOriente const& p_graphe){
     m_nbArcs = p_graphe.nbArcs();
+    m_poidsTotalArcs = p_graphe.getPoidsTotalArcs();
 
     for(unsigned int numeroSommet=0; numeroSommet < p_graphe.size(); numeroSommet++){
         m_poids.push_back(p_graphe.getPoids(numeroSommet));
@@ -118,9 +121,9 @@ int GrapheNonOriente::getDegre(unsigned int const& p_numeroSommet) const{
     return -1;
 }
 
-int GrapheNonOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
+double GrapheNonOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
     if(p_numeroSommet < size()){
-        int sommePoidsBoucle = 0;
+        double sommePoidsBoucle = 0;
 
         //Si le nombre d'arcs est égale au nombre d'arcs présent dans la liste divisé par deux, on est sûr qu'il n'y a pas de boucle (arc sur lui-même) pour aucun noeud.
         //En effet, dans notre liste d'arcs on compte chaque arc 2 fois, sauf pour les boucles.
@@ -140,17 +143,17 @@ int GrapheNonOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) co
     return -1;
 }
 
-int GrapheNonOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
+double GrapheNonOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
     return getSommePoidsArcs(p_numeroSommet);
 }
 
-int GrapheNonOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const{
+double GrapheNonOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const{
     return getSommePoidsArcs(p_numeroSommet);
 }
 
-int GrapheNonOriente::getSommePoidsArcs(unsigned int const& p_numeroSommet) const{
+double GrapheNonOriente::getSommePoidsArcs(unsigned int const& p_numeroSommet) const{
     if(p_numeroSommet < size()){
-        int sommePoidsArcs = 0;
+        double sommePoidsArcs = 0;
         std::vector<Arc> arcs = getArcs(p_numeroSommet);
         for(unsigned int indice = 0; indice < arcs.size(); indice++){
             sommePoidsArcs += arcs[indice].getPoids();
