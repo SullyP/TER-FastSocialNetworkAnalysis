@@ -4,7 +4,7 @@ Graphe::~Graphe(){
 }
 
 //Retourne -1 si le numéro du sommet n'est pas dans le graphe
-int Graphe::getPoids(unsigned int const& p_numeroSommet) const{
+double Graphe::getPoids(unsigned int const& p_numeroSommet) const{
     if (p_numeroSommet < m_poids.size()){
         return m_poids[p_numeroSommet];
     }
@@ -32,11 +32,11 @@ std::vector<bool> Graphe::breadthFirstSearch(unsigned int const& p_numeroSommet,
 
     //Tant qu'il reste des sommets à visiter
     while(!file.empty()){
-        std::vector<int> voisins = getArcsSortants(file.front());
+        std::vector<Arc> voisins = getArcsSortants(file.front());
         file.pop();
         //Pour chaque voisin
         for(unsigned int i=0; i<voisins.size(); i++){
-            int sommetVoisin = voisins[i];
+            int sommetVoisin = voisins[i].getNumeroSommet();
             //Si le sommet doit être pris en compte par l'algorithme et s'il n'est pas déjà marqué
             if(sommetsAPrendreEnCompte[sommetVoisin] && !marquer[sommetVoisin]){
                 file.push(sommetVoisin);
