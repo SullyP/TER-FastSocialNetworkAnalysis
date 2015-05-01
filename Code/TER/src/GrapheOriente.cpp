@@ -32,29 +32,27 @@ unsigned int GrapheOriente::nbArcs() const{
     return m_arcsSortants.size();
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 int GrapheOriente::getDegreBoucle(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        std::vector<Arc> arcs;
-        int degreBoucle = 0;
+    assert(p_numeroSommet < size());
 
-        //On effectue la recherche dans la liste d'arcs qui comporte le moinds d'éléments
-        if(getDegreEntrant(p_numeroSommet) < getDegreSortant(p_numeroSommet)){
-            arcs = getArcsEntrants(p_numeroSommet);
-        }else{
-            arcs = getArcsSortants(p_numeroSommet);
-        }
+    std::vector<Arc> arcs;
+    int degreBoucle = 0;
 
-        for(unsigned int indice = 0; indice < arcs.size(); indice++){
-            //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on incrémente le dégré
-            if(arcs[indice].getNumeroSommet() == p_numeroSommet){
-                degreBoucle++;
-            }
-        }
-
-        return degreBoucle;
+    //On effectue la recherche dans la liste d'arcs qui comporte le moinds d'éléments
+    if(getDegreEntrant(p_numeroSommet) < getDegreSortant(p_numeroSommet)){
+        arcs = getArcsEntrants(p_numeroSommet);
+    }else{
+        arcs = getArcsSortants(p_numeroSommet);
     }
-    return -1;
+
+    for(unsigned int indice = 0; indice < arcs.size(); indice++){
+        //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on incrémente le dégré
+        if(arcs[indice].getNumeroSommet() == p_numeroSommet){
+            degreBoucle++;
+        }
+    }
+
+    return degreBoucle;
 }
 
 //Retourne la taille du graphe (nombre de sommets)
@@ -62,106 +60,103 @@ unsigned int GrapheOriente::size() const{
     return m_degresCumulatifsSortants.size();
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 int GrapheOriente::getDegreSortant(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     if(p_numeroSommet == 0){
         return m_degresCumulatifsSortants[p_numeroSommet];
-    }else if(p_numeroSommet < size()){
+    }else{
         return m_degresCumulatifsSortants[p_numeroSommet] - m_degresCumulatifsSortants[p_numeroSommet-1];
     }
-    return -1;
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 int GrapheOriente::getDegreEntrant(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     if(p_numeroSommet == 0){
         return m_degresCumulatifsEntrants[p_numeroSommet];
-    }else if(p_numeroSommet < size()){
+    }else{
         return m_degresCumulatifsEntrants[p_numeroSommet] - m_degresCumulatifsEntrants[p_numeroSommet-1];
     }
-    return -1;
 }
 
 std::vector<Arc> GrapheOriente::getArcsSortants(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     std::vector<Arc> arcs;
-    if (p_numeroSommet < size()){
-        int startIndice, endIndice(m_degresCumulatifsSortants[p_numeroSommet]);
-        if(p_numeroSommet == 0){
-            startIndice = 0;
-        }else{
-            startIndice = m_degresCumulatifsSortants[p_numeroSommet-1];
-        }
-        for(int i=startIndice; i<endIndice; i++){
-            arcs.push_back(m_arcsSortants[i]);
-        }
+    int startIndice, endIndice(m_degresCumulatifsSortants[p_numeroSommet]);
+    if(p_numeroSommet == 0){
+        startIndice = 0;
+    }else{
+        startIndice = m_degresCumulatifsSortants[p_numeroSommet-1];
+    }
+    for(int i=startIndice; i<endIndice; i++){
+        arcs.push_back(m_arcsSortants[i]);
     }
     return arcs;
 }
 
 std::vector<Arc> GrapheOriente::getArcsEntrants(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     std::vector<Arc> arcs;
-    if (p_numeroSommet < size()){
-        int startIndice, endIndice(m_degresCumulatifsEntrants[p_numeroSommet]);
-        if(p_numeroSommet == 0){
-            startIndice = 0;
-        }else{
-            startIndice = m_degresCumulatifsEntrants[p_numeroSommet-1];
-        }
-        for(int i=startIndice; i<endIndice; i++){
-            arcs.push_back(m_arcsEntrants[i]);
-        }
+    int startIndice, endIndice(m_degresCumulatifsEntrants[p_numeroSommet]);
+    if(p_numeroSommet == 0){
+        startIndice = 0;
+    }else{
+        startIndice = m_degresCumulatifsEntrants[p_numeroSommet-1];
+    }
+    for(int i=startIndice; i<endIndice; i++){
+        arcs.push_back(m_arcsEntrants[i]);
     }
     return arcs;
 }
 
 double GrapheOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        double sommePoidsBoucle = 0;
-        std::vector<Arc> arcs;
+    assert(p_numeroSommet < size());
 
-        //On effectue la recherche dans la liste d'arcs qui comporte le moins d'éléments
-        if(getDegreEntrant(p_numeroSommet) < getDegreSortant(p_numeroSommet)){
-            arcs = getArcsEntrants(p_numeroSommet);
-        }else{
-            arcs = getArcsSortants(p_numeroSommet);
-        }
+    double sommePoidsBoucle = 0;
+    std::vector<Arc> arcs;
 
-        for(unsigned int indice = 0; indice < arcs.size(); indice++){
-            //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on ajoute le poids de l'arc
-            if(arcs[indice].getNumeroSommet() == p_numeroSommet){
-                sommePoidsBoucle += arcs[indice].getPoids();
-            }
-        }
-
-        return sommePoidsBoucle;
+    //On effectue la recherche dans la liste d'arcs qui comporte le moins d'éléments
+    if(getDegreEntrant(p_numeroSommet) < getDegreSortant(p_numeroSommet)){
+        arcs = getArcsEntrants(p_numeroSommet);
+    }else{
+        arcs = getArcsSortants(p_numeroSommet);
     }
-    return -1;
+
+    for(unsigned int indice = 0; indice < arcs.size(); indice++){
+        //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on ajoute le poids de l'arc
+        if(arcs[indice].getNumeroSommet() == p_numeroSommet){
+            sommePoidsBoucle += arcs[indice].getPoids();
+        }
+    }
+
+    return sommePoidsBoucle;
 }
 
 double GrapheOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        double sommePoidsArcsEntrants = 0;
-        std::vector<Arc> arcs = getArcsEntrants(p_numeroSommet);
+    assert(p_numeroSommet < size());
 
-        for(unsigned int indice = 0; indice < arcs.size(); indice++){
-                sommePoidsArcsEntrants += arcs[indice].getPoids();
-        }
+    double sommePoidsArcsEntrants = 0;
+    std::vector<Arc> arcs = getArcsEntrants(p_numeroSommet);
 
-        return sommePoidsArcsEntrants;
+    for(unsigned int indice = 0; indice < arcs.size(); indice++){
+            sommePoidsArcsEntrants += arcs[indice].getPoids();
     }
-    return -1;
+
+    return sommePoidsArcsEntrants;
 }
 
 double GrapheOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        double sommePoidsArcsSortants = 0;
-        std::vector<Arc> arcs = getArcsSortants(p_numeroSommet);
+    assert(p_numeroSommet < size());
 
-        for(unsigned int indice = 0; indice < arcs.size(); indice++){
-                sommePoidsArcsSortants += arcs[indice].getPoids();
-        }
+    double sommePoidsArcsSortants = 0;
+    std::vector<Arc> arcs = getArcsSortants(p_numeroSommet);
 
-        return sommePoidsArcsSortants;
+    for(unsigned int indice = 0; indice < arcs.size(); indice++){
+            sommePoidsArcsSortants += arcs[indice].getPoids();
     }
-    return -1;
+
+    return sommePoidsArcsSortants;
 }

@@ -3,12 +3,14 @@
 Graphe::~Graphe(){
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 double Graphe::getPoids(unsigned int const& p_numeroSommet) const{
-    if (p_numeroSommet < m_poids.size()){
+    assert(p_numeroSommet < size());
+
+    if(m_poids.size() == size()){
         return m_poids[p_numeroSommet];
+    }else{
+        return 1;
     }
-    return -1;
 }
 
 double Graphe::getPoidsTotalArcs() const{

@@ -1,5 +1,6 @@
 #include <vector>
 #include <queue>
+#include <cassert>
 #include "Arc.h"
 
 #ifndef GRAPHE_H

@@ -5,22 +5,23 @@
 	"GrapheNonOriente.h"
 	"IndiceEnsembliste.h"
 
-1429558090 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
+1430495942 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
-1429557866 d:\mes documents\workspace\ter\code\ter\include\graphe.h
+1429607028 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
 	<queue>
+	<cassert>
 	"Arc.h"
 
-1429558086 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
+1430495962 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
 
 1429541500 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
 	"Graphe.h"
 	"GrapheOriente.h"
 
-1429532724 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
+1430495978 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
 	"GrapheOriente.h"
 	<iostream>
 
@@ -41,9 +42,10 @@
 1429527914 source:d:\mes documents\workspace\ter\code\ter\src\arc.cpp
 	"Arc.h"
 
-1429558160 source:d:\mes documents\workspace\ter\code\ter\src\communaute.cpp
+1430487384 source:d:\mes documents\workspace\ter\code\ter\src\communaute.cpp
 	"Communaute.h"
 
-1429558128 d:\mes documents\workspace\ter\code\ter\include\communaute.h
-	"Graphe.h"
+1430486658 d:\mes documents\workspace\ter\code\ter\include\communaute.h
+	"GrapheNonOriente.h"
+	<cstdlib>
 

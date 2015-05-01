@@ -56,27 +56,25 @@ unsigned int GrapheNonOriente::nbArcs() const{
     return m_nbArcs;
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 int GrapheNonOriente::getDegreBoucle(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        int degreBoucle = 0;
+    assert(p_numeroSommet < size());
 
-        //Si le nombre d'arcs est égale au nombre d'arcs présent dans la liste divisé par deux, on est sûr qu'il n'y a pas de boucle (arc sur lui-même) pour aucun noeud.
-        //En effet, dans notre liste d'arcs on compte chaque arc 2 fois, sauf pour les boucles.
-        if((double)nbArcs() != (double)m_arcs.size()/2){
-            std::vector<Arc> arcs = getArcs(p_numeroSommet);
+    int degreBoucle = 0;
 
-            for(unsigned int indice = 0; indice < arcs.size(); indice++){
-                //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on incrémente le dégré
-                if(arcs[indice].getNumeroSommet() == p_numeroSommet){
-                    degreBoucle++;
-                }
+    //Si le nombre d'arcs est égale au nombre d'arcs présent dans la liste divisé par deux, on est sûr qu'il n'y a pas de boucle (arc sur lui-même) pour aucun noeud.
+    //En effet, dans notre liste d'arcs on compte chaque arc 2 fois, sauf pour les boucles.
+    if((double)nbArcs() != (double)m_arcs.size()/2){
+        std::vector<Arc> arcs = getArcs(p_numeroSommet);
+
+        for(unsigned int indice = 0; indice < arcs.size(); indice++){
+            //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on incrémente le dégré
+            if(arcs[indice].getNumeroSommet() == p_numeroSommet){
+                degreBoucle++;
             }
         }
-
-        return degreBoucle;
     }
-    return -1;
+
+    return degreBoucle;
 }
 
 int GrapheNonOriente::getDegreSortant(unsigned int const& p_numeroSommet) const{
@@ -96,51 +94,50 @@ std::vector<Arc> GrapheNonOriente::getArcsEntrants(unsigned int const& p_numeroS
 }
 
 std::vector<Arc> GrapheNonOriente::getArcs(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     std::vector<Arc> arcs;
-    if (p_numeroSommet < size()){
-        int startIndice, endIndice(m_degresCumulatifs[p_numeroSommet]);
-        if(p_numeroSommet == 0){
-            startIndice = 0;
-        }else{
-            startIndice = m_degresCumulatifs[p_numeroSommet-1];
-        }
-        for(int i=startIndice; i<endIndice; i++){
-            arcs.push_back(m_arcs[i]);
-        }
+    int startIndice, endIndice(m_degresCumulatifs[p_numeroSommet]);
+    if(p_numeroSommet == 0){
+        startIndice = 0;
+    }else{
+        startIndice = m_degresCumulatifs[p_numeroSommet-1];
+    }
+    for(int i=startIndice; i<endIndice; i++){
+        arcs.push_back(m_arcs[i]);
     }
     return arcs;
 }
 
-//Retourne -1 si le numéro du sommet n'est pas dans le graphe
 int GrapheNonOriente::getDegre(unsigned int const& p_numeroSommet) const{
+    assert(p_numeroSommet < size());
+
     if(p_numeroSommet == 0){
         return m_degresCumulatifs[p_numeroSommet];
-    }else if(p_numeroSommet < size()){
+    }else{
         return m_degresCumulatifs[p_numeroSommet] - m_degresCumulatifs[p_numeroSommet-1];
     }
-    return -1;
 }
 
 double GrapheNonOriente::getSommePoidsBoucle(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        double sommePoidsBoucle = 0;
+    assert(p_numeroSommet < size());
 
-        //Si le nombre d'arcs est égale au nombre d'arcs présent dans la liste divisé par deux, on est sûr qu'il n'y a pas de boucle (arc sur lui-même) pour aucun noeud.
-        //En effet, dans notre liste d'arcs on compte chaque arc 2 fois, sauf pour les boucles.
-        if((double)nbArcs() != (double)m_arcs.size()/2){
-            std::vector<Arc> arcs = getArcs(p_numeroSommet);
+    double sommePoidsBoucle = 0;
 
-            for(unsigned int indice = 0; indice < arcs.size(); indice++){
-                //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on ajoute le poids de l'arc
-                if(arcs[indice].getNumeroSommet() == p_numeroSommet){
-                    sommePoidsBoucle += arcs[indice].getPoids();
-                }
+    //Si le nombre d'arcs est égale au nombre d'arcs présent dans la liste divisé par deux, on est sûr qu'il n'y a pas de boucle (arc sur lui-même) pour aucun noeud.
+    //En effet, dans notre liste d'arcs on compte chaque arc 2 fois, sauf pour les boucles.
+    if((double)nbArcs() != (double)m_arcs.size()/2){
+        std::vector<Arc> arcs = getArcs(p_numeroSommet);
+
+        for(unsigned int indice = 0; indice < arcs.size(); indice++){
+            //Lorsque l'on trouve un arc qui part du sommet pour arriver sur lui-même, on ajoute le poids de l'arc
+            if(arcs[indice].getNumeroSommet() == p_numeroSommet){
+                sommePoidsBoucle += arcs[indice].getPoids();
             }
         }
-
-        return sommePoidsBoucle;
     }
-    return -1;
+
+    return sommePoidsBoucle;
 }
 
 double GrapheNonOriente::getSommePoidsArcsEntrants(unsigned int const& p_numeroSommet) const{
@@ -152,14 +149,13 @@ double GrapheNonOriente::getSommePoidsArcsSortants(unsigned int const& p_numeroS
 }
 
 double GrapheNonOriente::getSommePoidsArcs(unsigned int const& p_numeroSommet) const{
-    if(p_numeroSommet < size()){
-        double sommePoidsArcs = 0;
-        std::vector<Arc> arcs = getArcs(p_numeroSommet);
-        for(unsigned int indice = 0; indice < arcs.size(); indice++){
-            sommePoidsArcs += arcs[indice].getPoids();
-        }
+    assert(p_numeroSommet < size());
 
-        return sommePoidsArcs;
+    double sommePoidsArcs = 0;
+    std::vector<Arc> arcs = getArcs(p_numeroSommet);
+    for(unsigned int indice = 0; indice < arcs.size(); indice++){
+        sommePoidsArcs += arcs[indice].getPoids();
     }
-    return -1;
+
+    return sommePoidsArcs;
 }
