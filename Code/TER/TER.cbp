@@ -39,20 +39,24 @@
 			<Add option="-fexceptions -fopenmp" />
 		</Compiler>
 		<Linker>
-			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\bin\libgomp-1.dll" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/bin/libgomp-1.dll" />
 		</Linker>
 		<Unit filename="include/Arc.h" />
 		<Unit filename="include/Communaute.h" />
 		<Unit filename="include/Graphe.h" />
+		<Unit filename="include/GrapheBinary.h" />
 		<Unit filename="include/GrapheNonOriente.h" />
 		<Unit filename="include/GrapheOriente.h" />
+		<Unit filename="include/GuimeraAmaral.h" />
 		<Unit filename="include/IndiceEnsembliste.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arc.cpp" />
 		<Unit filename="src/Communaute.cpp" />
 		<Unit filename="src/Graphe.cpp" />
+		<Unit filename="src/GrapheBinary.cpp" />
 		<Unit filename="src/GrapheNonOriente.cpp" />
 		<Unit filename="src/GrapheOriente.cpp" />
+		<Unit filename="src/GuimeraAmaral.cpp" />
 		<Unit filename="src/IndiceEnsembliste.cpp" />
 		<Extensions>
 			<code_completion />
