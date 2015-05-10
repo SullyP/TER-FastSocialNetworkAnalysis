@@ -10,15 +10,13 @@
 1430495942 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
-1424954154 
+1430486658 
 
 1429607028 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
 	<queue>
 	<cassert>
 	"Arc.h"
-
-1430486658 
 
 1430495962 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
@@ -110,4 +108,31 @@
 
 1425589891 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
 	"IndiceEnsembliste.h"
+
+1431181076 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheBinary.cpp
+	<sys/mman.h>
+	<fstream>
+	<sstream>
+	<string>
+	<stack>
+	<set>
+	<string.h>
+	"../include/GrapheBinary.h"
+	"math.h"
+	<omp.h>
+	<limits>
+	<algorithm>
+
+1431179568 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheBinary.h
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<malloc.h>
+	<iostream>
+	<iomanip>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<algorithm>
 
