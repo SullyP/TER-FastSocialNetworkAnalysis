@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
@@ -18,6 +19,9 @@
 					<Add option="-fopenmp" />
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add library="../../../../../../../usr/lib/gcc/x86_64-linux-gnu/4.8.2/libgomp.so" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/TER" prefix_auto="1" extension_auto="1" />
@@ -49,6 +53,7 @@
 		<Unit filename="include/GrapheOriente.h" />
 		<Unit filename="include/GuimeraAmaral.h" />
 		<Unit filename="include/IndiceEnsembliste.h" />
+		<Unit filename="include/Lecture.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arc.cpp" />
 		<Unit filename="src/Communaute.cpp" />
@@ -58,6 +63,7 @@
 		<Unit filename="src/GrapheOriente.cpp" />
 		<Unit filename="src/GuimeraAmaral.cpp" />
 		<Unit filename="src/IndiceEnsembliste.cpp" />
+		<Unit filename="src/Lecture.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
