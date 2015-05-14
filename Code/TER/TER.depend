@@ -136,7 +136,7 @@
 	<set>
 	<algorithm>
 
-1431624824 source:/home/thanato/Documents/FastSNA/Code/TER/main.cpp
+1431625177 source:/home/thanato/Documents/FastSNA/Code/TER/main.cpp
 	<iostream>
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
@@ -213,12 +213,8 @@
 1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheNonOriente.cpp
 	"GrapheNonOriente.h"
 
-1431625114 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheOriente.cpp
+1431625200 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheOriente.cpp
 	"GrapheOriente.h"
-	<iostream>
-	<sstream>
-	<fstream>
-	<stdlib.h>
 
 1431613052 source:/home/thanato/Documents/FastSNA/Code/TER/src/GuimeraAmaral.cpp
 	"GuimeraAmaral.h"
