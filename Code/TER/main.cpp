@@ -2,6 +2,7 @@
 #include "GrapheOriente.h"
 #include "GrapheNonOriente.h"
 #include "IndiceEnsembliste.h"
+#include "ParticipationExterne.h"
 #include "Lecture.h"
 
 using namespace std;
@@ -32,7 +33,8 @@ int main()
     arcsEntrants.push_back(Arc(1,1));
     arcsEntrants.push_back(Arc(1,1));
     arcsEntrants.push_back(Arc(1,3));
-    GrapheOriente* grapheOriente = lecture("out.brunson_revolution_revolution");
+
+    GrapheOriente* grapheOriente = new GrapheOriente("out.brunson_revolution_revolution");
 
     cout << "Graphe Oriente - Taille : " << grapheOriente->size() << endl;
     cout << "Graphe Oriente - Nombre d'arcs : " << grapheOriente->nbArcs() << endl;
@@ -147,6 +149,10 @@ int main()
 
     cout << " Jacard " << indiceEnsembliste->jaccard() << endl;
     cout << " Overlap Index " << indiceEnsembliste->overlapIndex() << endl;
+
+    Communaute com = Communaute(grapheNonOriente, 5, 1);
+    com.effectuerUneEtape();
+    participationExterne(com, 1);
 
     delete indiceEnsembliste;
     delete grapheNonOriente;

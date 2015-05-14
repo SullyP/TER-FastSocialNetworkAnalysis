@@ -51,8 +51,8 @@ GrapheOriente* lecture(string nom)
 							v_entrant.push_back(y_entrant);
 							v_sortant.push_back(y_sortant);
 						}
-						v_sortant[value1-1].push_back(Arc(value2-1,value1-1));
-						v_entrant[value2-1].push_back(Arc(value1-1,value2-1));
+						v_sortant[value1-1].push_back(Arc(1,value2-1));
+						v_entrant[value2-1].push_back(Arc(1,value1-1));
 					}
 				}
 				int cpt_sortant=0;

@@ -1,12 +1,18 @@
 #ifndef GRAPHEORIENTE_H
 #define GRAPHEORIENTE_H
 
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <stdlib.h>
+#include <string>
 #include <omp.h>
 #include "Graphe.h"
 
 class GrapheOriente : public Graphe
 {
     public:
+        GrapheOriente(std::string const& p_nom);
         GrapheOriente(std::vector<int> const& p_degresCumulatifsSortants, std::vector<int> const& p_degresCumulatifsEntrants, std::vector<Arc> const& p_arcsSortants, std::vector<Arc> const& p_arcsEntrants, std::vector<double> const& p_poids);
         virtual ~GrapheOriente();
         virtual unsigned int size() const;

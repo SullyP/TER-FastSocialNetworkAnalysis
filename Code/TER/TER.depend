@@ -136,14 +136,20 @@
 	<set>
 	<algorithm>
 
-1431614937 source:/home/thanato/Documents/FastSNA/Code/TER/main.cpp
+1431624824 source:/home/thanato/Documents/FastSNA/Code/TER/main.cpp
 	<iostream>
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
 	"IndiceEnsembliste.h"
+	"ParticipationExterne.h"
 	"Lecture.h"
 
-1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheOriente.h
+1431625198 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheOriente.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<stdlib.h>
+	<string>
 	<omp.h>
 	"Graphe.h"
 
@@ -207,9 +213,12 @@
 1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheNonOriente.cpp
 	"GrapheNonOriente.h"
 
-1431615355 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheOriente.cpp
+1431625114 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheOriente.cpp
 	"GrapheOriente.h"
 	<iostream>
+	<sstream>
+	<fstream>
+	<stdlib.h>
 
 1431613052 source:/home/thanato/Documents/FastSNA/Code/TER/src/GuimeraAmaral.cpp
 	"GuimeraAmaral.h"
@@ -220,7 +229,7 @@
 1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
 	"IndiceEnsembliste.h"
 
-1431615506 source:/home/thanato/Documents/FastSNA/Code/TER/src/Lecture.cpp
+1431622924 source:/home/thanato/Documents/FastSNA/Code/TER/src/Lecture.cpp
 	"Lecture.h"
 	"GrapheOriente.h"
 
@@ -231,4 +240,12 @@
 	<stdlib.h>
 	<vector>
 	"GrapheOriente.h"
+
+1431623400 source:/home/thanato/Documents/FastSNA/Code/TER/src/ParticipationExterne.cpp
+	<iostream>
+	"ParticipationExterne.h"
+
+1431622551 /home/thanato/Documents/FastSNA/Code/TER/include/ParticipationExterne.h
+	"Communaute.h"
+	"GrapheNonOriente.h"
 
