@@ -20,7 +20,7 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add library="../../../../../../../usr/lib/gcc/x86_64-linux-gnu/4.8.2/libgomp.so" />
+					<Add library="..\..\..\..\..\..\..\usr\lib\gcc\x86_64-linux-gnu\4.8.2\libgomp.so" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -43,7 +43,7 @@
 			<Add option="-fexceptions -fopenmp" />
 		</Compiler>
 		<Linker>
-			<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/bin/libgomp-1.dll" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\bin\libgomp-1.dll" />
 		</Linker>
 		<Unit filename="include/Arc.h" />
 		<Unit filename="include/Communaute.h" />
@@ -53,7 +53,6 @@
 		<Unit filename="include/GrapheOriente.h" />
 		<Unit filename="include/GuimeraAmaral.h" />
 		<Unit filename="include/IndiceEnsembliste.h" />
-		<Unit filename="include/Lecture.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arc.cpp" />
 		<Unit filename="src/Communaute.cpp" />
@@ -63,7 +62,6 @@
 		<Unit filename="src/GrapheOriente.cpp" />
 		<Unit filename="src/GuimeraAmaral.cpp" />
 		<Unit filename="src/IndiceEnsembliste.cpp" />
-		<Unit filename="src/Lecture.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
