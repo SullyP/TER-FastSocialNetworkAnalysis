@@ -136,3 +136,99 @@
 	<set>
 	<algorithm>
 
+1431614937 source:/home/thanato/Documents/FastSNA/Code/TER/main.cpp
+	<iostream>
+	"GrapheOriente.h"
+	"GrapheNonOriente.h"
+	"IndiceEnsembliste.h"
+	"Lecture.h"
+
+1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheOriente.h
+	<omp.h>
+	"Graphe.h"
+
+1431612566 /home/thanato/Documents/FastSNA/Code/TER/include/Graphe.h
+	<vector>
+	<queue>
+	<cassert>
+	"Arc.h"
+
+1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/Arc.h
+
+1431612566 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheNonOriente.h
+	"Graphe.h"
+	"GrapheOriente.h"
+
+1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/IndiceEnsembliste.h
+	<vector>
+	<algorithm>
+	<iterator>
+
+1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/Arc.cpp
+	"Arc.h"
+
+1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/Communaute.cpp
+	"Communaute.h"
+
+1431612566 /home/thanato/Documents/FastSNA/Code/TER/include/Communaute.h
+	"GrapheNonOriente.h"
+	<cstdlib>
+
+1431612566 source:/home/thanato/Documents/FastSNA/Code/TER/src/Graphe.cpp
+	"Graphe.h"
+
+1431612906 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheBinary.cpp
+	<sys/mman.h>
+	<fstream>
+	<sstream>
+	<string>
+	<stack>
+	<set>
+	<string.h>
+	"../include/GrapheBinary.h"
+	"math.h"
+	<omp.h>
+	<limits>
+	<algorithm>
+
+1431612566 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheBinary.h
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<malloc.h>
+	<iostream>
+	<iomanip>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<algorithm>
+
+1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheNonOriente.cpp
+	"GrapheNonOriente.h"
+
+1431615355 source:/home/thanato/Documents/FastSNA/Code/TER/src/GrapheOriente.cpp
+	"GrapheOriente.h"
+	<iostream>
+
+1431613052 source:/home/thanato/Documents/FastSNA/Code/TER/src/GuimeraAmaral.cpp
+	"GuimeraAmaral.h"
+
+1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/GuimeraAmaral.h
+	"GrapheBinary.h"
+
+1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
+	"IndiceEnsembliste.h"
+
+1431615506 source:/home/thanato/Documents/FastSNA/Code/TER/src/Lecture.cpp
+	"Lecture.h"
+	"GrapheOriente.h"
+
+1431197770 /home/thanato/Documents/FastSNA/Code/TER/include/Lecture.h
+	<fstream>
+	<iostream>
+	<sstream>
+	<stdlib.h>
+	<vector>
+	"GrapheOriente.h"
+

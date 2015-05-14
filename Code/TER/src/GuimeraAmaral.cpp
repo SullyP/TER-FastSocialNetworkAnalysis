@@ -1,14 +1,14 @@
 #include "GuimeraAmaral.h"
 
 // Retourne le zscore d'une noeud en argument dans une communaute en argument
-double zScoreIn(int noeud, int commu){
-    double zsi = Graph::z_score_in(noeud, commu);
-    return zsi;
+double zScoreIn(Graph g, int noeud, int commu){
+    double zsi = g.z_score_in(noeud, commu);
+    return 0;
 }
 
 // Retourne la participation externe d'un noeud en argument
-double participationExterne(int noeud){
-    double pext = Graph::participation_out(noeud);
+double participationExterne(Graph g,int noeud){
+    double pext = g.participation_out(noeud);
     return pext;
 }
 
@@ -18,8 +18,8 @@ bool estConnect(int noeud){
 }
 
 // Retourne oui si le noeud est un hub, non sinon
-bool estHub(int noeud, int commu, double seuil){
-    return (Graph::z_score_out(noeud,commu))>=seuil;
+bool estHub(Graph g,int noeud, int commu, double seuil){
+    return (g.z_score_out(noeud,commu))>=seuil;
 }
 
 // Retourne oui si le noeud est peripherique, non sinon

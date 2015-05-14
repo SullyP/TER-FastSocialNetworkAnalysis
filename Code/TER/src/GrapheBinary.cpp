@@ -26,7 +26,7 @@ Graph::Graph(char *filename, char *filename_w, int type, bool renumbered) {
 cout << "ouverture " << endl;
   ifstream finput;
   finput.open(filename,fstream::in | fstream::binary);
-  
+
   // Read number of nodes on 4 bytes
   finput.read((char *)&nb_nodes, sizeof(int));
   assert(finput.rdstate() == ios::goodbit);
@@ -35,7 +35,7 @@ cout << "ouverture " << endl;
   // cum_degree[0]=degree(0); cum_degree[1]=degree(0)+degree(1), etc.
   degrees_out.resize(nb_nodes);
   finput.read((char *)&degrees_out[0], nb_nodes*sizeof(long));
-  
+
   // Read cumulative in degree sequence: 8 bytes for each node
   // cum_degree[0]=degree(0); cum_degree[1]=degree(0)+degree(1), etc.
   degrees_in.resize(nb_nodes);
@@ -45,21 +45,21 @@ cout << "ouverture " << endl;
   if (renumbered) {
   // Read correspondance of labels
   correspondance.resize(nb_nodes);
-  finput.read((char *)(&correspondance[0]), nb_nodes*sizeof(int)); 
+  finput.read((char *)(&correspondance[0]), nb_nodes*sizeof(int));
 
-  
+
 		  cout << "corresp read "<< endl;
     }
-  // Read links_out: 4 bytes for each link 
+  // Read links_out: 4 bytes for each link
   nb_links_out=degrees_out[nb_nodes-1];
   links.resize(nb_links_out);
-  finput.read((char *)(&links[0]), nb_links_out*sizeof(int)); 
- 
-  // Read links_in: 4 bytes for each link 
+  finput.read((char *)(&links[0]), nb_links_out*sizeof(int));
+
+  // Read links_in: 4 bytes for each link
   nb_links_in=degrees_in[nb_nodes-1];
   links_in.resize(nb_links_in);
-  finput.read((char *)(&links_in[0]), nb_links_in*sizeof(int)); 
-  
+  finput.read((char *)(&links_in[0]), nb_links_in*sizeof(int));
+
  cout << "links read " << endl;
   // IF WEIGHTED : read weights: 4 bytes for each link (each link is counted twice)
   weights.resize(0);
@@ -68,10 +68,10 @@ cout << "ouverture " << endl;
     ifstream finput_w;
     finput_w.open(filename_w,fstream::in | fstream::binary);
     weights.resize(nb_links_out);
-    finput_w.read((char *)&weights[0], nb_links_out*sizeof(int));  
-  }    
+    finput_w.read((char *)&weights[0], nb_links_out*sizeof(int));
+  }
 
-   
+
   // Compute total weight
   for (unsigned int i=0 ; i<nb_nodes ; i++) {
     total_weight_in = (double)in_weighted_degree(i);
@@ -101,7 +101,7 @@ Graph::display() {
 	else
 	  cout << node << " " << *(p.first+i) << endl;
       }
-    }   
+    }
   }*/
   for (unsigned int node=0 ; node<nb_nodes ; node++) {
     pair<vector<unsigned int>::iterator, vector<float>::iterator > p = neighbors(node);
@@ -118,24 +118,24 @@ Graph::display() {
   }
 }
 
-/* Methode de reecriture du fichier */ 
+/* Methode de reecriture du fichier */
 void
 Graph::writeFile(string outNeighbors, string inNeighbors) {
 
 	ofstream foutput;
 	foutput.open(outNeighbors.c_str() ,fstream::out | fstream::binary);
-	
-	cout << "Nombre de noeuds : " << nb_nodes << endl; 
 
-	/* On recupere les voisins sortants */ 
+	cout << "Nombre de noeuds : " << nb_nodes << endl;
+
+	/* On recupere les voisins sortants */
 	for(unsigned int node=0; node < nb_nodes; node++) {
-	
+
 		pair<vector<unsigned int>::iterator, vector<float>::iterator > p = neighbors(node);
-	
+
 		for(unsigned int i = 0; i < nb_neighbors_out(node); i++) {
-			
+
 			foutput << correspondance[node] << " " << correspondance[*(p.first+i)] << endl;
-			
+
 		}
 
 	}
@@ -147,13 +147,13 @@ Graph::writeFile(string outNeighbors, string inNeighbors) {
 
 	/* On recupere les voisins entrants */
 	for(unsigned int node=0; node < nb_nodes; node++) {
-	
+
 		pair<vector<unsigned int>::iterator, vector<float>::iterator > p1 = in_neighbors(node);
 
 		for(unsigned int i = 0; i < nb_neighbors_in(node); i++) {
 
 				foutputIn << correspondance[node] << " " << correspondance[*(p1.first+i)] << endl;
-		
+
 		}
 
 	}
@@ -168,7 +168,7 @@ Graph::writeFile(string outNeighbors, string inNeighbors) {
  *
  *
  * OVERLAP AND RATIO PROCESSING
- * 
+ *
  *
  *
  *
@@ -176,10 +176,10 @@ Graph::writeFile(string outNeighbors, string inNeighbors) {
  ***********************************************************************
 */
 
-void 
+void
 Graph::computeOverlap(string fileName) {
 
-	ofstream foutput; 
+	ofstream foutput;
 	foutput.open(fileName.c_str(), fstream::out | fstream::binary);
 	foutput.precision(15);
 
@@ -190,7 +190,7 @@ Graph::computeOverlap(string fileName) {
 	double ratio = 0.000000;
 	double in, out;
 	for(unsigned int node = 0; node < nb_nodes; node++) {
-	
+
 		if(node == 0) deg = 0; else deg = node - 1;
 
 		unsigned int* outNeighbors;
@@ -205,13 +205,13 @@ if(node == 0) {
 }/*
 		unsigned int* tmp = new unsigned int[nb_neighbors_out(node)];
 		unsigned int* tmp1 = new unsigned int [nb_neighbors_in(node)];
-	
-		for(int i = 0; i < nb_neighbors_out(node); i++) 
+
+		for(int i = 0; i < nb_neighbors_out(node); i++)
 			tmp[i] = outNeighbors[i];
 
 		for(int i = 0; i < nb_neighbors_in(node); i++)
-			tmp1[i] = inNeighbors[i];	
-*/				
+			tmp1[i] = inNeighbors[i];
+*/
 		vector<int>* inter;
 		inter = new vector<int>(max(nb_neighbors_out(node), nb_neighbors_in(node)));
 		vector<int>::iterator it;
@@ -221,20 +221,20 @@ if(node == 0) {
 
 		it = set_intersection(outNeighbors, outNeighbors + nb_neighbors_out(node), inNeighbors, inNeighbors + nb_neighbors_in(node), (*inter).begin());
 		(*inter).resize(it-(*inter).begin());
-		if(nb_neighbors_out(node) == 0 || nb_neighbors_in(node) == 0) {	
+		if(nb_neighbors_out(node) == 0 || nb_neighbors_in(node) == 0) {
 			ratio = 0;
 			overlap = 0;
 		}
-		else { 
+		else {
 			out = nb_neighbors_out(node);
-			in = nb_neighbors_in(node);	
+			in = nb_neighbors_in(node);
 			ratio = out / in;
-			overlap = max((*inter).size()/(float)nb_neighbors_out(node), (*inter).size()/(float)nb_neighbors_in(node)); 
+			overlap = max((*inter).size()/(float)nb_neighbors_out(node), (*inter).size()/(float)nb_neighbors_in(node));
 		}
-		foutput << correspondance[node] << ";" << nb_neighbors_out(node) << ";" << nb_neighbors_in(node) << ";" << ratio << ";" <<  overlap << endl;  
+		foutput << correspondance[node] << ";" << nb_neighbors_out(node) << ";" << nb_neighbors_in(node) << ";" << ratio << ";" <<  overlap << endl;
 //		foutput << node << ";" << nb_neighbors_out(node) << ";" << nb_neighbors_in(node) << ";" << ratio << ";" <<  overlap << endl;
-		//delete[] outNeighbors; 
-		//delete[] inNeighbors; 
+		//delete[] outNeighbors;
+		//delete[] inNeighbors;
 		//delete inter;
 
 	}
@@ -264,7 +264,7 @@ Graph::display_binary(char *outfile) {
  *
  *
  *GUIMERA METHOD IMPROVED
- * 
+ *
  *
  *
  *
@@ -280,7 +280,7 @@ Graph::display_binary(char *outfile) {
 		unsigned int node, node_corr, com, corr;
 
 		finput.open(filename.c_str(), fstream::in);
-		node = 0; com = 0; corr = 0; 
+		node = 0; com = 0; corr = 0;
 
 		map_communities.resize(nb_nodes);
 		int cpt = 0;
@@ -290,27 +290,27 @@ Graph::display_binary(char *outfile) {
 
 		while (!finput.eof() && cpt < nb_nodes) {
 
-			/* Strange: reads one line more than expected... */		
-			cpt++; 
-			if(finput.eof()) 
+			/* Strange: reads one line more than expected... */
+			cpt++;
+			if(finput.eof())
 
-				break; 
+				break;
 
 			/* Getting a node and its community */
 		        finput >> node_corr >> com;
 			//node_corr--;
-			/* Is it really needed? Depends on the community algorithm? */		
+			/* Is it really needed? Depends on the community algorithm? */
 			//com = com - 1;
 
 			/* We associate the community to the node */
-		        map_communities[node_corr] = com; 
-	
+		        map_communities[node_corr] = com;
+
 			if(communities.size() <= com) {
 
 				communities.resize(com+1);
 			}
-	
-			communities[com].push_back(node_corr); 		
+
+			communities[com].push_back(node_corr);
 
 		}
 
@@ -351,14 +351,14 @@ Graph::display_binary(char *outfile) {
 
 		unsigned int pos_out, pos_out_end;
 		float cpt = 0.;
-		 
+
 		if(node == 0) pos_out = 0; else pos_out = degrees_out[node - 1];
 		pos_out_end=degrees_out[node];
 
 		for (unsigned int i=pos_out; i < pos_out_end; i++) {
 			if (map_communities[links[i]] == comm)
 				cpt++;
-		}    
+		}
 		return cpt;
 
 	}
@@ -369,15 +369,15 @@ Graph::display_binary(char *outfile) {
 
 		unsigned int pos_out, pos_out_end;
 		float cpt = 0;
-		 
+
 		if(node == 0) pos_out = 0; else pos_out = degrees_in[node - 1];
 		pos_out_end=degrees_in[node];
-		    
+
 
 		for (unsigned int i=pos_out; i < pos_out_end; i++) {
 			if (map_communities[links_in[i]] == comm)
 				cpt++;
-		}    
+		}
 		return cpt;
 
 	}
@@ -392,7 +392,7 @@ Graph::display_binary(char *outfile) {
 		double degree_node = 0;
 
 		for(unsigned int i = 0; i < communities[comm].size(); i++) {
-	
+
 			degree_node = degree_out_com[communities[comm][i]];
 			tmp += (degree_node - mean) * (degree_node - mean);
 
@@ -424,7 +424,7 @@ Graph::display_binary(char *outfile) {
 
 	}
 
-	double 
+	double
 	Graph::standard_deviation_out(int comm) {
 
 		return sqrt(variane_out(comm));
@@ -454,12 +454,12 @@ Graph::display_binary(char *outfile) {
 	double
 	Graph::z_score_in(int node, int comm) {
 
-		if(std_com_in[comm] == 0) 
+		if(std_com_in[comm] == 0)
 
 			return numeric_limits<double>::max();
 
 		else
-	
+
 			return ((degree_in_com[node] - avg_com_in[comm]) /  std_com_in[comm]);
 
 	}
@@ -472,10 +472,10 @@ Graph::display_binary(char *outfile) {
                 double tmp = 0;
 
                 for (unsigned int i = 0; i < communities.size(); i++) {
-                
+
                         if(nb_neighbors_out(node) > 0) {
 
-                                tmp = ((degree_out_comm(node, i)) / nb_neighbors_out(node)); 
+                                tmp = ((degree_out_comm(node, i)) / nb_neighbors_out(node));
                                 sum += tmp * tmp;
 
                         }
@@ -493,10 +493,10 @@ double
                 double tmp = 0;
 
                 for (unsigned int i = 0; i < communities.size(); i++) {
-                
+
                         if(nb_neighbors_in(node) > 0) {
 
-                                tmp = ((degree_in_comm(node, i)) / nb_neighbors_in(node)); 
+                                tmp = ((degree_in_comm(node, i)) / nb_neighbors_in(node));
                                 sum += tmp * tmp;
 
                         }
@@ -508,8 +508,7 @@ double
         }*/
 
 
-double
-Graph::participation_out(int node) {
+double Graph::participation_out(int node) {
 
         //Un vecteur de taille Ã©gale au nombre de communautÃ©s, rempli de 0
         vector<unsigned int> communities_count(communities.size(),0);
@@ -609,7 +608,7 @@ Graph::participation_in(int node) {
 					comm_ext.insert(com);
 			}
 		}
-		
+
 		return comm_ext.size();
 	}
 
@@ -635,9 +634,9 @@ Graph::participation_in(int node) {
 
 		float tmp = 0;
 		float diversite_node = 0;
-		
+
 		for(unsigned int i = 0; i < communities[comm].size(); i++) {
-	
+
 			diversite_node = diversite(communities[comm][i], out);
 			tmp += (diversite_node - mean) * (diversite_node - mean);
 
@@ -659,20 +658,20 @@ Graph::participation_in(int node) {
 		float std;
 		if (out)
 			std = std_com_out[com_node];
-		else 
+		else
 			std = std_com_in[com_node];
-		
-		if(std == 0) 
+
+		if(std == 0)
 			return numeric_limits<double>::max();
 		else {
 			if (out)
 				return (((float)diversite(node, out) - avg_com_out[com_node]) / std_com_out[com_node]);
 			else
 				return (((float)diversite(node, out) - avg_com_in[com_node]) / std_com_in[com_node]);
-		}	
-			
+		}
+
 			//return (((float)diversite(node, out) - avg_diversite(com_node, out)) / std);
-		
+
 	}
 
 
@@ -681,7 +680,7 @@ Graph::participation_in(int node) {
 		int com_node = map_communities[node];
 		set<unsigned int> comm_ext;
 		int cpt = 0;
-		
+
 		if (out) {
 			int pos_out, pos_out_end = degrees_out[node];
 			if(node == 0) pos_out = 0; else pos_out = degrees_out[node - 1];
@@ -729,7 +728,7 @@ Graph::participation_in(int node) {
 		float intensite_node = 0;
 		//cout << "Ici" << endl;
 		for(unsigned int i = 0; i < communities[comm].size(); i++) {
-	
+
 			intensite_node = intensite(communities[comm][i], out);
 		//	cout << "Noeud " << communities[comm][i] <<" -> Intensite : "<< intensite_node << endl;
 			tmp += (intensite_node - mean) * (intensite_node - mean);
@@ -752,18 +751,18 @@ Graph::participation_in(int node) {
 		float std;
 		if (out)
 			std = std_com_out[com_node];
-		else 
+		else
 			std = std_com_in[com_node];
-		
-		if(std == 0) 
+
+		if(std == 0)
 			return numeric_limits<double>::max();
 		else {
 			if (out)
 				return (((float)intensite(node, out) - avg_com_out[com_node]) / std_com_out[com_node]);
 			else
 				return (((float)intensite(node, out) - avg_com_in[com_node]) / std_com_in[com_node]);
-		}	
-		
+		}
+
 	}
 
 	float
@@ -812,7 +811,7 @@ Graph::participation_in(int node) {
 				tmp_bis = (communities_count[i] - mean);
 				tmp +=  tmp_bis * tmp_bis;
 			}
-			
+
 		}
 		//cout << tmp << endl;
 		return sqrt(tmp / (float)nb_com);
@@ -839,9 +838,9 @@ Graph::participation_in(int node) {
 
 		float tmp = 0;
 		float homogeneite_node = 0;
-		
+
 		for(unsigned int i = 0; i < communities[comm].size(); i++) {
-			
+
 			homogeneite_node = homogeneite(communities[comm][i], out);
 			//cout << "homogeneite : " <<homogeneite_node << endl;
 			tmp += (homogeneite_node - mean) * (homogeneite_node - mean);
@@ -858,29 +857,29 @@ Graph::participation_in(int node) {
 		return sqrt(variance_homogeneite(comm, out));
 
 	}
-	
+
 	float
 	Graph::z_homogeneite(int node, bool out) {
 		int com_node = map_communities[node];
 		float std;
 		if (out)
 			std = std_com_out[com_node];
-		else 
+		else
 			std = std_com_in[com_node];
 		cout << "std dev : " << std << endl;
 		if (out)
 			cout << "avg : " << avg_com_out[com_node] << endl;
 		else
 			cout << "avg : " << avg_com_in[com_node] << endl;
-		if(std == 0) 
+		if(std == 0)
 			return numeric_limits<double>::max();
 		else	{
 			if (out)
 				return ((homogeneite(node, out) - avg_com_out[com_node]) / std_com_out[com_node]);
 			else
 				return ((homogeneite(node, out) - avg_com_in[com_node]) / std_com_in[com_node]);
-		}	
-		
+		}
+
 	}
 
 
@@ -888,21 +887,21 @@ Graph::participation_in(int node) {
 	Graph::writeGuimera(string filename) {
 
 		ofstream foutput;
-		
+
 
 		//foutput << "node;z_score_out;z_score_in;community;k_out;k_in;variane_out;variane_in;d_out;d_in;div_out;div_in;int_out;int_in;hom_out;hom_in" << endl;
-		//foutput << "node;community;z_score_out;z_score_in;z_diversite_out;z_diversite_in;z_intensite_out;z_intensite_in;z_homogeneite_out;z_homogeneite_in;"<< endl;			
-		
+		//foutput << "node;community;z_score_out;z_score_in;z_diversite_out;z_diversite_in;z_intensite_out;z_intensite_in;z_homogeneite_out;z_homogeneite_in;"<< endl;
+
 		avg_com_out.resize(communities.size());
 		std_com_out.resize(communities.size());
 		avg_com_in.resize(communities.size());
 		std_com_in.resize(communities.size());
 		degree_in_com.resize(nb_nodes);
 		degree_out_com.resize(nb_nodes);
-		
-		
-		
-		
+
+
+
+
 		unsigned int i, thread_id;
 
 		for (i=0; i < nb_nodes; i++) {
@@ -913,7 +912,7 @@ Graph::participation_in(int node) {
 		//Z_score
 		cout << "Calcul des degrÃ©s internes au communautÃ© " <<endl;
 		#pragma omp parallel private(thread_id)
-		{ 
+		{
 			thread_id = omp_get_thread_num();
 			int cpt = 1;
 			/*stringstream ss;
@@ -924,7 +923,7 @@ Graph::participation_in(int node) {
 				degree_in_com[i]= degree_in_comm(i, map_communities[i]);
 				degree_out_com[i]=degree_out_comm(i,map_communities[i]);
 				if (cpt % 500 == 0)
-					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl; 
+					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl;
 			}
 			#pragma omp barrier
 			#pragma omp master
@@ -940,31 +939,31 @@ Graph::participation_in(int node) {
 				avg_com_in[i] = avg_degree_in_comm(i);
 				std_com_in[i] = standard_deviation_in(i);
 				if (cpt % 500 == 0)
-					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl; 
+					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl;
 				cpt++;
 			}
-			
+
 		}
-		
+
 
 		foutput.open((filename+"_z_score").c_str(), fstream::out);
 		cout << "Calcul du z-score " <<endl;
 		for(i = 0; i < nb_nodes; i++) {
 			foutput << i <<";" << map_communities[i] << ";";
-			foutput << z_score_out(i, map_communities[i]) << ";" << z_score_in(i, map_communities[i]) << ";" << endl;			
+			foutput << z_score_out(i, map_communities[i]) << ";" << z_score_in(i, map_communities[i]) << ";" << endl;
 			if (i % 1000000 == 0)
 				cout << "1 million de noeuds en plus pour le z_score : prÃ©sence !" << endl;
 
 		}
-	
+
 		foutput.close();
-		
+
 		degree_in_com.clear();
 		degree_out_com.clear();
-		
+
 		//D'abord la diversitÃ©
 		cout << "Calcul des moyennes et ecart type pour la diversitÃ© " <<endl;
-		#pragma omp parallel private(thread_id, foutput) 
+		#pragma omp parallel private(thread_id, foutput)
  		{
 			thread_id = omp_get_thread_num();
 			stringstream ss;
@@ -976,18 +975,18 @@ Graph::participation_in(int node) {
 				avg_com_out[i]= avg_diversite(i, true);
 				std_com_out[i]= standard_deviation_diversite(i, true);
 				avg_com_in[i] = avg_diversite(i, false);
-				std_com_in[i] = standard_deviation_diversite(i, false);	
+				std_com_in[i] = standard_deviation_diversite(i, false);
 				if (cpt % 500 == 0)
-					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl; 
+					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl;
 				cpt++;
 			}
 			cpt=1;
 			#pragma omp barrier
-			#pragma omp master 
+			#pragma omp master
 			{
 				cout << "Calcul de la diversitÃ© " <<endl;
 			}
-			
+
 			//cout << filename2 << endl;
 			foutput.open((filename2).c_str(), fstream::out);
 			#pragma omp for
@@ -995,13 +994,13 @@ Graph::participation_in(int node) {
 				foutput << i <<";" << map_communities[i] << ";";
 				foutput << z_diversite(i, true) << ";" << z_diversite(i, false) << ";" << endl;
 				if (cpt % 200000 == 0)
-					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl; 
-				cpt++;	
+					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl;
+				cpt++;
 			}
 			foutput.close();
 			cpt=1;
 			#pragma omp barrier
-			#pragma omp master 
+			#pragma omp master
 			{
 				//Maintenant, l'intensitÃ©
 					cout << "Calcul des moyennes et ecart type pour l'intensitÃ© " <<endl;
@@ -1013,12 +1012,12 @@ Graph::participation_in(int node) {
 				avg_com_in[i] = avg_intensite(i, false);
 				std_com_in[i] = standard_deviation_intensite(i, false);
 				if (cpt % 500 == 0)
-					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl; 
+					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl;
 				cpt++;
 			}
 			cpt=1;
 			#pragma omp barrier
-			#pragma omp master 
+			#pragma omp master
 			{
 				//Maintenant, l'intensitÃ©
 					cout << "Calcul de l'intensitÃ© " <<endl;
@@ -1027,18 +1026,18 @@ Graph::participation_in(int node) {
 			foutput.open((filename2).c_str(), fstream::out);
 			#pragma omp for
 			for(i = 0; i < nb_nodes; i++) {
-			
+
 				foutput << i <<";" << map_communities[i] << ";";
 				foutput << z_intensite(i, true) << ";" << z_intensite(i, false) << ";" << endl;
 				if (cpt % 200000 == 0)
-					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl; 
+					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl;
 				cpt++;
 
 			}
 			foutput.close();
 			cpt=1;
 			#pragma omp barrier
-			#pragma omp master 
+			#pragma omp master
 			{
 				//Maintenant, l'homogÃ©nÃ©itÃ©
 					cout << "Calcul des moyennes et ecart type pour l'homogÃ©nÃ©itÃ© " <<endl;
@@ -1051,13 +1050,13 @@ Graph::participation_in(int node) {
 				avg_com_in[i] = avg_homogeneite(i, false);
 				std_com_in[i] = standard_deviation_homogeneite(i, false);
 				if (cpt % 500 == 0)
-					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl; 
+					cout << thread_id <<" a traitÃ© 500 communautÃ©s" << endl;
 				cpt++;
-	
+
 			}
 			cpt=1;
 			#pragma omp barrier
-			#pragma omp master 
+			#pragma omp master
 			{
 				//Maintenant, l'homogÃ©nÃ©itÃ©
 					cout << "Calcul de l'homogÃ©nÃ©itÃ© " <<endl;
@@ -1067,11 +1066,11 @@ Graph::participation_in(int node) {
 			foutput.open((filename2).c_str(), fstream::out);
 			#pragma omp for
 			for(i = 0; i < nb_nodes; i++) {
-			
+
 				foutput << i <<";" << map_communities[i] << ";";
-				foutput << z_homogeneite(i, true) << ";" << z_homogeneite(i, false) << ";"<<endl;	
+				foutput << z_homogeneite(i, true) << ";" << z_homogeneite(i, false) << ";"<<endl;
 				if (cpt % 200000 == 0)
-					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl; 
+					cout << thread_id <<" a traitÃ© 200000 noeuds" << endl;
 				cpt++;
 
 			}
@@ -1082,4 +1081,4 @@ Graph::participation_in(int node) {
 	}
 
 
-	
+

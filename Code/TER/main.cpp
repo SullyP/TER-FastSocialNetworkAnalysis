@@ -2,6 +2,7 @@
 #include "GrapheOriente.h"
 #include "GrapheNonOriente.h"
 #include "IndiceEnsembliste.h"
+#include "Lecture.h"
 
 using namespace std;
 
@@ -31,7 +32,7 @@ int main()
     arcsEntrants.push_back(Arc(1,1));
     arcsEntrants.push_back(Arc(1,1));
     arcsEntrants.push_back(Arc(1,3));
-    GrapheOriente* grapheOriente = new GrapheOriente(degresCumulatifsSortants,degresCumulatifsEntrants,arcsSortants,arcsEntrants,poids);
+    GrapheOriente* grapheOriente = lecture("out.brunson_revolution_revolution");
 
     cout << "Graphe Oriente - Taille : " << grapheOriente->size() << endl;
     cout << "Graphe Oriente - Nombre d'arcs : " << grapheOriente->nbArcs() << endl;
