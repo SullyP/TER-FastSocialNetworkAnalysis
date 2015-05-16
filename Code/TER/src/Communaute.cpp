@@ -116,11 +116,24 @@ bool Communaute::effectuerUneEtape(){
 
     } while (nbDeplacement>0 && newModularite-curModularite>m_minModularite);
 
+    //On calcule noeudCommunaute
+    for(unsigned numeroSommet=0; numeroSommet < m_noeudCommunaute.size(); numeroSommet++){
+        if((unsigned)m_noeudCommunaute[numeroSommet] >= m_communauteNoeud.size()){
+            //Si la communauté n'est pas dans la liste, on aggrandit la liste
+            m_communauteNoeud.resize(m_noeudCommunaute[numeroSommet]+1);
+        }
+        (m_communauteNoeud[m_noeudCommunaute[numeroSommet]]).push_back(numeroSommet);
+    }
+
     return deplacement;
 }
 
 std::vector<int> Communaute::getNoeudCommunaute() const{
     return m_noeudCommunaute;
+}
+
+std::vector< std::vector<int> > Communaute::getCommunauteNoeud() const{
+    return m_communauteNoeud;
 }
 
 const GrapheNonOriente* Communaute::getGraphe() const{

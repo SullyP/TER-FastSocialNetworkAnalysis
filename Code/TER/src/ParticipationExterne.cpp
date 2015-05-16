@@ -14,7 +14,7 @@ vector<int> participationExterne(Communaute communaute, int num_com){
     int cpt = 0;
     int nbCommunaute = 0;
 
-    for (int i = 0; i < listCommunaute.size(); i++){
+    for (unsigned int i = 0; i < listCommunaute.size(); i++){
         if (listCommunaute[i] > nbCommunaute){
             nbCommunaute = listCommunaute[i];
         }
@@ -29,12 +29,12 @@ vector<int> participationExterne(Communaute communaute, int num_com){
         participation.push_back(0);
     }
 
-    for(int noeud = 0; noeud < listCommunaute.size(); noeud++){
+    for(unsigned int noeud = 0; noeud < listCommunaute.size(); noeud++){
 
         if (listCommunaute[noeud] == num_com){
             moyenne.push_back(0);
             vector<Arc> voisins = graphe->getArcsSortants(noeud);
-            for(int i = 0; i < voisins.size(); i++){
+            for(unsigned int i = 0; i < voisins.size(); i++){
                 if (listCommunaute[voisins[i].getNumeroSommet()] != listCommunaute[noeud]){
 
                     if (!visiteCommunaute[listCommunaute[voisins[i].getNumeroSommet()]]){
@@ -49,7 +49,7 @@ vector<int> participationExterne(Communaute communaute, int num_com){
 
             int comVisite = 0;
             int total = 0;
-            for (int i = 0; i < moyenneNoeud.size(); i++){
+            for (unsigned int i = 0; i < moyenneNoeud.size(); i++){
                 if (moyenneNoeud[i] != 0){
                     comVisite++;
                     total += moyenneNoeud[i];
@@ -69,7 +69,7 @@ vector<int> participationExterne(Communaute communaute, int num_com){
     double hetero = 0;
     double moyenneTotal = 0;
 
-    for (int i = 0; i < moyenne.size(); i++){
+    for (unsigned int i = 0; i < moyenne.size(); i++){
         hetero += moyenne[i]*moyenne[i];
         moyenneTotal++;
     }

@@ -19,9 +19,6 @@
 					<Add option="-fopenmp" />
 					<Add directory="include" />
 				</Compiler>
-				<Linker>
-					<Add library="../../../../../../../usr/lib/gcc/x86_64-linux-gnu/4.8.2/libgomp.so" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/TER" prefix_auto="1" extension_auto="1" />
@@ -43,7 +40,7 @@
 			<Add option="-fexceptions -fopenmp" />
 		</Compiler>
 		<Linker>
-			<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/bin/libgomp-1.dll" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\bin\libgomp-1.dll" />
 		</Linker>
 		<Unit filename="include/Arc.h" />
 		<Unit filename="include/Communaute.h" />
@@ -58,7 +55,6 @@
 		<Unit filename="src/Arc.cpp" />
 		<Unit filename="src/Communaute.cpp" />
 		<Unit filename="src/Graphe.cpp" />
-		<Unit filename="src/GrapheBinary.cpp" />
 		<Unit filename="src/GrapheNonOriente.cpp" />
 		<Unit filename="src/GrapheOriente.cpp" />
 		<Unit filename="src/GuimeraAmaral.cpp" />

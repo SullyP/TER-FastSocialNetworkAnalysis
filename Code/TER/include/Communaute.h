@@ -15,6 +15,8 @@ class Communaute
         bool effectuerUneEtape();
         // Renvoye la partition, pour chaque noeud, sa communauté.
         std::vector<int> getNoeudCommunaute() const;
+        // Renvoye la partition, pour chaque communauté, ses noeuds .
+        std::vector< std::vector<int> > getCommunauteNoeud() const;
         // Renvoye le graphe avant partition
         const GrapheNonOriente* getGraphe() const;
         // Renvoye le graphe après partition
@@ -32,6 +34,7 @@ class Communaute
         int m_nbPasses; // Nombre de passes à éffectuer
         double m_minModularite; // Modularité minimum en desous de laquelle le gain n'est plus assez élevé pour fusionner des communautés/noeuds
         std::vector<int> m_noeudCommunaute; // Pour chaque noeud, la communauté à laquelle il appartient
+        std::vector< std::vector<int> > m_communauteNoeud; //Pour chaque communauté, la liste des noeuds lui appartenant
         std::vector<double> m_in; // Pour chaque communauté, la somme des poids des arcs internes
         std::vector<double> m_tot; // Pour chaque communauté, la somme des poids des arcs entrants (depuis une autre communauté)
 

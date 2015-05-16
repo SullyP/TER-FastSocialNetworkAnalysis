@@ -1,61 +1,66 @@
 # depslib dependency file v1.0
-1429534562 source:d:\mes documents\workspace\ter\code\ter\main.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\main.cpp
 	<iostream>
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
 	"IndiceEnsembliste.h"
+	"ParticipationExterne.h"
 
 1425139158 embliste.h"
 
-1430495942 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
 1430486658 
 
-1429607028 d:\mes documents\workspace\ter\code\ter\include\graphe.h
+1431815172 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
 	<queue>
 	<cassert>
 	"Arc.h"
 
-1430495962 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
 
 1430495962 Oriente.h"
 
-1429541500 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
+1431815172 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
 	"Graphe.h"
 	"GrapheOriente.h"
 
 1429541500 ente.h"
 
-1430495978 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
+1431815334 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
 	"GrapheOriente.h"
-	<iostream>
 
-1429541494 d:\mes documents\workspace\ter\code\ter\include\grapheoriente.h
+1431815172 d:\mes documents\workspace\ter\code\ter\include\grapheoriente.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<stdlib.h>
+	<string>
 	<omp.h>
 	"Graphe.h"
 
-1425139158 source:d:\mes documents\workspace\ter\code\ter\src\indiceensembliste.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\indiceensembliste.cpp
 	"IndiceEnsembliste.h"
 
-1424954154 d:\mes documents\workspace\ter\code\ter\include\indiceensembliste.h
+1431815172 d:\mes documents\workspace\ter\code\ter\include\indiceensembliste.h
 	<vector>
 	<algorithm>
 	<iterator>
 
-1429527898 d:\mes documents\workspace\ter\code\ter\include\arc.h
+1431815172 d:\mes documents\workspace\ter\code\ter\include\arc.h
 
-1429527914 source:d:\mes documents\workspace\ter\code\ter\src\arc.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\arc.cpp
 	"Arc.h"
 
-1430487384 source:d:\mes documents\workspace\ter\code\ter\src\communaute.cpp
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\communaute.cpp
 	"Communaute.h"
 
 1430487384 e.h"
 
-1430486658 d:\mes documents\workspace\ter\code\ter\include\communaute.h
+1431815174 d:\mes documents\workspace\ter\code\ter\include\communaute.h
 	"GrapheNonOriente.h"
 	<cstdlib>
 
@@ -253,4 +258,32 @@
 1431699459 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/ParticipationExterne.h
 	"Communaute.h"
 	"GrapheNonOriente.h"
+
+1431815172 d:\mes documents\workspace\ter\code\ter\include\participationexterne.h
+	"Communaute.h"
+	"GrapheNonOriente.h"
+
+1431815196 source:d:\mes documents\workspace\ter\code\ter\src\graphebinary.cpp
+
+1431815174 source:d:\mes documents\workspace\ter\code\ter\src\guimeraamaral.cpp
+	"GuimeraAmaral.h"
+
+1431815172 d:\mes documents\workspace\ter\code\ter\include\guimeraamaral.h
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<malloc.h>
+	<math.h>
+	<iostream>
+	<iomanip>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<algorithm>
+
+1431815302 source:d:\mes documents\workspace\ter\code\ter\src\participationexterne.cpp
+	<iostream>
+	<math.h>
+	"ParticipationExterne.h"
 

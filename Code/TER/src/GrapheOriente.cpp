@@ -25,7 +25,6 @@ GrapheOriente::GrapheOriente(string const& p_nom){
 						int cpt=0;
 						int value1;
 						int value2;
-						bool occur;
 						while(cpt<2 && iss >> word){
 							if (cpt==0){
 								value1 = atoi(word.c_str());
@@ -35,13 +34,13 @@ GrapheOriente::GrapheOriente(string const& p_nom){
 							}
 							cpt++;
 						}
-						if(value1>v_entrant.size()){
+						if((unsigned)value1>v_entrant.size()){
 							vector<Arc> y_entrant;
 							vector<Arc> y_sortant;
 							v_entrant.push_back(y_entrant);
 							v_sortant.push_back(y_sortant);
 						}
-						if(value2>v_entrant.size()){
+						if((unsigned)value2>v_entrant.size()){
 							vector<Arc> y_entrant;
 							vector<Arc> y_sortant;
 							v_entrant.push_back(y_entrant);

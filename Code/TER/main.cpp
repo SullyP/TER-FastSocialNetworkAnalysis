@@ -151,6 +151,26 @@ int main()
 
     Communaute com = Communaute(grapheNonOriente, 5, 1);
     com.effectuerUneEtape();
+    vector<int> noeudCom = com.getNoeudCommunaute();
+
+    cout << "Communaute " << endl;
+    for(unsigned int i=0; i < noeudCom.size(); i++){
+        cout << i << " : " << noeudCom[i] << "; ";
+    }
+    cout << endl;
+
+    std::vector< std::vector<int> > comNoeud = com.getCommunauteNoeud();
+
+    cout << "Communautes NOEUD " << endl;
+    for(unsigned int i=0; i < comNoeud.size(); i++){
+        cout << "Communaute " << i << endl;
+        for(unsigned int j=0; j < comNoeud[i].size(); j++){
+            cout << comNoeud[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
     participationExterne(com, 1);
 
     delete indiceEnsembliste;
