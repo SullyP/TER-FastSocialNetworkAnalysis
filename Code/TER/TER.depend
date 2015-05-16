@@ -59,57 +59,62 @@
 	"GrapheNonOriente.h"
 	<cstdlib>
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/main.cpp
+1431787317 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/main.cpp
 	<iostream>
 	"GrapheOriente.h"
 	"GrapheNonOriente.h"
 	"IndiceEnsembliste.h"
+	"ParticipationExterne.h"
 
-1430678728 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheOriente.h
+1431622603 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheOriente.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<stdlib.h>
+	<string>
 	<omp.h>
 	"Graphe.h"
 
-1430678728 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Graphe.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Graphe.h
 	<vector>
 	<queue>
 	<cassert>
 	"Arc.h"
 
-1430678728 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Arc.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Arc.h
 
-1430678728 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheNonOriente.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheNonOriente.h
 	"Graphe.h"
 	"GrapheOriente.h"
 
-1425589892 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/IndiceEnsembliste.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/IndiceEnsembliste.h
 	<vector>
 	<algorithm>
 	<iterator>
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Arc.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Arc.cpp
 	"Arc.h"
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Communaute.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Communaute.cpp
 	"Communaute.h"
 
-1430678728 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Communaute.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Communaute.h
 	"GrapheNonOriente.h"
 	<cstdlib>
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Graphe.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Graphe.cpp
 	"Graphe.h"
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheNonOriente.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheNonOriente.cpp
 	"GrapheNonOriente.h"
 
-1430678728 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheOriente.cpp
+1431622602 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheOriente.cpp
 	"GrapheOriente.h"
-	<iostream>
 
-1425589891 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
 	"IndiceEnsembliste.h"
 
-1431181076 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheBinary.cpp
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheBinary.cpp
 	<sys/mman.h>
 	<fstream>
 	<sstream>
@@ -123,7 +128,7 @@
 	<limits>
 	<algorithm>
 
-1431179568 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheBinary.h
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheBinary.h
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -242,6 +247,10 @@
 	"ParticipationExterne.h"
 
 1431622551 /home/thanato/Documents/FastSNA/Code/TER/include/ParticipationExterne.h
+	"Communaute.h"
+	"GrapheNonOriente.h"
+
+1431699459 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/ParticipationExterne.h
 	"Communaute.h"
 	"GrapheNonOriente.h"
 

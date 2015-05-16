@@ -3,7 +3,6 @@
 #include "GrapheNonOriente.h"
 #include "IndiceEnsembliste.h"
 #include "ParticipationExterne.h"
-#include "Lecture.h"
 
 using namespace std;
 
