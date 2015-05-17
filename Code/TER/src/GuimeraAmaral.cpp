@@ -8,48 +8,56 @@ GuimeraAmaral::GuimeraAmaral(Communaute const& p_communaute){
     m_noeudCommunaute = p_communaute.getNoeudCommunaute();
     m_communauteNoeud = p_communaute.getCommunauteNoeud();
     m_graphe = p_communaute.getGraphe();
+
+    m_degreInterneCommunaute.resize(m_graphe->size());
+    m_degreMoyenInterneCommunaute.resize(m_communauteNoeud.size());
+    m_ecartTypeInterneCommunaute.resize(m_communauteNoeud.size());
+
+    for (unsigned int numeroSommet=0; numeroSommet < m_graphe->size(); numeroSommet++) {
+            m_degreInterneCommunaute[numeroSommet] = degreIntCom(numeroSommet, m_noeudCommunaute[numeroSommet]);
+    }
+
+    for (unsigned int numeroCommunaute=0; numeroCommunaute < m_communauteNoeud.size(); numeroCommunaute++) {
+            m_degreMoyenInterneCommunaute[numeroCommunaute] = degreMoyenIntCom(numeroCommunaute);
+    }
+
+    for (unsigned int numeroCommunaute=0; numeroCommunaute < m_communauteNoeud.size(); numeroCommunaute++) {
+            m_ecartTypeInterneCommunaute[numeroCommunaute] = ecartTypeInt(numeroCommunaute);
+    }
 }
 
 // Calcule la variance interne
 double GuimeraAmaral::varianceInt(int p_numeroCommunaute){
-    vector<int> degreInterneCommu;
-    vector<double> degreMoyenInterneCommu;
-    double moyenne = degreMoyenInterneCommu[p_numeroCommunaute];
+    double moyenne = m_degreMoyenInterneCommunaute[p_numeroCommunaute];
     double tmp = 0;
     double tmpBis = 0;
     double degreNoeud = 0;
     for (unsigned int i = 0; i < m_communauteNoeud[p_numeroCommunaute].size(); i++){
-        degreNoeud = degreInterneCommu[m_communauteNoeud[p_numeroCommunaute][i]];
+        degreNoeud = m_degreInterneCommunaute[m_communauteNoeud[p_numeroCommunaute][i]];
         tmpBis = degreNoeud - moyenne;
         tmp = tmpBis*tmpBis;
     }
     return (tmp/(double)m_communauteNoeud[p_numeroCommunaute].size());
 }
 
-// Calcule le degre moyen interne/entrant (?) d'une communaute
-float GuimeraAmaral::degreMoyenIntCom(int p_numeroCommunaute, vector<int> degreInterneCommu){
+// Calcule le degre moyen interne d'une communaute
+double GuimeraAmaral::degreMoyenIntCom(int p_numeroCommunaute){
     long degreGlobalCommu = 0;
     for (unsigned int i = 0; i < m_communauteNoeud[p_numeroCommunaute].size(); i++){
-         degreGlobalCommu += degreInterneCommu[m_communauteNoeud[p_numeroCommunaute][i]];
+         degreGlobalCommu += m_degreInterneCommunaute[m_communauteNoeud[p_numeroCommunaute][i]];
     }
     return (degreGlobalCommu/m_communauteNoeud[p_numeroCommunaute].size());
 }
 
 // Calcule le degre interne/entrant d'un noeud
-float GuimeraAmaral::degreIntCom(int p_numeroSommet, int p_numeroCommunaute, vector<int> degresInternes, vector<int> liensInternes){
-    unsigned int posOut, posOutFin;
-    float cpt = 0;
-    if (p_numeroSommet==0)
-        posOut = 0;
-    else
-        posOut = degresInternes[p_numeroSommet-1];
-        posOutFin = degresInternes[p_numeroSommet];
-    for (unsigned int i = posOut; i < posOutFin; i++){
-        int tmp, tmpBis;
-        tmpBis = liensInternes[i];
-        //tmp = m_communauteNoeud[tmpBis];
-        //if (tmp==p_numeroCommunaute) cpt++;
+int GuimeraAmaral::degreIntCom(int p_numeroSommet, int p_numeroCommunaute){
+    int degreIntCom = 0;
+    std::vector<Arc> voisins = m_graphe->getArcsEntrants(p_numeroSommet);
+    for (unsigned int i = 0; i < voisins.size(); i++){
+        if (m_noeudCommunaute[voisins[i].getNumeroSommet()] == p_numeroCommunaute)
+            degreIntCom++;
     }
+    return degreIntCom;
 }
 
 // Calcule l'ecart type interne (?)
@@ -60,12 +68,10 @@ double GuimeraAmaral::ecartTypeInt(int p_numeroCommunaute){
 // Retourne le zscore d'une noeud en argument dans une communaute en argument pour un graphe g
 double GuimeraAmaral::zScoreInt(int p_numeroSommet, int p_numeroCommunaute){
     vector <int> ecartTypeInterne;
-    vector <int> degreInterneCommu;
-    vector <double> degreMoyenInterneCommu;
     if (ecartTypeInterne[p_numeroCommunaute]==0)
        return 0;
     else
-       return ((degreInterneCommu[p_numeroSommet]-degreMoyenInterneCommu[p_numeroCommunaute])/ecartTypeInterne[p_numeroCommunaute]);
+       return ((m_degreInterneCommunaute[p_numeroSommet]-m_degreMoyenInterneCommunaute[p_numeroCommunaute])/ecartTypeInterne[p_numeroCommunaute]);
 }
 
 // Retourne oui si le noeud est un hub, non sinon
