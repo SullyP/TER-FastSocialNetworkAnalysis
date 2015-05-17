@@ -192,13 +192,20 @@ double GuimeraAmaral::participationInterne(int const& p_numeroSommet) const{
 }
 
 // Retourne le nombre de connexions entre deux communautes
-int GuimeraAmaral::connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB){
+int GuimeraAmaral::connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB) const{
     return 0;
 }
 
 // Retourne oui si le noeud est peripherique, non sinon
-bool GuimeraAmaral::estPeriph(int const& p_numeroSommet){
-    return false;
+bool GuimeraAmaral::estPeripherique(int const& p_numeroSommet) const{
+    return ((zScoreEntrantCommunaute(p_numeroSommet, m_noeudCommunaute[p_numeroSommet]))<2.5
+            && participationExterne(p_numeroSommet) <= 0.62);
+}
+
+// Retourne oui si le noeud est ultra-peripherique, non sinon
+bool GuimeraAmaral::estUltraPeripherique(int const& p_numeroSommet) const{
+    return ((zScoreEntrantCommunaute(p_numeroSommet, m_noeudCommunaute[p_numeroSommet]))<2.5
+            && participationExterne(p_numeroSommet) <= 0.05);
 }
 
 //Getters

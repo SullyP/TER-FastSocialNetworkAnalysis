@@ -28,9 +28,9 @@ class GuimeraAmaral {
         bool estHub(int const& p_numeroSommet, int const& p_numeroCommunaute) const;
         double participationExterne(int const& p_numeroSommet) const;
         double participationInterne(int const& p_numeroSommet) const;
-        bool estConnect(int const& p_numeroSommet);
-        bool estPeriph(int const& p_numeroSommet);
-        int connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB);
+        bool estPeripherique(int const& p_numeroSommet) const;
+        bool estUltraPeripherique(int const& p_numeroSommet) const;
+        int connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB) const;
         //Getters
         vector<int> getNoeudCommunaute() const;
         vector< vector<int> > getCommunauteNoeud() const;
