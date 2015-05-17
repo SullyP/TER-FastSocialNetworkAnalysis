@@ -35,7 +35,7 @@ GuimeraAmaral::GuimeraAmaral(std::vector<int> const& p_noeudCommunaute, std::vec
 }
 
 // Calcule la variance entrante
-double GuimeraAmaral::varianceEntrante(int p_numeroCommunaute){
+double GuimeraAmaral::varianceEntrante(int const& p_numeroCommunaute) const{
     double moyenne = m_degreMoyenEntrantCommunaute[p_numeroCommunaute];
     double tmp = 0;
     #pragma omp parallel for reduction(+:tmp)
@@ -48,7 +48,7 @@ double GuimeraAmaral::varianceEntrante(int p_numeroCommunaute){
 }
 
 // Calcule la variance sortante
-double GuimeraAmaral::varianceSortante(int p_numeroCommunaute){
+double GuimeraAmaral::varianceSortante(int const& p_numeroCommunaute) const{
     double moyenne = m_degreMoyenSortantCommunaute[p_numeroCommunaute];
     double tmp = 0;
     #pragma omp parallel for reduction(+:tmp)
@@ -61,7 +61,7 @@ double GuimeraAmaral::varianceSortante(int p_numeroCommunaute){
 }
 
 // Calcule le degre moyen entrant d'une communaute
-double GuimeraAmaral::degreMoyenEntrantCommunaute(int p_numeroCommunaute){
+double GuimeraAmaral::degreMoyenEntrantCommunaute(int const& p_numeroCommunaute) const{
     long degreGlobalCommu = 0;
     #pragma omp parallel for reduction(+:degreGlobalCommu)
     for (unsigned int i = 0; i < m_communauteNoeud[p_numeroCommunaute].size(); i++){
@@ -71,7 +71,7 @@ double GuimeraAmaral::degreMoyenEntrantCommunaute(int p_numeroCommunaute){
 }
 
 // Calcule le degre moyen sortant d'une communaute
-double GuimeraAmaral::degreMoyenSortantCommunaute(int p_numeroCommunaute){
+double GuimeraAmaral::degreMoyenSortantCommunaute(int const& p_numeroCommunaute) const{
     long degreGlobalCommu = 0;
     #pragma omp parallel for reduction(+:degreGlobalCommu)
     for (unsigned int i = 0; i < m_communauteNoeud[p_numeroCommunaute].size(); i++){
@@ -81,7 +81,7 @@ double GuimeraAmaral::degreMoyenSortantCommunaute(int p_numeroCommunaute){
 }
 
 // Calcule le degre interne/entrant d'un noeud
-int GuimeraAmaral::degreEntrantCommunaute(int p_numeroSommet, int p_numeroCommunaute){
+int GuimeraAmaral::degreEntrantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute) const{
     int degreIntCom = 0;
     std::vector<Arc> voisins = m_graphe->getArcsEntrants(p_numeroSommet);
     for (unsigned int i = 0; i < voisins.size(); i++){
@@ -92,7 +92,7 @@ int GuimeraAmaral::degreEntrantCommunaute(int p_numeroSommet, int p_numeroCommun
 }
 
 // Calcule le degre sortant d'un noeud
-int GuimeraAmaral::degreSortantCommunaute(int p_numeroSommet, int p_numeroCommunaute){
+int GuimeraAmaral::degreSortantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute) const{
     int degreIntCom = 0;
     std::vector<Arc> voisins = m_graphe->getArcsSortants(p_numeroSommet);
     for (unsigned int i = 0; i < voisins.size(); i++){
@@ -103,12 +103,12 @@ int GuimeraAmaral::degreSortantCommunaute(int p_numeroSommet, int p_numeroCommun
 }
 
 // Calcule l'ecart type entrant
-double GuimeraAmaral::ecartTypeEntrantCommunaute(int p_numeroCommunaute){
+double GuimeraAmaral::ecartTypeEntrantCommunaute(int const& p_numeroCommunaute) const{
     return sqrt(varianceEntrante(p_numeroCommunaute));
 }
 
 // Calcule l'ecart type sortant
-double GuimeraAmaral::ecartTypeSortantCommunaute(int p_numeroCommunaute){
+double GuimeraAmaral::ecartTypeSortantCommunaute(int const& p_numeroCommunaute) const{
     if(m_graphe->estOriente()){
         return sqrt(varianceSortante(p_numeroCommunaute));
     }else{
@@ -117,7 +117,7 @@ double GuimeraAmaral::ecartTypeSortantCommunaute(int p_numeroCommunaute){
 }
 
 // Retourne le zscore d'une noeud en argument dans une communaute en argument pour un graphe g
-double GuimeraAmaral::zScoreEntrantCommunaute(int p_numeroSommet, int p_numeroCommunaute){
+double GuimeraAmaral::zScoreEntrantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute)  const{
     if (m_ecartTypeEntrantCommunaute[p_numeroCommunaute]==0)
        return 0;
     else
@@ -125,7 +125,7 @@ double GuimeraAmaral::zScoreEntrantCommunaute(int p_numeroSommet, int p_numeroCo
 }
 
 // Retourne le zscore d'une noeud en argument dans une communaute en argument pour un graphe g
-double GuimeraAmaral::zScoreSortantCommunaute(int p_numeroSommet, int p_numeroCommunaute){
+double GuimeraAmaral::zScoreSortantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute)  const{
     if(m_graphe->estOriente()){
         if (m_ecartTypeSortantCommunaute[p_numeroCommunaute]==0)
            return 0;
@@ -137,17 +137,67 @@ double GuimeraAmaral::zScoreSortantCommunaute(int p_numeroSommet, int p_numeroCo
 }
 
 // Retourne oui si le noeud est un hub, non sinon
-bool GuimeraAmaral::estHub(int p_numeroSommet, int p_numeroCommunaute){
+bool GuimeraAmaral::estHub(int const& p_numeroSommet, int const& p_numeroCommunaute) const{
     return (zScoreEntrantCommunaute(p_numeroSommet, p_numeroCommunaute))>=2.5;
 }
 
+double GuimeraAmaral::participationExterne(int const& p_numeroSommet) const{
+    //Un vecteur de taille égale au nombre de communautés, rempli de 0
+    vector<unsigned int> degreCommunautes(m_communauteNoeud.size(),0);
+
+	// Parcours du voisinage des noeuds
+	// A la fin, le vecteur contient le degre du noeud vers chaque communaute
+	vector<Arc> voisins = m_graphe->getArcsSortants(p_numeroSommet);
+    for (unsigned int i = 0; i < voisins.size(); i++){
+                degreCommunautes[m_noeudCommunaute[voisins[i].getNumeroSommet()]]++;
+	}
+
+	double sum = 0.;
+	double const degreSortant = m_graphe->getDegreSortant(p_numeroSommet);
+
+	// Parcours du vecteur de communautes pour calculer la participation
+	for(unsigned int numeroCommunaute = 0; numeroCommunaute < degreCommunautes.size(); numeroCommunaute++) {
+		// Si le noeud a des voisins dans la communaute
+		if(degreCommunautes[numeroCommunaute] > 0) {
+            sum += ((double)(degreCommunautes[numeroCommunaute]) / degreSortant) * ((double)(degreCommunautes[numeroCommunaute]) / degreSortant);
+		}
+	}
+
+	return (1 - sum);
+}
+
+double GuimeraAmaral::participationInterne(int const& p_numeroSommet) const{
+    //Un vecteur de taille égale au nombre de communautés, rempli de 0
+    vector<unsigned int> degreCommunautes(m_communauteNoeud.size(),0);
+
+	// Parcours du voisinage des noeuds
+	// A la fin, le vecteur contient le degre du noeud vers chaque communaute
+	vector<Arc> voisins = m_graphe->getArcsEntrants(p_numeroSommet);
+    for (unsigned int i = 0; i < voisins.size(); i++){
+                degreCommunautes[m_noeudCommunaute[voisins[i].getNumeroSommet()]]++;
+	}
+
+	double sum = 0.;
+	double const degreSortant = m_graphe->getDegreEntrant(p_numeroSommet);
+
+	// Parcours du vecteur de communautes pour calculer la participation
+	for(unsigned int numeroCommunaute = 0; numeroCommunaute < degreCommunautes.size(); numeroCommunaute++) {
+		// Si le noeud a des voisins dans la communaute
+		if(degreCommunautes[numeroCommunaute] > 0) {
+            sum += ((double)(degreCommunautes[numeroCommunaute]) / degreSortant) * ((double)(degreCommunautes[numeroCommunaute]) / degreSortant);
+		}
+	}
+
+	return (1 - sum);
+}
+
 // Retourne le nombre de connexions entre deux communautes
-int GuimeraAmaral::connexions(int p_numeroCommunauteA, int p_numeroCommunauteB){
+int GuimeraAmaral::connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB){
     return 0;
 }
 
 // Retourne oui si le noeud est peripherique, non sinon
-bool GuimeraAmaral::estPeriph(int p_numeroSommet){
+bool GuimeraAmaral::estPeriph(int const& p_numeroSommet){
     return false;
 }
 

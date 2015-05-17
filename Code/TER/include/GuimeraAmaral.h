@@ -21,14 +21,16 @@ using namespace std;
 class GuimeraAmaral {
     public:
         GuimeraAmaral(std::vector<int> const& p_noeudCommunaute, std::vector< std::vector<int> > const& p_communauteNoeud, const Graphe* p_graphe);
-        double varianceEntrante(int p_numeroCommunaute);
-        double varianceSortante(int p_numeroCommunaute);
-        double zScoreEntrantCommunaute(int noeud, int p_numeroCommunaute);
-        double zScoreSortantCommunaute(int noeud, int p_numeroCommunaute);
-        bool estHub(int noeud, int p_numeroCommunaute);
-        bool estConnect(int noeud);
-        bool estPeriph(int noeud);
-        int connexions(int p_numeroCommunauteA, int p_numeroCommunauteB);
+        double varianceEntrante(int const& p_numeroCommunaute) const;
+        double varianceSortante(int const& p_numeroCommunaute) const;
+        double zScoreEntrantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute) const;
+        double zScoreSortantCommunaute(int const& p_numeroSommet, int const& p_numeroCommunaute) const;
+        bool estHub(int const& p_numeroSommet, int const& p_numeroCommunaute) const;
+        double participationExterne(int const& p_numeroSommet) const;
+        double participationInterne(int const& p_numeroSommet) const;
+        bool estConnect(int const& p_numeroSommet);
+        bool estPeriph(int const& p_numeroSommet);
+        int connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB);
         //Getters
         vector<int> getNoeudCommunaute() const;
         vector< vector<int> > getCommunauteNoeud() const;
@@ -41,12 +43,12 @@ class GuimeraAmaral {
         const Graphe* getGraphe() const;
     private:
         //Fonctions de calculs pour le constructeur
-        double degreMoyenEntrantCommunaute(int p_numeroCommunaute);
-        int degreEntrantCommunaute(int noeud, int p_numeroCommunaute);
-        double ecartTypeEntrantCommunaute(int p_numeroCommunaute);
-        double degreMoyenSortantCommunaute(int p_numeroCommunaute);
-        int degreSortantCommunaute(int noeud, int p_numeroCommunaute);
-        double ecartTypeSortantCommunaute(int p_numeroCommunaute);
+        double degreMoyenEntrantCommunaute(int const& p_numeroCommunaute)  const;
+        int degreEntrantCommunaute(int const& noeud, int const& p_numeroCommunaute)  const;
+        double ecartTypeEntrantCommunaute(int const& p_numeroCommunaute)  const;
+        double degreMoyenSortantCommunaute(int const& p_numeroCommunaute)  const;
+        int degreSortantCommunaute(int const& noeud, int const& p_numeroCommunaute)  const;
+        double ecartTypeSortantCommunaute(int const& p_numeroCommunaute)  const;
 
         std::vector<int> m_noeudCommunaute; // Pour chaque noeud, la communauté à laquelle il appartient
         std::vector< std::vector<int> > m_communauteNoeud; //Pour chaque communauté, la liste des noeuds lui appartenant
