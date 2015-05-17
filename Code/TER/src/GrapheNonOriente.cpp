@@ -56,6 +56,10 @@ unsigned int GrapheNonOriente::nbArcs() const{
     return m_nbArcs;
 }
 
+bool GrapheNonOriente::estOriente() const{
+    return false;
+}
+
 int GrapheNonOriente::getDegreBoucle(unsigned int const& p_numeroSommet) const{
     assert(p_numeroSommet < size());
 

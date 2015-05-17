@@ -17,6 +17,7 @@ class Graphe
         //Methodes non-définies dans cette classe mais dans les classes filles (héritées)
         virtual unsigned int size() const = 0;
         virtual unsigned int nbArcs() const = 0;
+        virtual bool estOriente() const = 0;
         virtual int getDegreBoucle(unsigned int const& p_numeroSommet) const = 0;
         virtual int getDegreSortant(unsigned int const& p_numeroSommet) const = 0;
         virtual int getDegreEntrant(unsigned int const& p_numeroSommet) const = 0;

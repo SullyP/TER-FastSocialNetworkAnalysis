@@ -129,6 +129,10 @@ unsigned int GrapheOriente::nbArcs() const{
     return m_arcsSortants.size();
 }
 
+bool GrapheOriente::estOriente() const{
+    return true;
+}
+
 int GrapheOriente::getDegreBoucle(unsigned int const& p_numeroSommet) const{
     assert(p_numeroSommet < size());
 
