@@ -18,6 +18,8 @@
 
 using namespace std;
 
+enum Connectivite { TRESFAIBLE = -1, FAIBLE = 0, FORT = 1, TRESFORT = 2};
+
 class GuimeraAmaral {
     public:
         GuimeraAmaral(std::vector<int> const& p_noeudCommunaute, std::vector< std::vector<int> > const& p_communauteNoeud, const Graphe* p_graphe);
@@ -30,7 +32,7 @@ class GuimeraAmaral {
         double participationInterne(int const& p_numeroSommet) const;
         bool estPeripherique(int const& p_numeroSommet) const;
         bool estUltraPeripherique(int const& p_numeroSommet) const;
-        int connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB) const;
+        Connectivite connectiviteNoeud(int const& p_numeroSommet) const;
         //Getters
         vector<int> getNoeudCommunaute() const;
         vector< vector<int> > getCommunauteNoeud() const;

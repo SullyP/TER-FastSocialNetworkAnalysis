@@ -1,9 +1,5 @@
 #include "GuimeraAmaral.h"
 
-// ecartTypeInterne[i] = ecartTypeInt(i);
-// degreMoyenInterneCommu[i] = degreMoyenIntCom(i);
-// degreInterneCommu[i] = degreIntCom(i);// Calcule la variance interne (?)
-
 GuimeraAmaral::GuimeraAmaral(std::vector<int> const& p_noeudCommunaute, std::vector< std::vector<int> > const& p_communauteNoeud, const Graphe* p_graphe){
     m_noeudCommunaute = p_noeudCommunaute;
     m_communauteNoeud = p_communauteNoeud;
@@ -191,11 +187,6 @@ double GuimeraAmaral::participationInterne(int const& p_numeroSommet) const{
 	return (1 - sum);
 }
 
-// Retourne le nombre de connexions entre deux communautes
-int GuimeraAmaral::connexions(int const& p_numeroCommunauteA, int const& p_numeroCommunauteB) const{
-    return 0;
-}
-
 // Retourne oui si le noeud est peripherique, non sinon
 bool GuimeraAmaral::estPeripherique(int const& p_numeroSommet) const{
     return ((zScoreEntrantCommunaute(p_numeroSommet, m_noeudCommunaute[p_numeroSommet]))<2.5
@@ -206,6 +197,30 @@ bool GuimeraAmaral::estPeripherique(int const& p_numeroSommet) const{
 bool GuimeraAmaral::estUltraPeripherique(int const& p_numeroSommet) const{
     return ((zScoreEntrantCommunaute(p_numeroSommet, m_noeudCommunaute[p_numeroSommet]))<2.5
             && participationExterne(p_numeroSommet) <= 0.05);
+}
+
+Connectivite GuimeraAmaral::connectiviteNoeud(int const& p_numeroSommet) const{
+    double p = participationExterne(p_numeroSommet);
+    double z = zScoreEntrantCommunaute(p_numeroSommet, m_noeudCommunaute[p_numeroSommet]);
+    if(z >= 2.5){
+        if(p <= 0.3){
+            return FAIBLE;
+        }else if(p <= 0.75){
+            return FORT;
+        }else{
+            return TRESFORT;
+        }
+    }else{
+        if(p <= 0.05){
+            return TRESFAIBLE;
+        }else if(p <= 0.62){
+            return FAIBLE;
+        }else if(p <= 0.8){
+            return FORT;
+        }else{
+            return TRESFORT;
+        }
+    }
 }
 
 //Getters
