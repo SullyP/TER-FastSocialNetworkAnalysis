@@ -265,10 +265,10 @@
 
 1431815196 source:d:\mes documents\workspace\ter\code\ter\src\graphebinary.cpp
 
-1431815174 source:d:\mes documents\workspace\ter\code\ter\src\guimeraamaral.cpp
+1431857898 source:d:\mes documents\workspace\ter\code\ter\src\guimeraamaral.cpp
 	"GuimeraAmaral.h"
 
-1431815172 d:\mes documents\workspace\ter\code\ter\include\guimeraamaral.h
+1431855434 d:\mes documents\workspace\ter\code\ter\include\guimeraamaral.h
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -281,6 +281,7 @@
 	<map>
 	<set>
 	<algorithm>
+	"Communaute.h"
 
 1431815302 source:d:\mes documents\workspace\ter\code\ter\src\participationexterne.cpp
 	<iostream>

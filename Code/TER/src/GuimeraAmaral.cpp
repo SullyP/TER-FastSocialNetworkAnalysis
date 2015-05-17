@@ -13,15 +13,14 @@ GuimeraAmaral::GuimeraAmaral(Communaute const& p_communaute){
     m_degreMoyenInterneCommunaute.resize(m_communauteNoeud.size());
     m_ecartTypeInterneCommunaute.resize(m_communauteNoeud.size());
 
+    #pragma omp for
     for (unsigned int numeroSommet=0; numeroSommet < m_graphe->size(); numeroSommet++) {
             m_degreInterneCommunaute[numeroSommet] = degreIntCom(numeroSommet, m_noeudCommunaute[numeroSommet]);
     }
 
+    #pragma omp for
     for (unsigned int numeroCommunaute=0; numeroCommunaute < m_communauteNoeud.size(); numeroCommunaute++) {
             m_degreMoyenInterneCommunaute[numeroCommunaute] = degreMoyenIntCom(numeroCommunaute);
-    }
-
-    for (unsigned int numeroCommunaute=0; numeroCommunaute < m_communauteNoeud.size(); numeroCommunaute++) {
             m_ecartTypeInterneCommunaute[numeroCommunaute] = ecartTypeInt(numeroCommunaute);
     }
 }
@@ -35,7 +34,7 @@ double GuimeraAmaral::varianceInt(int p_numeroCommunaute){
     for (unsigned int i = 0; i < m_communauteNoeud[p_numeroCommunaute].size(); i++){
         degreNoeud = m_degreInterneCommunaute[m_communauteNoeud[p_numeroCommunaute][i]];
         tmpBis = degreNoeud - moyenne;
-        tmp = tmpBis*tmpBis;
+        tmp += tmpBis*tmpBis;
     }
     return (tmp/(double)m_communauteNoeud[p_numeroCommunaute].size());
 }
@@ -67,11 +66,10 @@ double GuimeraAmaral::ecartTypeInt(int p_numeroCommunaute){
 
 // Retourne le zscore d'une noeud en argument dans une communaute en argument pour un graphe g
 double GuimeraAmaral::zScoreInt(int p_numeroSommet, int p_numeroCommunaute){
-    vector <int> ecartTypeInterne;
-    if (ecartTypeInterne[p_numeroCommunaute]==0)
+    if (m_ecartTypeInterneCommunaute[p_numeroCommunaute]==0)
        return 0;
     else
-       return ((m_degreInterneCommunaute[p_numeroSommet]-m_degreMoyenInterneCommunaute[p_numeroCommunaute])/ecartTypeInterne[p_numeroCommunaute]);
+       return ((m_degreInterneCommunaute[p_numeroSommet]-m_degreMoyenInterneCommunaute[p_numeroCommunaute])/m_ecartTypeInterneCommunaute[p_numeroCommunaute]);
 }
 
 // Retourne oui si le noeud est un hub, non sinon
