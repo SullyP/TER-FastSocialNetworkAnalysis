@@ -5,14 +5,15 @@
 	"GrapheNonOriente.h"
 	"IndiceEnsembliste.h"
 	"ParticipationExterne.h"
-	"Kcore.h"
 
-1425139158 embliste.h"
+1431815302 tionExterne.h"
+
+1431612560 embliste.h"
 
 1431815174 source:d:\mes documents\workspace\ter\code\ter\src\graphe.cpp
 	"Graphe.h"
 
-1430486658 
+1431612566 
 
 1431863266 d:\mes documents\workspace\ter\code\ter\include\graphe.h
 	<vector>
@@ -23,13 +24,13 @@
 1431864714 source:d:\mes documents\workspace\ter\code\ter\src\graphenonoriente.cpp
 	"GrapheNonOriente.h"
 
-1430495962 Oriente.h"
+1431815172 Oriente.h"
 
 1431863278 d:\mes documents\workspace\ter\code\ter\include\graphenonoriente.h
 	"Graphe.h"
 	"GrapheOriente.h"
 
-1429541500 ente.h"
+1431197770 ente.h"
 
 1431864718 source:d:\mes documents\workspace\ter\code\ter\src\grapheoriente.cpp
 	"GrapheOriente.h"
@@ -59,7 +60,7 @@
 1431818464 source:d:\mes documents\workspace\ter\code\ter\src\communaute.cpp
 	"Communaute.h"
 
-1430487384 e.h"
+1431861706 e.h"
 
 1431817726 d:\mes documents\workspace\ter\code\ter\include\communaute.h
 	"GrapheNonOriente.h"
@@ -134,6 +135,8 @@
 	<limits>
 	<algorithm>
 
+1431612566 >
+
 1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheBinary.h
 	<stdlib.h>
 	<stdio.h>
@@ -154,6 +157,8 @@
 	"IndiceEnsembliste.h"
 	"ParticipationExterne.h"
 	"Lecture.h"
+
+1431625177 "
 
 1431625198 /home/thanato/Documents/FastSNA/Code/TER/include/GrapheOriente.h
 	<iostream>
@@ -230,8 +235,12 @@
 1431613052 source:/home/thanato/Documents/FastSNA/Code/TER/src/GuimeraAmaral.cpp
 	"GuimeraAmaral.h"
 
+1431859204 aral.h"
+
 1431612560 /home/thanato/Documents/FastSNA/Code/TER/include/GuimeraAmaral.h
 	"GrapheBinary.h"
+
+1431612560 ary.h"
 
 1431612560 source:/home/thanato/Documents/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
 	"IndiceEnsembliste.h"
@@ -289,9 +298,85 @@
 	<math.h>
 	"ParticipationExterne.h"
 
-1431963166 d:\mes documents\workspace\ter\code\ter\include\kcore.h
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Arc.cpp
+	"Arc.h"
+
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Arc.h
+
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Graphe.cpp
+	"Graphe.h"
+
+1431867699 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Graphe.h
+	<vector>
+	<queue>
+	<cassert>
+	"Arc.h"
+
+1431616554 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/IndiceEnsembliste.cpp
+	"IndiceEnsembliste.h"
+
+1431616554 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/IndiceEnsembliste.h
+	<vector>
+	<algorithm>
+	<iterator>
+
+1431867699 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/main.cpp
+	<iostream>
+	"GrapheOriente.h"
+	"GrapheNonOriente.h"
+	"IndiceEnsembliste.h"
+	"ParticipationExterne.h"
+
+1431867699 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheOriente.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<stdlib.h>
+	<string>
+	<omp.h>
+	"Graphe.h"
+
+1431867699 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GrapheNonOriente.h
+	"Graphe.h"
+	"GrapheOriente.h"
+
+1431699459 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/ParticipationExterne.h
+	"Communaute.h"
 	"GrapheNonOriente.h"
 
-1431963166 source:d:\mes documents\workspace\ter\code\ter\src\kcore.cpp
-	"Kcore.h"
+1431867699 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/Communaute.h
+	"GrapheNonOriente.h"
+	<cstdlib>
+
+1431867699 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/Communaute.cpp
+	"Communaute.h"
+
+1431867699 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheNonOriente.cpp
+	"GrapheNonOriente.h"
+
+1431867699 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GrapheOriente.cpp
+	"GrapheOriente.h"
+
+1431867699 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/ParticipationExterne.cpp
+	<iostream>
+	<math.h>
+	"ParticipationExterne.h"
+
+1431876018 source:/home/nicolas/Documents/Ter/FastSNA/Code/TER/src/GuimeraAmaral.cpp
+	"GuimeraAmaral.h"
+
+1431876018 /home/nicolas/Documents/Ter/FastSNA/Code/TER/include/GuimeraAmaral.h
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<malloc.h>
+	<math.h>
+	<iostream>
+	<iomanip>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<algorithm>
+	"Communaute.h"
 

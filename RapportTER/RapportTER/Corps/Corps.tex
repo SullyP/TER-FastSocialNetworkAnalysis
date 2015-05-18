@@ -17,7 +17,7 @@
 \vspace{1cm}
 
 {
-Dans le cadre de recherches sur les réseaux, tout particulièrement les réseaux sociaux, nous sommes rapidement amenés à traiter des quantités importantes de données. Les données provenant des réseaux peuvent être représentées sous forme de graphes, nous pouvons donc faire appel à certaines informations que la théorie des graphes nous permet d'obtenir. Par exemple, la taille d'un graphe en nombre de noeuds ou de liens. Ou encore utiliser des algorithmes permettant de parcourir les différents noeuds d'un graphe.
+Dans le cadre de recherches sur les réseaux, tout particulièrement les réseaux sociaux, nous sommes rapidement amenés à traiter des quantités importantes de données. Les données provenant des réseaux peuvent être représentées sous forme de graphes, nous pouvons donc faire appel à certaines informations que la théorie des graphes nous permet d'obtenir. Par exemple, la taille d'un graphe en nombre de nœuds ou de liens. Ou encore utiliser des algorithmes permettant de parcourir les différents nœuds d'un graphe.
 ~\\ \\ 
 Pour aller plus loin, la théorie des réseaux complexes permet de comprendre comment de tels réseaux se forment, grandissent, quelles caractéristiques ils partagent. Ceci permet par exemple de comprendre comment l'information ou une infection se propage dans un réseau.
 ~\\ \\
@@ -39,9 +39,9 @@ utilisable, sans oublier d'enrichir la librairie d'algorithmes classiques de la 
 
 \vspace{1cm}
 {
-Lors de la dernière décennie nous avons vu émerger de nombreux services de réseaux sociaux, c'est à dire des environnements collaboratifs centrés sur l'individu. En effet, il existe une multitude de réseaux sociaux, certains destinés à regrouper des amis de la vie réelle, comme Facebook. D'autres aident à trouver des relations professionnels (emplois, liens commerciaux), amicales, amoureuses, ou permettent la découverte et le partage de contenus.
+Lors de la dernière décennie nous avons vu émerger de nombreux services de réseaux sociaux, c'est à dire des environnements collaboratifs centrés sur l'individu. En effet, il existe une multitude de réseaux sociaux, certains destinés à regrouper des amis de la vie réelle, comme Facebook. D'autres aident à trouver des relations professionnelles (emplois, liens commerciaux), amicales, amoureuses, ou permettent la découverte et le partage de contenus.
 \\ \\
-L'ensemble de ces plateformes a vu son nombre d'utilisateurs exploser, comme c'est le cas pour Twitter (permettant le partage, la découverte, et le débat d'informations) qui est passé de 200 millions de comptes en Avril 2011 à 500 millions en Octobre 2012.
+L'ensemble de ces plate-formes a vu son nombre d'utilisateurs exploser, comme c'est le cas pour Twitter (permettant le partage, la découverte, et le débat d'informations) qui est passé de 200 millions de comptes en Avril 2011 à 500 millions en Octobre 2012.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{tcot}
@@ -58,11 +58,11 @@ Mais les réseaux ne sont pas limités aux réseaux sociaux, et peuvent faire le
 \end{figure}
 \\ \\
 Dans un premier temps, il est nécessaire de définir quelques concepts liés à la représentation de réseaux sous forme de graphes.
-Un graphe est un ensemble de points, dont certaines paires sont directement reliées par un (ou plusieurs) lien(s). Ces liens peuvent être orientés, c'est-à-dire qu'un lien entre deux points u et v relie soit u vers v, soit v vers u : dans ce cas, le graphe est dit orienté. Sinon, les liens sont symétriques, et le graphe est dit non orienté. \\ Afin de représenter au mieux les données, nous pouvons placer des poids sur les noeuds ou sur les arêtes, par exemple : dans un graphe représentant des villes, on pourrait mettre une valeur en kilomètres sur les liens séparants 2 villes ; ou encore affecter le nombre d'habitants d'une ville à chaque noeud correspondant. Le degré d'un noeud correspond au nombre de ses voisins. On définit comme voisins d'un noeud N l'ensemble des noeuds ayant un lien direct avec N. 
+Un graphe est un ensemble de points, dont certaines paires sont directement reliées par un (ou plusieurs) lien(s). Ces liens peuvent être orientés, c'est-à-dire qu'un lien entre deux points u et v relie soit u vers v, soit v vers u : dans ce cas, le graphe est dit orienté. Sinon, les liens sont symétriques, et le graphe est dit non orienté. \\ Afin de représenter au mieux les données, nous pouvons placer des poids sur les nœuds ou sur les arêtes, par exemple : dans un graphe représentant des villes, on pourrait mettre une valeur en kilomètres sur les liens séparant 2 villes ; ou encore affecter le nombre d'habitants d'une ville à chaque nœud correspondant. Le degré d'un nœud correspond au nombre de ses voisins. On définit comme voisins d'un nœud N l'ensemble des nœuds ayant un lien direct avec N. 
 \\ \\
-Grâce à cela, il est déjà possible de répondre à certaines questions, comme par exemple trouver le chemin le plus court entre deux noeuds. Ou encore, de répondre à des problèmes comme le voyageur de commerce : on se place dans un graphe à n noeuds où l'on connaît les distances séparant chaque noeuds, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque noeuds et revienne au noeud de départ. L'ensemble des algorithmes de la théorie des graphes nous sert donc comme base pour nos algorithmes d'études de réseaux.
+Grâce à cela, il est déjà possible de répondre à certaines questions, comme par exemple trouver le chemin le plus court entre deux nœuds. Ou encore, de répondre à des problèmes comme le voyageur de commerce : on se place dans un graphe à n nœuds où l'on connaît les distances séparant chaque nœud, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque nœud et revienne au nœud de départ. L'ensemble des algorithmes de la théorie des graphes nous sert donc comme base pour nos algorithmes d'études de réseaux.
 \\ \\ 
-Dans un second temps, la théorie des réseaux complexes définit plusieurs mesures comme le nombre de sauts (utilisé dans les réseaux internet pour compter le nombre d'intermédiaire pour aller d'un point à un autre), ou encore la distribution des degrés, c'est à dire la probabilité qu'un noeud, choisi de manière aléatoire, comporte un certain degré. Le degré de séparation est également une notion importante qui définit le nombre de noeuds minimum pour aller d'un noeud à un autre.
+Dans un second temps, la théorie des réseaux complexes définit plusieurs mesures comme le nombre de sauts (utilisé dans les réseaux internet pour compter le nombre d'intermédiaire pour aller d'un point à un autre), ou encore la distribution des degrés, c'est à dire la probabilité qu'un nœud, choisi de manière aléatoire, comporte un certain degré. Le degré de séparation est également une notion importante qui définit le nombre de nœuds minimum pour aller d'un nœud à un autre.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{degreedistribution}
@@ -71,13 +71,13 @@ Dans un second temps, la théorie des réseaux complexes définit plusieurs mesu
 \\ \\ 
 Nous avons vu précédemment qu'avec la théorie des réseaux complexes, on recherche à comprendre comment les réseaux se forment, grandissent, et quelles caractéristiques ils partagent. Nous allons donc décrire plusieurs caractéristiques que les réseaux peuvent avoir en commun.
 \\ \\ 
-Un réseau est appelé small-world, en référence au phénomène du même nom qui indique que dans un graphe représentant un réseau social, il y a au plus $k$ (avec $k$ petit, souvent inférieur à $10$) degrés de séparation entre deux noeuds. L'idée est donc que, dans un réseau small-world, le degré de séparation entre deux noeuds est très petit (mathématiquement, il augmente de manière logarithmique en fonction de la taille du réseau).
+Un réseau est appelé small-world, en référence au phénomène du même nom qui indique que dans un graphe représentant un réseau social, il y a au plus $k$ (avec $k$ petit, souvent inférieur à $10$) degrés de séparation entre deux nœuds. L'idée est donc que, dans un réseau small-world, le degré de séparation entre deux nœuds est très petit (mathématiquement, il augmente de manière logarithmique en fonction de la taille du réseau).
 \\ \\ 
 Il existe également des réseaux appelés scale-free, dont la distribution des degrés suit une loi de puissance. Une loi de puissance est une relation entre deux quantités x et y qui peut s'écrire de la façon suivante :
 $ y = ax^k $
-De part la loi de puissance et son principe d'invariance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de noeuds/liens).
+De part la loi de puissance et son principe d'invariance d'échelle, les réseaux scale-free suivent cette propriété de loi de puissance peu importe l'échelle du graphe (nombre de nœuds/liens).
 \\ \\ 
-Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels noeuds du réseau sont importants, influents, centraux, ou connaitre quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis ou de sa communauté.
+Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, afin d'observer les groupes d'individus ayant une liaison forte (ces groupes sont appelés communautés~\cite{communautes, structure}). Grâce à ce que nous avons vu, nous pouvons par exemple essayer de savoir quels nœuds du réseau sont importants, influents, centraux, ou connaître quel contenu recommander à quelqu'un dont on connaît les goûts de ses amis ou de sa communauté.
 }
 
 %------------------------------Fin Introduction------------------------------
@@ -93,7 +93,7 @@ Nous pouvons être amenés à vouloir partitionner un ensemble d'utilisateurs, a
 \vspace{1cm}
 {
 Actuellement, une partie des algorithmes que nous allons reprendre a déjà été implémentée, notre travail va donc consister à adapter ces algorithmes pour notre structure de données, et à implémenter nous-mêmes les algorithmes restants. 
-Les al\=gorithmes que nous allons devoir traiter sont les suivants : \\ \\
+Les algorithmes que nous allons devoir traiter sont les suivants : \\ \\
 	
 \begin{description}
 \item[Jaccard :] Il s'agit d'étudier le jaccard \cite{jaccard} de deux ensembles de sommets A et B, c'est à dire le cardinal de l'intersection de A et B, divisé par le cardinal de l'union de A et B. A est l'ensemble des voisins sortants et B l'ensemble des voisins entrants. \[J(A,B) = \frac{|A \cap B|}{|A \cup B|}\] Cela permet de voir les similitudes en deux ensembles. Par exemple, on peut comparer le voisinage de deux utilisateurs et déterminer leur ressemblance, ou encore comparer les communautés résultantes d'algorithmes différents, afin de voir leur correspondance. Il existe aussi OverlapIndex qui permet de mesurer le chevauchement de deux ensembles et est défini comme ceci : \[O(A,B) = \frac{|A \cap B|}{min(|A|,|B|)}\]
@@ -107,7 +107,7 @@ Les al\=gorithmes que nous allons devoir traiter sont les suivants : \\ \\
 \includegraphics[width=0.9\textwidth]{fast}
 \caption{Un exemple des différentes étapes de l'algorithme de Louvain}
 \end{figure}
-\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne - le nombre de nœuds de la m\^eme communauté auquel un nœud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un noeud aux autres communautés à travers la participation externe. Un noeud est dit connecteur s'il est connecté à beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne. Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté proportionnellement aux liaisons des autres nœuds de la communauté.\\ \[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] \\ \\ \\ \\La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du noeud i dans sa communauté.\cite{GA}
+\item[Guimera et Amaral :]  On se penchera ici sur le rôle que jouent les nœuds, c'est à dire s'ils sont hubs (s'ils sont incontournables dans une communauté), ce qui est définit par le z-score de leur degré interne - le nombre de nœuds de la m\^eme communauté auquel un nœud est connecté. Empiriquement, un hub est dit hub si ce score est supérieur à 2.5. On étudie également la connectivité d'un nœud aux autres communautés à travers la participation externe. Un nœud est dit connecteur s'il est connecté à beaucoup d'autres communautés. En revanche, il est dit périphérique s'il dispose de peu de connexions vers d'autres communautés que la sienne. Le z-score est défini comme suit: \[Z_i=\frac{l_i-\overline{L}}{\sigma_L}\] où $L = \{l_i,...,l_n\} $ avec $l$ les liaisons du nœud actuel, $L$ la moyenne des liaisons des nœuds de la communauté et $\sigma$ l'écart type. Le z-score du degré interne est la normalisation entre les différents graphes. Il permet d'obtenir le nombre de liaisons dans la communauté proportionnellement aux liaisons des autres nœuds de la communauté.\\ \[Z_i=\frac{d_{int}^i - \overline{d_{int}^{c_i}}}{\sigma_{d_{int}}^{c_i}}\] \\ \\ \\ \\La participation externe permet de connaître la connectivité avec l'extérieur (vers 0 quand peu connecté avec l'extérieur, vers 1 quand très connecté). \[P_i=\sum_i\left(\frac{d_c}{d_i}\right)^2\] $d_c$ est le degré du nœud i dans sa communauté.\cite{GA}
 \newline
 \item[Dugué et Perez  :] Ce dernier point est une adaptation des mesures de Guimera et Amaral. On traitera de la connectivité externe, en étudiant la diversité, l'intensité et l'hétérogénéité. La diversité correspond au z-score du nombre de communautés externes auquel le nœud est connecté. L'intensité correspond au z-score du nombre de liens vers l'extérieur. Enfin, l'hétérogénéité est l'écart type de la moyenne des liens vers les communautés extérieures, par communauté extérieure, et pour chaque nœud. \cite{NDAP1}\cite{NDAP2}  \\ 
 \end{description} 
@@ -136,17 +136,17 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 10/10
 
-\textbf{Justification :} Les solutions existantes sont déjà en C++. De plus, les programmes qui utilisent les solutions existantes le sont également. Enfin, cela permet un usage simple dans des programmes en C++. Par ailleurs, C++ est un language performant et OpenMP permet de paralléliser simplement du code C++ . Ainsi, par souci de continuité et de performance, C++ est choisi.
+\textbf{Justification :} Les solutions existantes sont déjà en C++. De plus, les programmes qui utilisent les solutions existantes le sont également. Enfin, cela permet un usage simple dans des programmes en C++. Par ailleurs, C++ est un langage performant et OpenMP permet de paralléliser simplement du code C++ . Ainsi, par souci de continuité et de performance, C++ est choisi.
 }
 
 \subsection{Environnement cible}
 \subsubsection{La machine Speed}
 {
-\textbf{Description :} L'environnement cible de notre bibliothèque est la machine Speed qui comporte 64 coeurs et 64 Go de RAM. En outre l'utilisation de la mémoire doit être limitée.
+\textbf{Description :} L'environnement cible de notre bibliothèque est la machine Speed qui comporte 64 cœurs et 64 Go de RAM. En outre l'utilisation de la mémoire doit être limitée.
 
 \textbf{Priorité :} 10/10
 
-\textbf{Justification :} Avec 64Go et des réseaux qui peuvent en occuper la moitié, il est nécessaire d'avoir des algorithmes n'abusant pas de la mémoire vive.
+\textbf{Justification :} Avec 64 Go et des réseaux qui peuvent en occuper la moitié, il est nécessaire d'avoir des algorithmes n'abusant pas de la mémoire vive.
 }
 
 \subsubsection{Algorithmes non-récursif}
@@ -213,7 +213,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 9/10
 
-\textbf{Justification :} En effet, l'environnement cible dispose de 64 coeurs, il est donc très intéressant de paralléliser nos programmes et de bénéficier d'un temps de calcul beaucoup plus réduit. OpenMP \cite{OpenMP} permet une parallélisation simple de programmes grâce à l'utilisation de directives (lignes de code qui seront remplacées à la compilation pour transformer certains blocs en blocs parallèles, avec des paramètres définis).
+\textbf{Justification :} En effet, l'environnement cible dispose de 64 cœurs, il est donc très intéressant de paralléliser nos programmes et de bénéficier d'un temps de calcul beaucoup plus réduit. OpenMP \cite{OpenMP} permet une parallélisation simple de programmes grâce à l'utilisation de directives (lignes de code qui seront remplacées à la compilation pour transformer certains blocs en blocs parallèles, avec des paramètres définis).
 }
 
 \subsection{Algorithmes}
@@ -279,7 +279,7 @@ Ce qui est attendu de nous pour ces travaux, c'est de débuter la constitution d
 
 \textbf{Priorité :} 8/10
 
-\textbf{Justification :} Lorsque l'on écrit un programme, il est nécéssaire de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu'il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
+\textbf{Justification :} Lorsque l'on écrit un programme, il est nécessaire de vérifier qu'il fonctionne ; pour cela on réalise des tests. Ces tests permettent de s'assurer que le code ne bug pas, qu'il réalise ce pourquoi il a été écrit, et qu'il ne fait rien d'autre que cela. Il est donc vital pour notre librairie de tester notre code.
 }
 
 \subsection{Documentation}
@@ -408,11 +408,11 @@ bla bla
 
 \vspace{1cm}
 {
-Nous avons choisis de mettre en place une architecture simple, une définition de graphe modulable avec un objet pour chaque algorithme qui s'articule autour.
+Nous avons choisi de mettre en place une architecture simple, une définition de graphe modulable avec un objet pour chaque algorithme qui s'articule autour.
 \\ \\
-La définition de graphe est le coeur de la librairie, c'est pourquoi nous avons choisie de faire une classe abstraite graphe qui est hérité par deux classes : une pour un graphe orienté et une autre pour un graphe non-orienté. Ceci permet de pouvoir utiliser de manière simple un graphe en paramètre d'une fonction. En effet, je peu demander un pointeur de Graphe si ma fonction s'exécute de la même manière pour un graphe orienté ou non. Alors que si tel n'est pas le cas, je peux créé deux fonctions pour gérer les deux types de graphes différemment. Graphe est certes une classe abstraite, mais elle spécifie les fonctions minimales qu'un graphe doit implémenter, on peut donc utiliser un graphe orienté ou non orienté de la même façon.
+La définition de graphe est le cœur de la librairie, c'est pourquoi nous avons choisi de faire une classe abstraite graphe, qui est héritée par deux classes : une pour un graphe orienté et une autre pour un graphe non-orienté. Ceci permet d'utiliser de manière simple un graphe en paramètre d'une fonction. En effet, on peut demander un pointeur de Graphe si la fonction s'exécute de la même manière pour un graphe orienté ou non. Alors que dans le cas contraire, on doit créer deux fonctions pour gérer les deux types de graphes différemment. Graphe est certes une classe abstraite, mais elle spécifie les fonctions minimales qu'un graphe doit implémenter ; on peut donc utiliser un graphe orienté ou non orienté de la même façon.
 \\ \\
-Le reste des algorithmes vient donc se greffer de manière modulable sur cette base qu'est l'implémentation des graphes. Tout en ajoutant leurs lots de fonctionnalités qui peuvent donc êtres à nouveau utilisées pour de nouveaux algorithmes.
+Le reste des algorithmes vient donc se greffer de manière modulable sur cette base qu'est l'implémentation des graphes, tout en ajoutant leurs lots de fonctionnalités qui peuvent être à nouveau utilisées pour de nouveaux algorithmes.
 }
 
 
@@ -447,11 +447,11 @@ L'algorithme de parcours en largeur (ou BFS, pour Breadth First Search) permet l
 }
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{Graphe}, car c'est un algorithme basique de parcours d'un graphe et qui s'utilise peut importe l'orientation de ce dernier.
+Nous avons implémenté cet algorithme dans la classe \textit{Graphe}, car c'est un algorithme basique de parcours d'un graphe, et pouvant s'utiliser peut importe l'orientation du graphe.
 }
 \subsubsection{Justifications techniques}
 {
-Notre implémentation prend en paramètre un numéro de sommet, afin de définir la source du parcours, ainsi qu'un paramètre optionnel qui est un tableau de sommets à ne pas prendre en compte. Ceci peut permettre d'indiquer au parcours de ne pas utiliser certains sommets. Nous avons également choisis de retourner un tableau de booléen pour chaque sommet du graphe, vrai si le sommet à été trouver lors de la recherche, faux sinon. Ce tableau permet par exemple de vérifier la connexité d'un graphe.
+Notre implémentation prend en paramètre un numéro de sommet, afin de définir la source du parcours, ainsi qu'un paramètre optionnel qui est un tableau de sommets à ne pas prendre en compte. Ceci peut permettre d'indiquer au parcours de ne pas utiliser certains sommets. Nous avons également choisi de retourner un tableau de booléens pour chaque sommet du graphe : vrai si le sommet a été trouvé lors de la recherche, faux sinon. Ce tableau permet par exemple de vérifier la connexité d'un graphe.
 }
 
 \subsection{Jaccard et OverlapIndex}
@@ -461,7 +461,7 @@ Ces algorithmes permettent de connaître la similarité et la diversité de deux
 }
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{IndiceEnsembliste} afin de les regrouper puisqu'ils utilise les mêmes données.
+Nous avons implémenté cet algorithme dans la classe \textit{IndiceEnsembliste} afin de les regrouper, puisqu'ils utilisent les mêmes données.
 }
 \subsubsection{Justifications techniques}
 {
@@ -471,11 +471,11 @@ Notre implémentation effectue la plus grande majorité des calculs dans le cons
 \subsection{K-core}
 \subsubsection{Description technique}
 {
-Cette algorithme permet d'obtenir un graphe de type K-core permettant de mettre en évidence la diffusion d'informations et les noyaux centraux qui les diffusent.
+Cet algorithme permet d'obtenir un graphe de type K-core, permettant de mettre en évidence la diffusion d'informations et les noyaux centraux qui les diffusent.
 }
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{Kcore} afin d'être utilisé par d'autres algorithmes.
+Nous avons implémenté cet algorithme dans la classe \textit{Kcore} afin de le rendre utilisable par d'autres algorithmes.
 }
 \subsubsection{Justifications techniques}
 {
@@ -485,44 +485,44 @@ ELEONORE TODO
 \subsection{Louvain}
 \subsubsection{Description technique}
 {
-Cette algorithme permet de détecter les communautés d'un graphe via la maximisation d'une mesure appelée la modularité.
+Cet algorithme permet de détecter les communautés d'un graphe via la maximisation d'une mesure appelée modularité.
 }
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{Communaute}. Son constructeur permet de préciser le nombre de passes à effectuer pour la détection de communauté, ainsi que la modularité minimum en dessous de laquelle l'algorithme s'arrête. On peu également renseigné un paramètre facultatif pour indiquer à l'algorithme de débuter avec une certaine répartition des communautés déjà évaluée.
+Nous avons implémenté cet algorithme dans la classe \textit{Communaute}. Son constructeur permet de préciser le nombre de passes à effectuer pour la détection de communautés, ainsi que la modularité minimale en dessous de laquelle l'algorithme s'arrête. On peut également renseigner un paramètre facultatif pour indiquer à l'algorithme de débuter avec une certaine répartition des communautés déjà évaluées.
 \\ \\ 
-Afin de lancer l'algorithme, il est nécessaire de lancer la fonction \textit{effectuerUneEtape()}, nous avons garder ce fonctionnement afin de permettre une migration facilité des anciens codes vers une adaptation utilisant notre librairie.
+Afin de lancer l'algorithme, il est nécessaire de lancer la fonction \textit{effectuerUneEtape()}, nous avons gardé ce fonctionnement afin de permettre une migration facilitée des anciens codes vers une utilisation de notre librairie.
 \\ \\ 
-Par la suite les informations peuvent êtres obtenus via \textit{getCommunauteNoeud()} qui renvoye la partition sous forme d'un tableau pour chaque communauté, l'ensemble de ses noeuds, ou via \textit{getNoeudCommunaute} qui renvoie la partition sous forme d'un tableau pour chaque noeud, la communauté à laquelle il appartient. On peut également obtenir le graphe où chaque noeud représente une communauté via \textit{getGrapheCommunaute()}.
+Par la suite les informations peuvent être obtenues via \textit{getCommunauteNoeud()}, qui renvoie la partition sous forme d'un tableau pour chaque communauté, l'ensemble de ses nœuds ; ou via \textit{getNoeudCommunaute} qui renvoie la partition sous forme d'un tableau avec, pour chaque nœud, la communauté à laquelle il appartient. On peut également obtenir le graphe où chaque nœud représente une communauté via \textit{getGrapheCommunaute()}.
 }
 \subsubsection{Justifications techniques}
 {
-Nous avons décidé de stocker l'ensemble des informations pour accélérer le temps de calcul, et la restitution d'informations via les getters (\textit{getCommunauteNoeud} et \textit{getNoeudCommunaute}). \textit{m\_in} permet de stocker pour chaque communauté la somme des poids des arcs internes et \textit{m\_tot} pour chaque communauté la somme des poids des arcs entrants depuis une autre communauté. Ces variables sont utilisées et mise à jour par plusieurs fonctions et représente le coeur des informations permettant de détecter les communautés.
+Nous avons décidé de stocker l'ensemble des informations pour accélérer le temps de calcul, et la restitution d'informations via les getters (\textit{getCommunauteNoeud} et \textit{getNoeudCommunaute}). \textit{m\_in} permet de stocker pour chaque communauté la somme des poids des arcs internes et \textit{m\_tot} pour chaque communauté la somme des poids des arcs entrants depuis une autre communauté. Ces variables sont utilisées et mise à jour par plusieurs fonctions et représente le cœur des informations permettant de détecter les communautés.
 \\ \\ 
-Nous avons également trois variables permettant de stocker des informations sur le voisinage d'un sommet, ces informations sont utiles lorsque l'on décide si l'on doit changer le sommet de communauté. Ces informations pourrait être stocker temporairement dans une structure ad hoc, mais cela nécessiterait de recalculer une partie des données alors que actuellement le minimum de calcul est effectué pour mettre à jour ces informations.
+Nous avons également trois variables permettant de stocker des informations sur le voisinage d'un sommet, ces informations sont utiles lorsque l'on décide si l'on doit changer le sommet de communauté. Ces informations pourraient être stockées temporairement dans une structure ad hoc, mais cela nécessiterait de recalculer une partie des données, alors qu'actuellement, le minimum de calcul est effectué pour mettre à jour ces informations.
 }
 
 \subsection{Guimera et Amaral}
 \subsubsection{Description technique}
 {
-Cette algorithme permet d'obtenir le rôle des noeuds par rapport au graphe, à leur communauté ou aux autres communautés, et ceci par l'intermédiaire de deux mesures appelée z-score (statistique qui permet de conclure à la signifiance ou non d'un écart dans un profil) et participation (la participation permet de connaître la connectivité avec l'extérieur (participation externe) ou l'intérieur (participation interne) d'une communauté, cette mesure s'étend de 0 (peu connecté) à 1 (très connecté)).
+Cet algorithme permet d'obtenir le rôle des nœuds par rapport au graphe, à leur communauté ou aux autres communautés, et ceci par l'intermédiaire de deux mesures appelées z-score (statistique qui permet de conclure à la signifiance ou non d'un écart dans un profil) et participation (la participation permet de connaître la connectivité avec l'extérieur (participation externe) ou avec l'intérieur (participation interne) d'une communauté ; cette mesure s'étend de 0 (peu connecté) à 1 (très connecté)).
 }
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{GuimeraAmaral} toujours dans l'idée de limiter d'effectuer les mêmes calculs puisque de nombreuses fonctions utilisent les mêmes données. Nous avons fait le choix de laisser les fonctions de calculs du z-score et de la participation accessible en public, mais nous avons tout de même mis en place des fonctions simples qui permettent de donner des significations à ces deux mesures. Par exemple pour savoir l'importance de connectivité d'un noeud.
+Nous avons implémenté cet algorithme dans la classe \textit{GuimeraAmaral}, toujours dans l'idée de limiter la réalisation des mêmes calculs à répétition, comme de nombreuses fonctions utilisent les mêmes données. Nous avons fait le choix de laisser les fonctions de calcul du z-score et de la participation accessible en public, mais nous avons tout de même mis en place des fonctions simples qui permettent de donner des significations à ces deux mesures. Par exemple pour savoir l'importance de connectivité d'un nœud.
 }
 \subsubsection{Justifications techniques}
 {
-Nous avons mis en place une implémentation pour graphe orienté et non-orienté, nous avons fais le choix de limiter les calculs en évitant de calculer ou de stocker les valeurs pour les arcs sortants d'un graphe non-orienté. En effet, nous calculons et stockons déjà les données pour les arcs entrants or ces données sont identiques à celles des arcs sortants dans le cas d'un graphe non-orienté. Les fonctions associés retournent donc la même chose dans ce cas (sortants/entrants).
+Nous avons mis en place une implémentation pour graphes orientés et non-orientés, nous avons fait le choix de limiter les calculs en évitant de calculer ou de stocker les valeurs pour les arcs sortants d'un graphe non-orienté. En effet, nous calculons et stockons déjà les données pour les arcs entrants, or ces données sont identiques à celles des arcs sortants dans le cas d'un graphe non-orienté. Les fonctions associées retournent donc la même chose dans ce cas.
 \\ \\
 D'autre part, nous avons stocké l'ensemble des informations qui sont utilisées à maintes reprises par les autres fonctions :}
 \begin{itemize}
     \item \textit{m\_graphe} : le graphe
-    \item \textit{m\_noeudCommunaute} : pour chaque noeud, la communauté à laquelle il appartient
-    \item \textit{m\_communauteNoeud} : pour chaque communauté, la liste des noeuds lui appartenant
-    \item \textit{m\_degreEntrantCommunaute} : degré interne de chaque noeud pour sa communauté
+    \item \textit{m\_noeudCommunaute} : pour chaque nœud, la communauté à laquelle il appartient
+    \item \textit{m\_communauteNoeud} : pour chaque communauté, la liste des nœuds lui appartenant
+    \item \textit{m\_degreEntrantCommunaute} : degré interne de chaque nœud pour sa communauté
     \item \textit{m\_degreMoyenEntrantCommunaute} : pour chaque communauté, son degré moyen interne
-    \item \textit{m\_degreSortantCommunaute} : degré externe de chaque noeud pour sa communauté
+    \item \textit{m\_degreSortantCommunaute} : degré externe de chaque nœud pour sa communauté
     \item \textit{m\_degreMoyenSortantCommunaute} : pour chaque communauté, son degré moyen sortant
     \item \textit{m\_ecartTypeEntrantCommunaute} : pour chaque communauté, son écart type interne
     \item \textit{m\_ecartTypeSortantCommunaute} : pour chaque communauté, son écart type externe
@@ -531,20 +531,20 @@ D'autre part, nous avons stocké l'ensemble des informations qui sont utilisées
 \subsection{Dugué et Perez}
 \subsubsection{Description technique}
 {
-Cette algorithme est une amélioration de l'algorithme de Guimera et Amaral, il permet d'obtenir plusieurs informations en lieu et place de la participation externe :
+Cet algorithme est une amélioration de l'algorithme de Guimera et Amaral, il permet d'obtenir plusieurs informations en lieu et place de la participation externe :
 }
 \begin{itemize}
-    \item l'intensité externe : évalue le nombre de liens d'un noeud avec d'autre communautés (autre que la sienne), par rapport aux autres noeuds de sa communauté
-    \item la diversité : évalue le nombre de communautés auquel un noeud est connecté (autre que la sienne), par rapport aux autres noeuds de sa communauté
-    \item l'hétérogénéité : mesure la variation du nombre de liens d'un noeud, d'une communauté à une autre
+    \item l'intensité externe : évalue le nombre de liens d'un nœud avec d'autres communautés (autres que la sienne), par rapport aux autres nœuds de sa communauté
+    \item la diversité : évalue le nombre de communautés auquel un nœud est connecté (autres que la sienne), par rapport aux autres nœuds de sa communauté
+    \item l'hétérogénéité : mesure la variation du nombre de liens d'un nœud, d'une communauté à une autre
 \end{itemize}
 \subsubsection{Commentaires techniques}
 {
-Nous avons implémenté cette algorithme dans la classe \textit{ParticipationExterne}, cette classe éffectue l'ensemble des calculs dans son constructeur et ne sert par la suite qu'à sotcker les differentes informations.
+Nous avons implémenté cet algorithme dans la classe \textit{ParticipationExterne}, cette classe effectue l'ensemble des calculs dans son constructeur et ne sert par la suite qu'à stocker les différentes informations.
 }
 \subsubsection{Justifications techniques}
 {
-Nous avons mis en place une implémentation qui une fois les calculs terminés permet d'obtenir une structure de donnée qui permet d'accéder rapidement aux trois mesures que sont l'intensité, la diversité et l'hétérogénéité.}
+Nous avons mis en place une implémentation qui, une fois les calculs terminés, permet d'obtenir une structure de données qui donne accès rapidement aux trois mesures que sont l'intensité, la diversité et l'hétérogénéité.}
 }
 
 %------------------------------Fin Commentaires techniques------------------------------
@@ -667,18 +667,18 @@ bla bla
 \subsection{Graphe, GrapheOriente et GrapheNonOriente}
 {
 \begin{itemize}
-    \item Des algorithmes de base de la théorie des graphes comme par exemple, le parcours en profondeur.
-    \item Des améliorations pour obtenir certaines informations plus rapidement et qui seront utiles pour plusieurs algorithmes, comme nous l'avons fais pour \textit{getDegreBoucle} et \textit{getPoidsBoucle} dans le cadre de Louvain.
+    \item Des algorithmes de base de la théorie des graphes, comme par exemple le parcours en profondeur.
+    \item Des améliorations pour obtenir certaines informations plus rapidement, et qui seront utiles pour plusieurs algorithmes, comme nous l'avons fait pour \textit{getDegreBoucle} et \textit{getPoidsBoucle} dans le cadre de Louvain.
     \item Une fonction pour enregistrer un graphe dans un fichier.
     \item Un constructeur pour GrapheNonOriente à partir d'un fichier.
-    \item Utilisation de OpenMP pour paralléliser certains calculs.
+    \item Utilisation d'OpenMP pour paralléliser certains calculs.
 \end{itemize}
 }
 
 \subsection{IndiceEnsembliste}
 {
 \begin{itemize}
-    \item Ajouter de nouveaux indicateur de mesure concernant deux ensembles, comme la distance de Jaccard par exemple.
+    \item Ajouter de nouveaux indicateurs de mesure concernant deux ensembles, comme la distance de Jaccard par exemple.
 \end{itemize}
 }
 
@@ -687,7 +687,7 @@ bla bla
 \begin{itemize}
     \item Ajout d'une sauvegarde dans un fichier et constructeur via ce même fichier.
     \item Ajout d'un booléen pour savoir si l'instance à été initialisé avec une partition de communauté donnée.
-    \item Ajout d'un booléen pour savoir si la détection de communautés à déjà été lancé ou non.
+    \item Ajout d'un booléen pour savoir si la détection de communautés a déjà été lancée ou non.
     \item Si possible, utiliser OpenMP.
 \end{itemize}
 }
