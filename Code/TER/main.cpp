@@ -201,7 +201,7 @@ int main()
         if(k3[i]!=0)
         cout << i << " : " << k3[i] << "; ";
     }
-    cout << endl;*/
+    cout << endl;
 
     std::vector<int> k4 = kcore->kcore(grapheNonOriente,4);
 
