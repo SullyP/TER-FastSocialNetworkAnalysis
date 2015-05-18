@@ -172,7 +172,7 @@ int main()
     }
     cout << endl;
 
-    participationExterne(com, 1);
+    ParticipationExterne duguePerez = ParticipationExterne(com, 1);
 
     Kcore* kcore;
 

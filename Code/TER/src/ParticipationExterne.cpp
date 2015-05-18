@@ -4,9 +4,9 @@
 
 using namespace std;
 
-vector<int> participationExterne(Communaute communaute, int num_com){
-    const GrapheNonOriente* graphe = communaute.getGraphe();
-    vector<int> listCommunaute = communaute.getNoeudCommunaute();
+ParticipationExterne::ParticipationExterne(Communaute const& p_communaute, int const& p_numeroSommet){
+    const GrapheNonOriente* graphe = p_communaute.getGraphe();
+    vector<int> listCommunaute = p_communaute.getNoeudCommunaute();
     vector<double> moyenne;
     vector<int> moyenneNoeud;
     vector<bool> visiteCommunaute;
@@ -31,7 +31,7 @@ vector<int> participationExterne(Communaute communaute, int num_com){
 
     for(unsigned int noeud = 0; noeud < listCommunaute.size(); noeud++){
 
-        if (listCommunaute[noeud] == num_com){
+        if (listCommunaute[noeud] == p_numeroSommet){
             moyenne.push_back(0);
             vector<Arc> voisins = graphe->getArcsSortants(noeud);
             for(unsigned int i = 0; i < voisins.size(); i++){
@@ -80,5 +80,21 @@ vector<int> participationExterne(Communaute communaute, int num_com){
 
     participation[1] /= cpt;
 
-    return participation;
+    m_diversite = participation[0];
+    m_intensite = participation[1];
+    m_heterogeneite = participation[2];
+}
+
+ParticipationExterne::~ParticipationExterne(){
+    //dtor
+}
+
+int ParticipationExterne::getDiversite() const{
+    return m_diversite;
+}
+int ParticipationExterne::getIntensite() const{
+    return m_intensite;
+}
+int ParticipationExterne::getHeterogeneite() const{
+    return m_heterogeneite;
 }

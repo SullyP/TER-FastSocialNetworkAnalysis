@@ -48,11 +48,11 @@
 		<Unit filename="include/Arc.h" />
 		<Unit filename="include/Communaute.h" />
 		<Unit filename="include/Graphe.h" />
-		<Unit filename="include/GrapheBinary.h" />
 		<Unit filename="include/GrapheNonOriente.h" />
 		<Unit filename="include/GrapheOriente.h" />
 		<Unit filename="include/GuimeraAmaral.h" />
 		<Unit filename="include/IndiceEnsembliste.h" />
+		<Unit filename="include/Kcore.h" />
 		<Unit filename="include/ParticipationExterne.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arc.cpp" />
@@ -62,6 +62,7 @@
 		<Unit filename="src/GrapheOriente.cpp" />
 		<Unit filename="src/GuimeraAmaral.cpp" />
 		<Unit filename="src/IndiceEnsembliste.cpp" />
+		<Unit filename="src/Kcore.cpp" />
 		<Unit filename="src/ParticipationExterne.cpp" />
 		<Extensions>
 			<code_completion />
