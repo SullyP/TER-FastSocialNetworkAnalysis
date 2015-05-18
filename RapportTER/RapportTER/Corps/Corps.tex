@@ -410,15 +410,22 @@ bla bla
 {
 Nous avons choisis de mettre en place une architecture simple, une définition de graphe modulable avec un objet pour chaque algorithme qui s'articule autour.
 \\ \\
-La définition de graphe est le coeur de la librairie, c'est pourquoi nous avons choisie de faire une classe abstraite graphe qui est hérité par deux classes : une pour un graphe orienté et une autre pour un graphe non-orienté. Ceci permet de pouvoir utiliser de manière simple un graphe en paramètre d'une fonction. En effet, je peu demander un pointeur de Graphe si ma fonction s'exécute de la même manière pour un graphe orienté ou non. Alors que si tel n'est pas le cas, je peux créé deux fonctions pour gérer les deux types de graphes différemment. Graphe est certe une classe abstraite, mais elle spécifie les fonctions minimales qu'un graphe doit implémenter, on peut donc utiliser un graphe orienté ou non orienté de la même façon.
+La définition de graphe est le coeur de la librairie, c'est pourquoi nous avons choisie de faire une classe abstraite graphe qui est hérité par deux classes : une pour un graphe orienté et une autre pour un graphe non-orienté. Ceci permet de pouvoir utiliser de manière simple un graphe en paramètre d'une fonction. En effet, je peu demander un pointeur de Graphe si ma fonction s'exécute de la même manière pour un graphe orienté ou non. Alors que si tel n'est pas le cas, je peux créé deux fonctions pour gérer les deux types de graphes différemment. Graphe est certes une classe abstraite, mais elle spécifie les fonctions minimales qu'un graphe doit implémenter, on peut donc utiliser un graphe orienté ou non orienté de la même façon.
 \\ \\
-Le reste des algorithmes vient donc se greffer ne manière modulable sur cette base qu'est l'implémentassions des graphes. Tout en ajoutant leur lots de fonctionnalités qui peuvent donc êtres à nouveau utilisées pour de nouveaux algorithmes.
-\begin{figure}[]
+Le reste des algorithmes vient donc se greffer de manière modulable sur cette base qu'est l'implémentation des graphes. Tout en ajoutant leurs lots de fonctionnalités qui peuvent donc êtres à nouveau utilisées pour de nouveaux algorithmes.
+}
+
+
+
+\newpage
+{
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.99\textwidth]{diagrammeDeClasse}
 \caption{Diagramme de classe}
 \end{figure}
 }
+
 
 %------------------------------Fin Architecture------------------------------
 %------------------------------Commentaires techniques------------------------------
@@ -432,7 +439,112 @@ Le reste des algorithmes vient donc se greffer ne manière modulable sur cette b
 
 \vspace{1cm}
 {
-bla bla
+
+\subsection{Breadth First Search, ou algorithme de parcours en largeur.}
+\subsubsection{Description technique}
+{
+L'algorithme de parcours en largeur (ou BFS, pour Breadth First Search) permet le parcours d'un graphe de manière itérative, en utilisant une file. Il peut par exemple servir à déterminer la connexité d'un graphe.
+}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{Graphe}, car c'est un algorithme basique de parcours d'un graphe et qui s'utilise peut importe l'orientation de ce dernier.
+}
+\subsubsection{Justifications techniques}
+{
+Notre implémentation prend en paramètre un numéro de sommet, afin de définir la source du parcours, ainsi qu'un paramètre optionnel qui est un tableau de sommets à ne pas prendre en compte. Ceci peut permettre d'indiquer au parcours de ne pas utiliser certains sommets. Nous avons également choisis de retourner un tableau de booléen pour chaque sommet du graphe, vrai si le sommet à été trouver lors de la recherche, faux sinon. Ce tableau permet par exemple de vérifier la connexité d'un graphe.
+}
+
+\subsection{Jaccard et OverlapIndex}
+\subsubsection{Description technique}
+{
+Ces algorithmes permettent de connaître la similarité et la diversité de deux ensembles.
+}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{IndiceEnsembliste} afin de les regrouper puisqu'ils utilise les mêmes données.
+}
+\subsubsection{Justifications techniques}
+{
+Notre implémentation effectue la plus grande majorité des calculs dans le constructeur, ce qui permet d'obtenir la valeur du jaccard ou de l'overlapIndex avec une simple opération.
+}
+
+\subsection{K-core}
+\subsubsection{Description technique}
+{
+Cette algorithme permet d'obtenir un graphe de type K-core permettant de mettre en évidence la diffusion d'informations et les noyaux centraux qui les diffusent.
+}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{Kcore} afin d'être utilisé par d'autres algorithmes.
+}
+\subsubsection{Justifications techniques}
+{
+ELEONORE TODO
+}
+
+\subsection{Louvain}
+\subsubsection{Description technique}
+{
+Cette algorithme permet de détecter les communautés d'un graphe via la maximisation d'une mesure appelée la modularité.
+}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{Communaute}. Son constructeur permet de préciser le nombre de passes à effectuer pour la détection de communauté, ainsi que la modularité minimum en dessous de laquelle l'algorithme s'arrête. On peu également renseigné un paramètre facultatif pour indiquer à l'algorithme de débuter avec une certaine répartition des communautés déjà évaluée.
+\\ \\ 
+Afin de lancer l'algorithme, il est nécessaire de lancer la fonction \textit{effectuerUneEtape()}, nous avons garder ce fonctionnement afin de permettre une migration facilité des anciens codes vers une adaptation utilisant notre librairie.
+\\ \\ 
+Par la suite les informations peuvent êtres obtenus via \textit{getCommunauteNoeud()} qui renvoye la partition sous forme d'un tableau pour chaque communauté, l'ensemble de ses noeuds, ou via \textit{getNoeudCommunaute} qui renvoie la partition sous forme d'un tableau pour chaque noeud, la communauté à laquelle il appartient. On peut également obtenir le graphe où chaque noeud représente une communauté via \textit{getGrapheCommunaute()}.
+}
+\subsubsection{Justifications techniques}
+{
+Nous avons décidé de stocker l'ensemble des informations pour accélérer le temps de calcul, et la restitution d'informations via les getters (\textit{getCommunauteNoeud} et \textit{getNoeudCommunaute}). \textit{m\_in} permet de stocker pour chaque communauté la somme des poids des arcs internes et \textit{m\_tot} pour chaque communauté la somme des poids des arcs entrants depuis une autre communauté. Ces variables sont utilisées et mise à jour par plusieurs fonctions et représente le coeur des informations permettant de détecter les communautés.
+\\ \\ 
+Nous avons également trois variables permettant de stocker des informations sur le voisinage d'un sommet, ces informations sont utiles lorsque l'on décide si l'on doit changer le sommet de communauté. Ces informations pourrait être stocker temporairement dans une structure ad hoc, mais cela nécessiterait de recalculer une partie des données alors que actuellement le minimum de calcul est effectué pour mettre à jour ces informations.
+}
+
+\subsection{Guimera et Amaral}
+\subsubsection{Description technique}
+{
+Cette algorithme permet d'obtenir le rôle des noeuds par rapport au graphe, à leur communauté ou aux autres communautés, et ceci par l'intermédiaire de deux mesures appelée z-score (statistique qui permet de conclure à la signifiance ou non d'un écart dans un profil) et participation (la participation permet de connaître la connectivité avec l'extérieur (participation externe) ou l'intérieur (participation interne) d'une communauté, cette mesure s'étend de 0 (peu connecté) à 1 (très connecté)).
+}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{GuimeraAmaral} toujours dans l'idée de limiter d'effectuer les mêmes calculs puisque de nombreuses fonctions utilisent les mêmes données. Nous avons fait le choix de laisser les fonctions de calculs du z-score et de la participation accessible en public, mais nous avons tout de même mis en place des fonctions simples qui permettent de donner des significations à ces deux mesures. Par exemple pour savoir l'importance de connectivité d'un noeud.
+}
+\subsubsection{Justifications techniques}
+{
+Nous avons mis en place une implémentation pour graphe orienté et non-orienté, nous avons fais le choix de limiter les calculs en évitant de calculer ou de stocker les valeurs pour les arcs sortants d'un graphe non-orienté. En effet, nous calculons et stockons déjà les données pour les arcs entrants or ces données sont identiques à celles des arcs sortants dans le cas d'un graphe non-orienté. Les fonctions associés retournent donc la même chose dans ce cas (sortants/entrants).
+\\ \\
+D'autre part, nous avons stocké l'ensemble des informations qui sont utilisées à maintes reprises par les autres fonctions :}
+\begin{itemize}
+    \item \textit{m\_graphe} : le graphe
+    \item \textit{m\_noeudCommunaute} : pour chaque noeud, la communauté à laquelle il appartient
+    \item \textit{m\_communauteNoeud} : pour chaque communauté, la liste des noeuds lui appartenant
+    \item \textit{m\_degreEntrantCommunaute} : degré interne de chaque noeud pour sa communauté
+    \item \textit{m\_degreMoyenEntrantCommunaute} : pour chaque communauté, son degré moyen interne
+    \item \textit{m\_degreSortantCommunaute} : degré externe de chaque noeud pour sa communauté
+    \item \textit{m\_degreMoyenSortantCommunaute} : pour chaque communauté, son degré moyen sortant
+    \item \textit{m\_ecartTypeEntrantCommunaute} : pour chaque communauté, son écart type interne
+    \item \textit{m\_ecartTypeSortantCommunaute} : pour chaque communauté, son écart type externe
+\end{itemize}
+
+\subsection{Dugué et Perez}
+\subsubsection{Description technique}
+{
+Cette algorithme est une amélioration de l'algorithme de Guimera et Amaral, il permet d'obtenir plusieurs informations en lieu et place de la participation externe :
+}
+\begin{itemize}
+    \item l'intensité externe : évalue le nombre de liens d'un noeud avec d'autre communautés (autre que la sienne), par rapport aux autres noeuds de sa communauté
+    \item la diversité : évalue le nombre de communautés auquel un noeud est connecté (autre que la sienne), par rapport aux autres noeuds de sa communauté
+    \item l'hétérogénéité : mesure la variation du nombre de liens d'un noeud, d'une communauté à une autre
+\end{itemize}
+\subsubsection{Commentaires techniques}
+{
+Nous avons implémenté cette algorithme dans la classe \textit{ParticipationExterne}, cette classe éffectue l'ensemble des calculs dans son constructeur et ne sert par la suite qu'à sotcker les differentes informations.
+}
+\subsubsection{Justifications techniques}
+{
+Nous avons mis en place une implémentation qui une fois les calculs terminés permet d'obtenir une structure de donnée qui permet d'accéder rapidement aux trois mesures que sont l'intensité, la diversité et l'hétérogénéité.}
 }
 
 %------------------------------Fin Commentaires techniques------------------------------
@@ -447,7 +559,83 @@ bla bla
 
 \vspace{1cm}
 {
-bla bla
+• Graphe.cpp
+\\  \\
+> Graphe::breadthFirstSearch \\ 
+O(n*m) : \\
+n le nombre de sommets à étudier, \\
+m le nombre de voisins correspondants ; \\
+O(n log(n)) dans le pire des cas. \\ \\
+
+• Communaute.cpp
+\\  \\
+> Communaute::Communaute  \\
+O(n*m) : \\
+n le nombre de sommets dans la communauté, \\
+m le nombre de voisins dans la bordne max ; \\
+O(n log(n)) dans le pire des cas. \\ 
+ \\
+> Communaute::effectuerUneEtape \\
+O(d*n*m) : \\
+d le nombre de déplacements, \\
+n le nombre de sommets à déplacer, \\
+m le nombre de voisins correspondants ; \\
+O(n log(n)) dans le pire des cas. \\ 
+ \\
+> Communaute::getGrapheCommunaute \\
+O(c*n*m) : \\
+c le nombre de communautés, \\
+n le nombre de sommets à étudier, \\
+m le nombre de voisins correspondants ; \\ 
+O(n log(n)) dans le pire des cas.  \\  \\
+
+• GrapheNonOriente.cpp
+ \\  \\
+> GrapheNonOriente::GrapheNonOriente \\
+O(n*(m1+m2)) : \\
+n le nombre de sommets à étudier, \\
+m1 le nombre d'arcs entrants, 
+m2 le nombre d'arcs sortants ; \\
+O(n log(n)) dans le pire des cas. \\ \\
+
+• GrapheOriente.cpp
+ \\ \\
+> GrapheOriente::GrapheOriente \\
+O(n*(m1+m2)) : \\
+n le nombre de sommets à étudier, \\
+m1 le nombre d'arcs entrants, \\
+m2 le nombre d'arcs sortants ; \\
+O(n log(n)) dans le pire des cas. \\ \\
+
+• GuimeraAmaral.cpp
+ \\  \\
+> GuimeraAmaral::GuimeraAmaral \\
+> GuimeraAmaral::varianceEntrante \\
+> GuimeraAmaral::varianceSortante \\
+> GuimeraAmaral::degreMoyenEntrantCommunaute \\
+> GuimeraAmaral::degreMoyenSortantCommunaute \\
+> GuimeraAmaral::degreEntrantCommunaute \\
+> GuimeraAmaral::degreSortantCommunaute \\
+O(n) : \\
+n le nombre de sommets ; \\
+O(n) dans le pire des cas. \\ \\
+
+• IndiceEnsembliste.cpp
+ \\  \\
+> IndiceEnsembliste::IndiceEnsembliste \\
+> IndiceEnsembliste::overlapIndex \\
+O(n) : \\
+n le nombre de sommets ; \\
+O(n) dans le pire des cas. \\ \\
+
+• ParticipationExterne.cpp
+ \\  \\
+> ParticipationExterne::participationExterne \\
+O(n*m) : \\
+n le nombre de sommets dans la communauté, \\
+m le nombre de voisins correspondants ; \\
+O(n log(n)) dans le pire des cas. \\ \\
+
 }
 
 %------------------------------Fin Analyse en complexité des algorithmes------------------------------
