@@ -382,6 +382,105 @@ Notre objectif est d'avancer progressivement, de construire notre librairie briq
 }
 
 %------------------------------Fin Planning et affectation des taches------------------------------
+%------------------------------Exemple de fonctionnement du logiciel final------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Exemple de fonctionnement du logiciel final}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+bla bla
+}
+
+%------------------------------Fin Exemple de fonctionnement du logiciel final------------------------------
+%------------------------------Architecture------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Architecture}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+Nous avons choisis de mettre en place une architecture simple, une définition de graphe modulable avec un objet pour chaque algorithme qui s'articule autour.
+\\ \\
+La définition de graphe est le coeur de la librairie, c'est pourquoi nous avons choisie de faire une classe abstraite graphe qui est hérité par deux classes : une pour un graphe orienté et une autre pour un graphe non-orienté. Ceci permet de pouvoir utiliser de manière simple un graphe en paramètre d'une fonction. En effet, je peu demander un pointeur de Graphe si ma fonction s'exécute de la même manière pour un graphe orienté ou non. Alors que si tel n'est pas le cas, je peux créé deux fonctions pour gérer les deux types de graphes différemment. Graphe est certe une classe abstraite, mais elle spécifie les fonctions minimales qu'un graphe doit implémenter, on peut donc utiliser un graphe orienté ou non orienté de la même façon.
+\\ \\
+Le reste des algorithmes vient donc se greffer ne manière modulable sur cette base qu'est l'implémentassions des graphes. Tout en ajoutant leur lots de fonctionnalités qui peuvent donc êtres à nouveau utilisées pour de nouveaux algorithmes.
+\begin{figure}[]
+\centering
+\includegraphics[width=0.99\textwidth]{diagrammeDeClasse}
+\caption{Diagramme de classe}
+\end{figure}
+}
+
+%------------------------------Fin Architecture------------------------------
+%------------------------------Commentaires techniques------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Commentaires techniques}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+bla bla
+}
+
+%------------------------------Fin Commentaires techniques------------------------------
+%------------------------------Analyse en complexité des algorithmes------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Analyse en complexité des algorithmes}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+bla bla
+}
+
+%------------------------------Fin Analyse en complexité des algorithmes------------------------------
+%------------------------------Résultats des tests de validation------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Résultats des tests de validation}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+bla bla
+}
+
+%------------------------------Fin Résultats des tests de validation------------------------------
+%------------------------------Extensions possibles------------------------------
+
+\newpage
+\begin{center}
+\begin{bf}
+\section{Extensions possibles}
+\end{bf}
+\end{center}
+
+\vspace{1cm}
+{
+bla bla
+}
+
+%------------------------------Fin Extensions possibles------------------------------
 %------------------------------Bibliographie------------------------------
 
 \newpage
