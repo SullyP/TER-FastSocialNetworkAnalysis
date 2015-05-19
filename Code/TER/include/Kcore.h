@@ -7,9 +7,13 @@ using namespace std;
 class Kcore
 {
     public:
-        std::vector<int> kcore(GrapheNonOriente* graphe, int k);
+        Kcore(GrapheNonOriente* graphe, int k);
+        vector<int> getTabDegre() const;
+        GrapheNonOriente* getGrapheKcore() const;
+    private:
         bool supK (std::vector<int> tabdegre, int k);
-    //private:
+        std::vector<int> m_tabDegre;
+        GrapheNonOriente* m_grapheKcore;
 };
 
 #endif // KCORE_H

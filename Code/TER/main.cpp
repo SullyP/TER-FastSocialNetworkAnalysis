@@ -174,43 +174,28 @@ int main()
 
     ParticipationExterne duguePerez = ParticipationExterne(com, 1);
 
-    Kcore* kcore;
+    Kcore kcore = Kcore(grapheNonOriente, 3);
+    GrapheNonOriente* troiskcore = kcore.getGrapheKcore();
 
-    std::vector<int> k1 = kcore->kcore(grapheNonOriente,1);
-
-    /*cout << "Kcore -> k=1" << endl;
-    for(unsigned int i=0; i < k1.size(); i++){
-        if(k1[i]!=0)
-        cout << i << " : " << k1[i] << "; ";
-    }
-    cout << endl;*/
-
-    std::vector<int> k2 = kcore->kcore(grapheNonOriente,2);
-
-    cout << "Kcore -> k=2" << endl;
-    for(unsigned int i=0; i < k2.size(); i++){
-        if(k2[i]!=0)
-        cout << i << " : " << k2[i] << "; ";
+    cout << "Kcore v2-> k=3" << endl;
+    cout << "Graphe Non-Oriente - Taille : " << troiskcore->size() << endl;
+    cout << "Graphe Non-Oriente - Nombre d'arcs : " << troiskcore->nbArcs() << endl;
+    cout << "Graphe Non-Oriente - Degres : ";
+    for (unsigned int i=0; i<troiskcore->size(); i++)
+    {
+    	cout << troiskcore->getDegreEntrant(i) << " ";
     }
     cout << endl;
-
-    std::vector<int> k3 = kcore->kcore(grapheNonOriente,3);
-
-    cout << "Kcore -> k=3" << endl;
-    for(unsigned int i=0; i < k3.size(); i++){
-        if(k3[i]!=0)
-        cout << i << " : " << k3[i] << "; ";
+    cout << "Graphe Non-Oriente - Arcs : " << endl;
+    for (unsigned int i=0; i<troiskcore->size(); i++)
+    {
+    	std::vector<Arc> arcsk = troiskcore->getArcsSortants(i);
+    	cout << " Sommet num " << i << " : ";
+    	for(unsigned int i=0; i<arcsk.size(); i++){
+            cout << "poids: " << arcsk[i].getPoids() << " sommet: " << arcsk[i].getNumeroSommet() << " ";
+    	}
+    	cout << endl;
     }
-    cout << endl;
-
-    std::vector<int> k4 = kcore->kcore(grapheNonOriente,4);
-
-    cout << "Kcore -> k=4" << endl;
-    for(unsigned int i=0; i < k4.size(); i++){
-        if(k4[i]!=0)
-        cout << i << " : " << k4[i] << "; ";
-    }
-    cout << endl;
 
 
     delete indiceEnsembliste;
