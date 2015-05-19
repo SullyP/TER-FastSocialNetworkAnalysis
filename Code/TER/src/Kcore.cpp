@@ -47,7 +47,14 @@ Kcore::Kcore(GrapheNonOriente* graphe, int k){
     for(unsigned int numeroSommet=0; numeroSommet<graphe->size();numeroSommet++){
         if(tabdegre[numeroSommet] == 0){
             //On dérément le nombre d'arcs car ce sommet n'a plus d'arcs
-            nbArcs -= graphe->getDegre(numeroSommet);
+            vector<Arc> voisins = graphe->getArcs(numeroSommet);
+            for(unsigned int indiceVoisin=0; indiceVoisin < voisins.size(); indiceVoisin++){
+                    if(tabdegre[(voisins[indiceVoisin]).getNumeroSommet()] != 0){
+                        nbArcs--;
+                    }else if(voisins[indiceVoisin].getNumeroSommet() < numeroSommet){
+                        nbArcs--;
+                    }
+            }
         }else{
             vector<Arc> voisins = graphe->getArcs(numeroSommet);
             for(unsigned int indiceVoisin=0; indiceVoisin < voisins.size(); indiceVoisin++){
